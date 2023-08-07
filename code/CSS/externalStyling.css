@@ -1,0 +1,38 @@
+
+/* Universal selector: Evrensel secici */
+
+/* Daha cok Browser da sifirlama islemi yapilir */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(240, 239, 238);
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Elements il erisim */
+
+li{
+    background-color: cadetblue;
+    margin-top: 20px;
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px;
+    
+}
+
+li:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    font-size:  larger;
+}
+
+/* Class ile erisim */
+.about{
+    color: red;
+    background-color: antiquewhite;
+}
