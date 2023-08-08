@@ -1,0 +1,105 @@
+.text1 {
+    font-family: 'Courier New', Courier, monospace;
+
+    font-size: 80%;
+
+    font-style: italic;
+    font-style: normal;
+
+    font-weight: 900;
+    font-weight: lighter;
+    font-weight: bold;
+
+    color: green;
+}
+
+.text2 {
+    font-size: 24px;
+    /* font-size: 1em; ==> 1 em = 16px */
+
+    font-style: oblique;
+
+    font-variant: small-caps;
+
+}
+
+.text3 {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.5rem; /* 1 rem = 16px 1.5rem * 16px = 24px */
+
+    text-align: center;
+    text-align: right;
+    text-align: justify;
+
+    text-decoration: underline;
+    text-decoration: line-through;
+    text-decoration: overline;
+    text-decoration: none;
+}
+
+.text4 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em; /* 32px */
+
+    text-transform: capitalize;
+    text-transform: lowercase;
+    text-transform: uppercase;
+    text-transform: none;
+    
+}
+
+.text5 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.25em; /* 20px */
+    font-size: 20px;
+
+    text-indent: 1rem;
+}
+
+.text6 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: blue;
+
+    text-indent: 2.5rem;
+
+    letter-spacing: 7px;
+
+    word-spacing: 20px;
+
+    line-height: 2;
+}
+
+.text7 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: rgb(255, 30, 0);
+
+    text-indent: 2.5rem;
+
+    letter-spacing: 7px;
+
+    word-spacing: 20px;
+
+    line-height: 2;
+
+    direction: rtl;
+    direction: ltr;
+}
+
+
+.text8 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: rgb(16, 46, 198);
+
+    text-indent: 2.5rem;
+
+    letter-spacing: 7px;
+
+    word-spacing: 20px;
+
+    line-height: 2;
+
+    text-shadow: 2px 3px 1px black;
+}

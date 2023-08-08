@@ -1,0 +1,16 @@
+
+a:link{
+    background-color: rgb(12, 71, 110);
+}
+
+a:visited{
+    background-color: yellow;
+}
+
+a:hover{
+    background-color: crimson;
+}
+
+a:active{
+    background-color: orange;
+}
