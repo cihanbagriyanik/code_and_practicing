@@ -1,0 +1,64 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    background-color: black;
+    color: white;
+}
+h1{
+    font-size: 60px;
+}
+
+span {
+    color: red;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 5px 5px 100px red;
+}
+
+footer {
+    text-align: center;
+}
+
+.container {
+    /* border: 1px solid red; */
+    width: 80%;
+    background-color: #272626;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.box1 {
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    
+}
+
+.box2 {
+    
+    width: 400px;
+    margin: auto;
+
+}
+
+.date{
+    text-align: center;
+}
+
+.heading{
+    font-family: 'Lobster', cursive;
+}
+
+.info{
+    width: 80%;
+    text-align: justify;
+    margin: auto;
+    font-size: 20px;
+}
+
+
