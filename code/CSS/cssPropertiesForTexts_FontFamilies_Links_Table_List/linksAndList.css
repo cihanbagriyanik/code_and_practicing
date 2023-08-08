@@ -14,3 +14,17 @@ a:hover{
 a:active{
     background-color: orange;
 }
+
+
+
+
+
+ul.first{
+    list-style-type: circle;
+    list-style-position: inside;
+}
+
+ul.second{
+    /* list-style-type: none; */
+    list-style-position: outside;
+}
