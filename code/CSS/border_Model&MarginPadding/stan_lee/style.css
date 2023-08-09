@@ -34,6 +34,21 @@ li{
 
 footer {
     text-align: center;
+    font-size: 20px;
+}
+
+a{
+    color: white;
+    background-color: black;
+    padding: 16px;
+    border: 2px solid darkorange;
+    border-radius: 10px;
+    text-decoration: none;
+
+}
+
+.link:hover{
+    background-color: #272626;
 }
 
 .container {
@@ -42,6 +57,7 @@ footer {
     background-color: #272626;
     border-radius: 20px;
     margin: auto;
+    
 }
 
 .box1 {
