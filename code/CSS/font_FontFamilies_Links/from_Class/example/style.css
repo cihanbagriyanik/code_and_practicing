@@ -1,0 +1,21 @@
+
+body{
+    background-color: black;
+    color: white;
+
+}
+
+a{
+    text-decoration: none;
+
+}
+
+ul{
+    display: inline;
+}
+
+li{
+    display: inline;
+    padding: 10px;
+}
+

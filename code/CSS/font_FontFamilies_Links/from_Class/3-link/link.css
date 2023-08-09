@@ -1,0 +1,29 @@
+
+a{
+    margin: 30px;
+    background-color: rgb(56, 56, 199);
+    padding: 20px;
+    border: 2px solid gray;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
+}
+
+a:link{
+    color: orange;
+}
+
+a:active{
+    color: green;
+    font-size: 30px;
+}
+
+a:hover{
+    background-color: gray;
+    border: 5px solid rgb(56, 56, 199);
+}
+
+a:visited{
+   color: red;
+}
