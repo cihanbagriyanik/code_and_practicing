@@ -21,6 +21,17 @@ img {
     box-shadow: 5px 5px 100px red;
 }
 
+ul{
+    width: 80%;
+    margin: auto;
+    text-align: justify;
+}
+
+li{
+    line-height: 20px;
+    margin-bottom: 10px;
+}
+
 footer {
     text-align: center;
 }
@@ -52,6 +63,8 @@ footer {
 
 .heading{
     font-family: 'Lobster', cursive;
+    color: red;
+    margin-left: 10%;
 }
 
 .info{
