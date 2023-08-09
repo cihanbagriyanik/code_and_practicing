@@ -1,5 +1,4 @@
-
-body{
+body {
     background-color: black;
     color: white;
 
@@ -7,28 +6,163 @@ body{
 
 a{
     text-decoration: none;
-    border: 2px solid rgb(251, 1, 176);
     color: white;
+}
+
+a:hover{
+    background-color: rgb(255, 0, 120);
+}
+
+#button{
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 0, 120);
+    width: 7rem;
+    height: 1.3rem;
+    border: 2px solid rgb(255, 0, 120);
+    border-radius: 20px;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 3px;
+    font-size: xx-small;
+    padding-top: 9px;
+    margin: 4rem auto;
+
+ 
+}
+
+#button:hover{
+    background-color: white;
+    color: rgb(255, 0, 120);
+    border: 2px solid rgb(255, 0, 120);
+    cursor:default;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+p {
+    /* display: inline;
+    align-content: center;
+    align-items: center; */
+
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+.fa-solid{
+    display: inline-block;
+    text-align: center;
+    border: 1px none ;
+    width: 20px;
+    height: 20px;
+    padding: 2rem;
+    border-radius: 100%;
+    margin: 25px 7.5rem 0px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+
+    
+
+
+    
 
 }
 
-ul{
+.fa-music{
+    
+    background-color: rgb(255, 0, 120);
+    color: white;
+}
+
+.fa-user{
+    background-color: rgb(246, 240, 51);
+    color: white;
+}
+
+.fa-video{
+    background-color: rgb(126, 210, 41);
+    color: white;
+}
+
+
+
+ul {
     display: inline;
 }
 
-li{
+li {
     display: inline;
     padding: 10px;
 }
 
-/* img{
-    width: 100% ;
-} */
+.topfont{
+   font-family: 'Rubik Beastly', cursive; 
+   font-variant: small-caps;
+   font-size: 1.3rem;
 
-.img{
+}
+
+
+.img {
+
     background-image: url(./img/background.jpg);
     width: auto;
     height: 35rem;
-    background-size: cover;    
+    background-size: cover;
+    padding-top: 1.5rem;
 }
 
+.imgbox {
+    text-align: center;
+    display: block;
+}
+
+.p2{
+    line-height: 3rem;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+
+}
+
+.p3{
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+.newRelease {
+    text-decoration: underline 1.5px rgb(255, 0, 120);
+    line-height: 5rem;
+    padding-top: 10rem;
+    letter-spacing: 5px;
+    font-variant: small-caps;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+
+}
+
+.altP {
+    /* border: 2px solid red; */
+    display: inline-block;
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    padding: 30px;
+
+    display: flex;
+    align-content: center
+}
