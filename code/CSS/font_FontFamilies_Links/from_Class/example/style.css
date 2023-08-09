@@ -70,21 +70,13 @@ p {
     border-radius: 100%;
     margin: 25px 7.5rem 0px;
     
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-
-    
-
-    
-
-
-    
+    justify-content: center; */
 
 }
 
 .fa-music{
-    
     background-color: rgb(255, 0, 120);
     color: white;
 }
@@ -98,8 +90,6 @@ p {
     background-color: rgb(126, 210, 41);
     color: white;
 }
-
-
 
 ul {
     display: inline;
@@ -116,7 +106,6 @@ li {
    font-size: 1.3rem;
 
 }
-
 
 .img {
 
@@ -136,12 +125,10 @@ li {
     line-height: 3rem;
     font-family: 'Permanent Marker', cursive;
     font-size: 1.5rem;
-
 }
 
 .p3{
     font-family: 'Times New Roman', Times, serif;
-    
 }
 
 .newRelease {
