@@ -7,6 +7,8 @@ body{
 
 a{
     text-decoration: none;
+    border: 2px solid rgb(251, 1, 176);
+    color: white;
 
 }
 
@@ -17,5 +19,16 @@ ul{
 li{
     display: inline;
     padding: 10px;
+}
+
+/* img{
+    width: 100% ;
+} */
+
+.img{
+    background-image: url(./img/background.jpg);
+    width: auto;
+    height: 35rem;
+    background-size: cover;    
 }
 
