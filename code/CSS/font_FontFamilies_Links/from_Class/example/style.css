@@ -55,6 +55,13 @@ p {
     margin-inline-end: 0px;
 }
 
+.p2:hover{
+    color: rgb(255, 0, 120);
+    text-decoration: underline rgb(255, 0, 120);
+    /* cursor: pointer; */
+    font-size: 2em;
+}
+
 ul {
     display: inline;
 }
@@ -101,8 +108,6 @@ nav{
 }
 
 .newRelease {
-    /* text-decoration: underline 1.5px rgb(255, 0, 120); */
-    /* line-height: 5rem; */
     padding-top: 10rem;
     padding-bottom: 1.2rem;
     letter-spacing: 5px;
@@ -112,19 +117,14 @@ nav{
     font-family: 'Roboto', sans-serif;
     font-size: 1.1rem;
     font-weight: bolder;
-    border-bottom: 2px solid red;
-    width: 160px;
+    border-bottom: 2px solid rgb(255, 0, 120);
+    width: 150px;
     margin: auto;
     
 
 }
 
-/* .newRelease::first-letter{
-    font-size: 1.6rem;
-} */
-
 .altP {
-    /* border: 2px solid red; */
     display: inline-block;
     height: 70px;
     width: 300px;
