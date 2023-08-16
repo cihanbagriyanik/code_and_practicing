@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DynaPuff', cursive;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* ! header */
+
+header {
+    background-color: #D9AFD9;
+    background-image: linear-gradient(0deg, #D9AFD9, #97D9e1 100%);
+    padding: 1rem;
+}
+
+header a img {
+    width: 60px;
+}
+
+header .sign-in {
+    float: right;
+    padding-top: 1.7rem;
+    padding-right: 0.5rem;
+    color: #920101;
+}
+
+header .sign-in a {
+    color: #920101;
+    text-decoration: none;
+    /* remove underline from links*/
+    font-weight: 700;
+}
+
+header .sign-in a:hover {
+border-bottom: 2px solid #920101;
+
+}
