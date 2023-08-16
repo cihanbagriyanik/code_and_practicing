@@ -12,7 +12,15 @@ body{
     margin: auto;
     padding: 10px;
 
-    background-image: url();
+    
+    /* background-size: contain;
+    background-size: auto; */
+
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.371), rgba(0, 0, 0, 0.406));
+    background-image: url(./img/resim-2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
@@ -21,10 +29,28 @@ body{
     display: none;
 }
 
-/* p{
-    display: none;
-} */
-
 .paragraf{
     text-align: justify;
+    color: rgb(248, 193, 40);
+    text-shadow: 5px 5px 10px yellow;
 }
+
+img{
+    width: 20%;
+}
+
+#img1,
+#img2,
+#img3,
+#img4{
+    opacity: 0.7;
+}
+
+#img1:hover,
+#img2:hover,
+#img3:hover,
+#img4:hover{
+    opacity: 1;
+    transition: all ease-in-out 400ms;
+}
+
