@@ -1,0 +1,152 @@
+
+
+.yazi {
+    text-align: center;
+    font-size: 2rem;
+    margin: 2rem auto;
+    width: 50vw;
+}
+
+/*! ******** TRANSFORM-ROTATE ************ */
+/* rotate içinde ... degree (deg) olarak değer verilir */
+/* 90 ve 270 deerelecelerde yazılar tam dik olduklarından ve 
+    3 boyutlu olarak bakamadığımız için gözükmezler */
+
+.yazi1 {
+    background-color: darkcyan;
+    transform: rotateX(45deg);
+}
+
+.yazi2 {
+    background-color: cornflowerblue;
+    transform: rotateY(60deg);
+
+}
+
+.yazi3 {
+    background-color: darkorange;
+    /* transform: rotate(45deg); */
+    /* transform-origin: left; */
+
+}
+.yazi3:active {
+    background-color: darkorange;
+    transform: rotate(45deg);
+    /* transform-origin: left; */
+
+}
+
+/* ******** TRANSFORM-SCALE ************ */
+/* scale boyutlandırma için kullanılır */
+
+.yazi4 {
+    background-color: fuchsia;
+    transform: scaleX(1.5);
+}
+
+.yazi5 {
+    background-color: seagreen;
+    /* transform: scaleY(2.5); */
+}
+.yazi5:active {
+    background-color: seagreen;
+    transform: scaleY(2.5);
+}
+
+
+.yazi6 {
+    background-color: violet;
+    /* transform: scale(2); */
+}
+.yazi6:hover {
+    background-color: violet;
+    /* transform: scale(2); */
+    transform: rotate(30deg)scale(1.5);
+}
+
+img{
+    width: 150px;
+    transform: skew(15deg, 15deg);
+
+}
+
+/* ************* -TRANSFORM- TRANSLATE ********* */
+/* Translate öteleme,hareket ettirmek için kullanılır. */
+
+.box{
+    background-color: crimson;
+    width: 100px;
+    height: 50px;
+    margin: 2px;
+}
+
+.x{
+    transform: translateX(0px);
+}
+.x:active{
+    transform: translateX(50px);  
+    background-color: orange;  
+
+}
+
+
+.y{
+/* transform: translateY(0px); */
+}
+.y:active{
+transform: translateY(150px);
+background-color: blue;
+}
+
+.xy{
+    /* transform: translate(150px, 50px); */
+}
+.xy:active{
+    transform: translate(150px, 50px);
+}
+
+.btn-div{
+    text-align: center;
+}
+
+.btn{
+    background-color: olive;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    transition: all .3s;
+}
+.btn:active{
+    background-color: crimson;
+    color: white;
+    transform: scale(95%);
+}
+
+/* *************Transition*************** */
+
+.box1{
+    transition-property: width;
+    transition-duration: 2s;
+    transition-delay: .5s;
+    /* transition: all 2s; */
+}
+.box1:active{
+    width: 300px;
+    height: 100px;
+}
+
+.box2{
+    transition: all ease-in-out 2s;
+
+}
+.box2:active{
+    transform: translate(50px) scale(1.5);
+    background-color: olive;
+}
+.box3{
+    transition: all ease-in-out 1s;
+}
+.box3:active{
+    width: 400px;
+    background-color: greenyellow;
+}
