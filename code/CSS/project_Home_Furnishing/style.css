@@ -4,10 +4,6 @@
     box-sizing: border-box;
 }
 
-
-/*  */
-
-
 body {
     background-color: #efefef;
 }
@@ -35,6 +31,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
+    /* border: 3px solid red; */
 }
 
 .logo {
@@ -56,7 +54,6 @@ body {
     /* margin: 1rem; */
 
 }
-
 
 .searchInput {
     width: 300px;
@@ -214,7 +211,6 @@ header {
     /* border: 2px solid red; */
     font-size: 24px;
     padding-bottom: 1rem;
-
 }
 
 .category p {
@@ -250,7 +246,6 @@ header {
     border-radius: 2rem;
     padding: 1rem 10px 1rem 1rem;
 
-
 }
 
 .productPart {
@@ -268,7 +263,6 @@ header {
 .productSection {
     background-color: #eeecec;
     margin: 1rem;
-
 
 }
 
@@ -289,7 +283,6 @@ header {
     height: 95%;
     /* padding-bottom: 0.7rem; */
 
-
 }
 
 .product p {
@@ -298,37 +291,34 @@ header {
     text-align: center;
     /* position: relative;
     bottom: 2.7rem; */
-
-
-
 }
 
 .contact {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     /* flex-wrap: wrap; */
     /* gap: 2rem; */
     background-color: #AE9F8D;
     padding: 2rem 4rem;
-   
+
 }
 
-.expert{
+.expert {
     /* display: flex; */
-    
+
     width: 50%;
     padding: 2rem;
-    margin:1rem;
+    margin: 1rem;
     /* letter-spacing: 1px; */
-    
+
 }
 
 .leaeYourInfo p {
     font-family: 'Judson', serif;
 }
 
-.lookForExpert{
+.lookForExpert {
     /* font-family: 'Josefin Slab', serif; */
     font-family: 'Bellota', cursive;
     font-size: 2rem;
@@ -337,58 +327,270 @@ header {
 
 }
 
-span{
-    color:#f37705 ;
+span {
+    color: #f37705;
 }
 
-.formSection{
+.formSection {
     width: 50%;
 }
 
-.formElement{
-    font-size:1.5rem ;
+.formElement {
+    font-size: 1.5rem;
 }
 
-.formElement input{
+.formElement input {
     background-color: inherit;
-    border:none;
-    border-bottom: 1px solid black;   
-    margin-bottom: 1rem; 
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 1rem;
     padding: 1rem 0;
     width: 38rem;
 }
 
-input:focus{
+input:focus {
     outline: none !important;
-    border-bottom: 1px solid black;   
+    border-bottom: 1px solid black;
 }
 
-.submit{
+.submit {
     width: 13rem;
     height: 2.5rem;
     text-align: left;
-    padding-left:1rem;
+    padding-left: 1rem;
     font-style: italic;
     border-radius: 5px;
     background-color: #D9D9D9;
     outline: none;
     border: 1px solid black;
-    
+
 }
 
-.copyright{
+.copyright {
     display: flex;
     justify-content: space-between;
     margin: 0 2rem;
     align-items: center;
     height: 5rem;
-   
+
 }
 
-
-.policy a{
+.policy a {
     margin-right: 1rem;
     text-decoration: none;
     color: black;
     border-bottom: 1px solid black;
+}
+
+@media screen and (max-width:700px) {
+    .iconBar {
+        /* border: 3px solid red; */
+
+        margin: 0;
+        padding: 0;
+        /* margin: 0.5rem 1rem 1rem 0.5rem;
+        padding: 10px 0; */
+        /* display: flex;
+        justify-content: space-between;
+        align-items: center; */
+
+        border-bottom: 2px solid #d9d9d9;
+    }
+
+    .inputPart {
+        margin: 0.5rem 2rem 1rem 0.5rem;
+        /* padding: 10px 0; */
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .searchInput {
+        /* border: 2px solid red; */
+        width: 100%;
+        margin-left: 0.5rem;
+        margin-bottom: 1rem;
+        /* display: flex; */
+       
+    }
+
+    .support{
+        display: flex;
+        gap: 1rem;
+
+    }
+
+    .icons{
+        /* border: 2px solid red; */
+        display: flex;
+        gap: 1.3rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navBar{
+        margin: 0;
+        padding-left: 0.5rem;
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: left;
+    }
+
+    .nav{
+        margin-left: -0.9rem;
+        padding: 0;
+    }
+
+    .contact{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .expert {
+        width: 100%;
+        padding: 2rem;
+        margin: 1rem; 
+    
+    }
+
+
+    /* *************** */
+
+    .lookForExpert{
+        font-size: 1.5rem;
+    }
+
+    .formSection {
+        /* margin: 1rem; */
+        width: 90%;
+        padding-bottom: 1rem;
+    }
+    
+    .formElement {
+        font-size: 1.3rem;
+    }
+    
+    .formElement input {
+        background-color: inherit;
+        border: none;
+        border-bottom: 1px solid black;
+        margin-bottom: 1rem;
+        padding: 1rem 0;
+        width: 24rem;
+    }
+    
+    input:focus {
+        outline: none !important;
+        border-bottom: 1px solid black;
+    }
+    
+    .submit {
+        width: 13rem;
+        height: 2.5rem;
+        text-align: left;
+        padding-left: 1rem;
+        font-style: italic;
+        border-radius: 5px;
+        background-color: #D9D9D9;
+        outline: none;
+        border: 1px solid black;
+    
+    }
+    
+    .copyright {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 1rem;
+        align-items: center;
+        height: 5rem;
+    
+    }
+    
+    .policy a {
+        margin-right: 1rem;
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid black;
+    }
+
+
+}
+@media screen and (max-width:550px) {
+
+    .searchInput {
+        width: 60%;
+
+    }
+
+    .essentials {
+        height: 430px;
+        display: flex;
+        flex-direction: column;
+    
+    }
+    
+    .essentialText {
+        padding: 20px;
+        font-style: italic;
+        letter-spacing: 0.3px;
+        font-size: 2rem;
+    
+    }
+    
+    .lighting {
+        width: 25rem;
+        background-color: #ffc868;
+        height: 300px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 10px black;
+    
+    }
+    
+    .lighting img {
+        width: 290px;
+        height: 300px;
+        border-radius: 5px;
+    }
+    
+    .lighting p {
+        margin-bottom: -200px;
+        width: 80%;
+        float: right;
+        padding: 3.5rem;
+        font-style: italic;
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .formElement input {
+        width: 20rem;
+
+    }
+
+    .copyright {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 0.5rem;
+    
+    }
+    
+    .policy  {
+        display: flex;
+        justify-content:space-between;
+
+    }
+
 }
