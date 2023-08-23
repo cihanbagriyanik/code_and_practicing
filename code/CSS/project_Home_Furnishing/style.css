@@ -565,15 +565,6 @@ input:focus {
     }
 
 
-
-
-
-
-
-
-
-
-
     .formElement input {
         width: 20rem;
 
@@ -592,5 +583,30 @@ input:focus {
         justify-content:space-between;
 
     }
+
+}
+
+@media screen and (max-width:500px) {
+
+    .inputPart {
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: flex-start;
+
+    }
+
+    .searchInput {
+        width: 68%;
+
+    }
+
+    .icons{
+        margin-left: 1.3rem;
+    }
+
+    .formElement input {
+        width: 16rem;
+
+    } 
 
 }
