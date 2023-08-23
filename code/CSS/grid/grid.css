@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    display: grid;
+    /* grid-template-rows:150px 400px 100px;
+    grid-template-columns:200px 300px 100px; */
+    /*! Yüzde değerleri ile ayarlama */
+   /*  height: 100vh; yükseklikte % değeri kullanmak için height belirlemeliyim.*/
+    /* grid-template-rows:20% 50% 30%;
+    grid-template-columns:30% 60% 10%; */
+
+    /*! Oranlama yaparak ayarlama => fr (fraction)*/
+    height: 80vh;
+   grid-template-rows:repeat(4,1fr);
+    /* grid-template-columns:1fr 1fr 1fr 1fr; */
+    /*! Kısayolu => repeat() */
+    grid-template-columns:repeat(4,1fr)   
+
+}
+
+.content{
+    background-color: cadetblue;
+    border:1px solid black;
+}
+
