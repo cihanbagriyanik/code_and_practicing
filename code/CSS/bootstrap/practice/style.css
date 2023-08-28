@@ -71,9 +71,18 @@
 /* --------------------------------------------------------- */
 
 section .card:hover{
-    transform: scale(1.06);
+    transform: scale(1.03);
     transition-duration: 1s;
+    cursor: pointer;
 }
+
+section#instructors i{
+    transition: opacity 0.5;
+}
+section#instructors i:hover{
+    opacity: 0.5;
+}
+
 
 
 /* --------------------------------------------------------- */
@@ -134,12 +143,11 @@ footer a{
     text-decoration: none;
     color: white;
     padding: 0.5rem;
+    transition-duration: 1s;
 }
 
 footer a:hover{
-    
     color: var(--red);
-    transition-duration: 1s;
     
 }
 
@@ -156,7 +164,12 @@ footer article.p4{
     position: fixed;
     bottom: 1rem;
     right: 1rem;
-    text-align: center;
-    padding:.5rem;
-    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.up i{
+    font-size: 1.3rem;
 }
