@@ -189,7 +189,47 @@ let soyad = "Bagriyanik";
 let job = "Developer";
 console.log("Persolenimiz " + ad + " " + soyad + " kurumumuzda" + " " + job + " olarak calismaktadir.");
 
-//! Template Literals => string template => ES6
+//! 2 -  Template Literals => string template => ES6
 
-// backtick ` 
+// backtick ``````` 
+
+// Stringleri duzgun bir sekilde yazmamizi saglar
+
+let newText = `Personelimiz ${ad} ${soyad} 
+kurumumuzda ${job}
+
+olarak calismaktadir.`
+
+console.log(newText);
+
+// 3 - str1.concat(str2)
+console.log(ad.concat(soyad));
+
+/* -------------------------------------------------------------------------- */
+document.write("<b><i><mark>",newText)
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                              BOOLEAN DATA TYPE                             */
+/* -------------------------------------------------------------------------- */
+// Boolean veri tipindeki değerler true veya false olur ve bu boolean verileri kullanarak programlamaya devam edilir.
+// Daha cok mantiksal karsilastirmalarda kullaniyoruz.
+
+let isOpen = true;
+let isSignUp = false;
+// let isSmall = 4 < 10; //true
+let isSmall = 15 < 10; //false
+console.log(isSmall);
+
+//Truthy Values:
+
+//falsy value
+// 0, -0, null, undefined, false, NaN(Not a Number)
+
+// let num = "34f" ; //Nan
+let num = 0 ; //0
+console.log(num/3);
+
+let myNum;
+console.log(myNum); //undefined
 
