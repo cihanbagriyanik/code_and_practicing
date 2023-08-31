@@ -208,6 +208,7 @@ console.log(ad.concat(soyad));
 /* -------------------------------------------------------------------------- */
 document.write("<b><i><mark>",newText)
 /* -------------------------------------------------------------------------- */
+console.clear();
 
 /* -------------------------------------------------------------------------- */
 /*                              BOOLEAN DATA TYPE                             */
@@ -222,6 +223,7 @@ let isSmall = 15 < 10; //false
 console.log(isSmall);
 
 //Truthy Values:
+//sayilar, harfler, karakterler,.........
 
 //falsy value
 // 0, -0, null, undefined, false, NaN(Not a Number)
@@ -230,6 +232,107 @@ console.log(isSmall);
 let num = 0 ; //0
 console.log(num/3);
 
+
+/* -------------------------------------------------------------------------- */
+/*                             UNDEFINED DATA TYPE                            */
+/* -------------------------------------------------------------------------- */
+//undefined = tanimsiz
+
+//Bir deger tanimlamadigim bir degiskende karimsiza cikabilir.
 let myNum;
 console.log(myNum); //undefined
+console.log(typeof(myNum)); //undefined
 
+// Bir fonskiyondan bir deger beklerken ger igonderim yapmiyorsa undefined verecektir.
+function example(){
+    let sum = 89+69
+    // return sum // 159
+}
+
+console.log(example()); //undefined
+
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                               NULL DATA TYPE                               */
+/* -------------------------------------------------------------------------- */
+
+let empty = null; // hata yok
+console.log(empty);
+console.log(typeof(empty)); // object
+
+// let empty = ; // hata var
+
+console.clear();
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                           NONPRIMITIVE DATA TYPE                           */
+/* -------------------------------------------------------------------------- */
+// Buradaki her bir elemana bir referans ile erişilir
+// Array, Object, Function
+//! **************** ARRAY ******************
+
+//Birden fazla değer tutabilen değişkenlere array(dizi) denir
+let SchoolGrades=[80,70,56,78,98,67,89,78,90]
+console.log(SchoolGrades);
+console.log(SchoolGrades[3]);
+
+//! ****************OBJECT ******************
+
+let obj={name:"Helen",surname:"Kuttery",age:37}
+
+console.log(obj.name,obj.age);
+console.clear()
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/*                TYPE CONVERSION : Tip DÖNÜŞÜMÜ                             */
+/* -------------------------------------------------------------------------- */
+
+//? Automatically Type Conversion
+// Js otomatik tip dönüşümünü destekler
+
+let num1=40;
+let num2="20"
+
+console.log(num1-num2);
+console.log(num1*num2);
+console.log(num1/num2);
+console.log(num1 + num2); // string concatanation - string birleştirme yaptı
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                   // String Değişkeni numbera dönüştürme                   */
+/* -------------------------------------------------------------------------- */
+
+// Number
+// ParseInt 
+// ParseFloat
+
+let num3=Number(num2)
+console.log(num1+num3);
+
+let stringToDecimal="34.67"
+
+let convert=parseInt(stringToDecimal)
+console.log(convert);
+
+let convertFloat=parseFloat(stringToDecimal)
+console.log(convertFloat);
+
+/* -------------------------------------------------------------------------- */
+// let SchoolNumber=+prompt("Okul numaranızı giriniz:")
+// console.log(typeof(SchoolNumber));
+/* -------------------------------------------------------------------------- */
+// NUMBER TO STRING
+// String()
+// sayı.toString()
+
+let birthday=17
+console.log(typeof(birthday));
+
+console.log(birthday.toString());
+
+let cvrtNumber=String(birthday)
+console.log(typeof(cvrtNumber));
