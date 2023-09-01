@@ -83,3 +83,13 @@ console.log(num4);
 console.log(--num4);
 
 
+
+// ODEV ICIN ARASTIRMA
+/* -------------------------------------------------------------------------- */
+
+const now = new Date();
+const yil = now.getFullYear();
+const ay = now.getMonth() + 1; // JavaScript ayları 0'dan başlayarak sayar, bu yüzden 1 ekliyoruz.
+const gun = now.getDate();
+
+console.log(`Bugünün tarihi:${gun}-${ay}-${yil}`);
