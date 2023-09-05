@@ -34,7 +34,7 @@ console.log(m);
 /* -------------------------------------------------------------------------- */
 
 // Pozitif / Negatif
-let nr = 1
+let nr = 0
 let mes;
 
 mes = nr >= 0 ? (nr === 0 ? "Notr" : "Pozitif") : ("Negatif")
