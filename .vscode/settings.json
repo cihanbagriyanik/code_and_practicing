@@ -1,6 +1,6 @@
 {
     "liveServer.settings.port": 5501,
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Monokai Dimmed",
     "terminal.integrated.tabs.defaultColor": null,
     "editor.suggest.showCustomcolors": true
 }
