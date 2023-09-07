@@ -92,7 +92,7 @@ while (check === true) {
 
 
 
-
+//! -------------------------------------------------------------------------- */
 
 //todo Girilen sayinin kac basamkli oldugunu bulan program WHILE LOOP ile yaziniz
 //todo 2346 sayisi 4 basamaklidir
