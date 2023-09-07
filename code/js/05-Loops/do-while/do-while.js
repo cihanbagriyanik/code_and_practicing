@@ -78,6 +78,9 @@ while (check === true) {
 */
 
 
+//! -------------------------------------------------------------------------- */
+
+
 //todo SAYI TAHMIN OYUNU
 //todo pc rastgele bir deger tutacak
 //todo Kullanici bulmaya calisacak.
