@@ -7,7 +7,7 @@
 //?   }
 
 
-//todo 1den 10 a kadar olan sayıları yazdıran program
+//! 1den 10 a kadar olan sayıları yazdıran program
 
 let i = 1;
 while (i <= 10) {
@@ -17,7 +17,7 @@ while (i <= 10) {
 
 
 
-//todo Kullanici 100 ve 200 arasinda bir deger girene kadar islemi devam ettiren program
+//! Kullanici 100 ve 200 arasinda bir deger girene kadar islemi devam ettiren program
 
 // let number =90
 
@@ -81,18 +81,45 @@ while (check === true) {
 //! -------------------------------------------------------------------------- */
 
 
-//todo SAYI TAHMIN OYUNU
-//todo pc rastgele bir deger tutacak
-//todo Kullanici bulmaya calisacak.
-//todo Kullanicinin girdigi sayi bilgisayarin tuttugu sayidan kucuksa "daha buyuk sayi giriniz" desin
-//todo buyukse "daha kucuk bir sayi giriniz" desin
-//todo Bulursa tebrikler desin...
+//! SAYI TAHMIN OYUNU
+//? pc rastgele bir deger tutacak
+//? Kullanici bulmaya calisacak.
+//? Kullanicinin girdigi sayi bilgisayarin tuttugu sayidan kucuksa "daha buyuk sayi giriniz" desin
+//? buyukse "daha kucuk bir sayi giriniz" desin
+//? Bulursa tebrikler desin...
 
 
+let uretilenSayi = Math.round(Math.random() * 100);
+// console.log(uretilenSayi);
+let tahminEtmeSayisi = 0;
+let tahmin;
 
+while (true) {
+    let tahmin = +prompt("Please enter the number between 0 - 100...")
+    tahminEtmeSayisi++;
+
+    if (tahmin < uretilenSayi) {
+        alert("The estimated number is low! RAISE");
+    } else if (tahmin > uretilenSayi) {
+        alert("The estimated number is high! REDUCE");
+    } else {
+        console.log(`congratulations! You found the number in ${tahminEtmeSayisi} times!...`);
+        break;
+    }
+}
 
 
 //! -------------------------------------------------------------------------- */
 
-//todo Girilen sayinin kac basamkli oldugunu bulan program WHILE LOOP ile yaziniz
-//todo 2346 sayisi 4 basamaklidir
+
+//! Girilen sayinin kac basamkli oldugunu bulan program WHILE LOOP ile yaziniz
+//? 2346 sayisi 4 basamaklidir
+
+let number = 2346;
+let digitCount = 0;
+
+while (number !== 0) {
+    digitCount++;
+    number = Math.trunc(number/10)
+}
+console.log(`Sayinin basamak sayisi: ${digitCount}`);
