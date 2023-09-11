@@ -8,3 +8,19 @@
         padding: 20rem 0;
     }
 }
+
+.section-features{
+    padding: 20rem 10rem;
+    background-image: linear-gradient(to right bottom, rgba($color-primary-light, 1), rgba($color-primary-dark, 1));
+    background-size: cover;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    & > * {
+        transform: skewY(7deg);
+    }
+
+    @include respond(tab-port){
+        padding: 10rem 0;
+    }
+}

@@ -564,4 +564,20 @@ body {
   }
 }
 
+.section-features {
+  padding: 20rem 10rem;
+  background-image: linear-gradient(to right bottom, #050872, #070335);
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -10rem;
+}
+.section-features > * {
+  transform: skewY(7deg);
+}
+@media only screen and (max-width: 56.25em) {
+  .section-features {
+    padding: 10rem 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
