@@ -17,3 +17,20 @@
 @import "./pages/about";
 @import "./pages/contact";
 @import "./pages/projects";
+
+
+body{
+    font-family: $font-family;
+    color:$text-color;
+    background-color: $primary-color;
+    height: 100vh;
+    line-height: 1;
+}
+
+a{
+    color: $text-color;
+    text-decoration: none;
+}
+h1,h2,h3{
+    font-weight: 400;
+}
