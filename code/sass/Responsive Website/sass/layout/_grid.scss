@@ -4,6 +4,12 @@
     max-width: $grid-width;
     margin: 0 auto;
 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    
+
     &:not(:last-child){
         margin-bottom: $gutter-vertical;
 
