@@ -1,0 +1,19 @@
+
+
+// ABSTRACTS
+@import "./abstracts/mixin";
+@import "./abstracts/variables";
+
+//BASE
+@import "./base/reset";
+
+//COMPONENTS
+@import "./components/nav";
+@import "./components/footer";
+@import "./components/responsive";
+
+//PAGES
+@import "./pages/home";
+@import "./pages/about";
+@import "./pages/contact";
+@import "./pages/projects";
