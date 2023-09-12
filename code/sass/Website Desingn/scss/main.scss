@@ -7,16 +7,19 @@
 //BASE
 @import "./base/reset";
 
-//COMPONENTS
-@import "./components/nav";
-@import "./components/footer";
-@import "./components/responsive";
-
 //PAGES
 @import "./pages/home";
 @import "./pages/about";
 @import "./pages/contact";
 @import "./pages/projects";
+
+//FONT-AWESOME
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+
+//COMPONENTS
+@import "./components/nav";
+@import "./components/footer";
+@import "./components/responsive";
 
 
 body{
