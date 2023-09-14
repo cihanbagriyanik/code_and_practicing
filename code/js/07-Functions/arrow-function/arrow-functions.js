@@ -153,13 +153,25 @@ console.log(vergiBul(8500));
 //* °C = (°F – 32) / 1.8
 //* °C = °K – 273.15
 
+let temp = +prompt("Lutfen donusturmek sitediginiz sicakligi giriniz")
+let unit = prompt("Lutfen donusturmek istediginiz sicaklik birimini giriniz").toUpperCase()
 
-
+const convertToCelsius = (temp, unit) => {
+    if (unit === 'K' || unit === 'KELVIN') {
+        return (temp - 273.15).toFixed(2);
+    }
+    else if (unit === 'F' || unit === 'FAHRENHEIT') {
+        return ((temp - 32) / 1.8).toFixed(2);
+    }
+    else {
+        return 'Geçersiz birim';
+    }
+};
+console.log(convertToCelsius(temp, unit));
 
 
 
 //* -------------------------------------------------------------------------- */
-
 //todo ÖRNEK:
 //todo küçük çikolata (her biri 2 gram) 
 //todo büyük çikolata (her biri 5 gram) 
@@ -168,6 +180,8 @@ console.log(vergiBul(8500));
 //* küçük çikolata adedi=10
 //* büyük çikolata adedi=5
 //* istenen ağırlık=27
+
+
 
 
 
