@@ -34,10 +34,10 @@ function topla() {
 }
 topla()  //! invoke,call
 
-//Hoisting: fonksiyonun çağrıldıktan sonra yazılması, JS hoisting destekleyen bir dildir.
+//!Hoisting: fonksiyonun çağrıldıktan sonra yazılması, JS hoisting destekleyen bir dildir.
 
 //? 1- Geriye bir değer döndermek için return anahtar kelimesini kullanırız. 
-// Geriye bir değer döndermezse yani return anahtar kelimesini unutursak undefined olur
+//!   Geriye bir değer döndermezse yani return anahtar kelimesini unutursak undefined olur
 
 function toplama() {
     let x = 60;
@@ -54,7 +54,7 @@ console.log(sonuc);
 //? Girilen sayı tek mi çift olduğunu ana programa döndüren fonksiyon
 
 function checkEvenOdd() {
-    let number = 45
+    let number = 44
     let result = number % 2 === 0 ? "even" : "odd";
     return result;
 }
