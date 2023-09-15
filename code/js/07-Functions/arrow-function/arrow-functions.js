@@ -153,21 +153,21 @@ console.log(vergiBul(8500));
 //* °C = (°F – 32) / 1.8
 //* °C = °K – 273.15
 
-let temp = +prompt("Lutfen donusturmek sitediginiz sicakligi giriniz")
-let unit = prompt("Lutfen donusturmek istediginiz sicaklik birimini giriniz").toUpperCase()
+// let temp = +prompt("Lutfen donusturmek sitediginiz sicakligi giriniz")
+// let unit = prompt("Lutfen donusturmek istediginiz sicaklik birimini giriniz").toUpperCase()
 
-const convertToCelsius = (temp, unit) => {
-    if (unit === 'K' || unit === 'KELVIN') {
-        return (temp - 273.15).toFixed(2);
-    }
-    else if (unit === 'F' || unit === 'FAHRENHEIT') {
-        return ((temp - 32) / 1.8).toFixed(2);
-    }
-    else {
-        return 'Geçersiz birim';
-    }
-};
-console.log(convertToCelsius(temp, unit));
+// const convertToCelsius = (temp, unit) => {
+//     if (unit === 'K' || unit === 'KELVIN') {
+//         return (temp - 273.15).toFixed(2);
+//     }
+//     else if (unit === 'F' || unit === 'FAHRENHEIT') {
+//         return ((temp - 32) / 1.8).toFixed(2);
+//     }
+//     else {
+//         return 'Geçersiz birim';
+//     }
+// };
+// console.log(convertToCelsius(temp, unit));
 
 
 
@@ -182,9 +182,38 @@ console.log(convertToCelsius(temp, unit));
 //* istenen ağırlık=27
 
 
+// Adım 1: Kaç adet küçük çikolata ve kaç adet büyük çikolata olduğunu hesaplayalım.
+const kucukCikolataAdedi = 10;
+const buyukCikolataAdedi = 5;
 
+// Adım 2: Hedef ağırlığı belirleyelim.
+const hedefAgirlik = 34;
 
+// Adım 3: Şimdi elimizde kaç büyük çikolata olduğunu kontrol edelim.
+const buyukCikolataAgirligi = 5;
+const buyukCikolataSayisi = buyukCikolataAdedi;
 
+// Hedef ağırlığa ulaşmak için gerekli olan küçük ve büyük çikolata sayılarını hesaplayalım.
+const hesaplaGerekliCikolataSayisi = () => {
+    const kucukCikolataAgirligi = 2;
+    const maxKucukCikolataSayisi = Math.floor(hedefAgirlik / kucukCikolataAgirligi);
+    for (let kucukCikolataSayisi = 0; kucukCikolataSayisi <= maxKucukCikolataSayisi; kucukCikolataSayisi++) {
+        const kalanAgirlik = hedefAgirlik - kucukCikolataSayisi * kucukCikolataAgirligi;
+        if (kalanAgirlik % buyukCikolataAgirligi === 0) {
+            const buyukCikolataSayisi = kalanAgirlik / buyukCikolataAgirligi;
+            return { kucukCikolata: kucukCikolataSayisi, buyukCikolata: buyukCikolataSayisi };
+        }
+    }
+    return null; // İşlem imkansız durumu
+};
+
+// Kontrol edelim, işlemi yapabilir miyiz?
+const gerekliCikolatalar = hesaplaGerekliCikolataSayisi();
+if (gerekliCikolatalar !== null && gerekliCikolatalar.kucukCikolata <= kucukCikolataAdedi && gerekliCikolatalar.buyukCikolata <= buyukCikolataAdedi) {
+    console.log(`Hedef ağırlığa ulaşmak için ${gerekliCikolatalar.kucukCikolata} küçük çikolata ve ${gerekliCikolatalar.buyukCikolata} büyük çikolata kullanabilirsiniz.`);
+} else {
+    console.log("Bu işlem imkansız.");
+}
 
 
 
@@ -192,5 +221,20 @@ console.log(convertToCelsius(temp, unit));
 //* -------------------------------------------------------------------------- */
 //? Bir öğrencinin adını fonksiyona gönderip eğer hafta için bir gün ise 
 //? Sema bugün Salı, okul var. 7.00 da kalkmalısın => yazdıran fonksiyon
+
+const ogrenciAdi = "Sema";
+
+function haftaGunuMesaj(ogrenciAdi) {
+    const gunler = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"];
+    const simdikiGun = new Date().getDay(); // Bugünkü günü al
+
+    const mesaj = simdikiGun >= 1 && simdikiGun <= 5 // Pazartesi'den Cuma'ya kadar olan günler
+        ? `${ogrenciAdi} bugün ${gunler[simdikiGun - 1]}, okul var. 7.00'da kalkmalısın`
+        : `${ogrenciAdi} bugün hafta sonu, parti var...`;
+    console.log(mesaj);
+
+}
+haftaGunuMesaj(ogrenciAdi);
+
 
 
