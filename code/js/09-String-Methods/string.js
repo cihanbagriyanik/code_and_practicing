@@ -71,7 +71,7 @@ console.log(kelime.toUpperCase().includes("TO BE")); //true
 console.log(kelime.includes(" ")); //true
 console.log(kelime.includes("to be", 14)); //true
 
-console.log(kelime.includes(",") ? "evet var" : "hayir yok");
+console.log(kelime.includes(",") ? "evet var" : "hayir yok"); // evet var
 
 
 /* -------------------------------------------------------------------------- */
@@ -83,3 +83,77 @@ console.log(kelime.lastIndexOf("be")); // 16
 console.log(kelime.indexOf("BE")); // -1 
 console.log(kelime.indexOf("be" , 4)); // 16 
 console.log(kelime.indexOf("be" , kelime.indexOf("be")+1)); // 16 
+
+
+/* -------------------------------------------------------------------------- */
+//*                                 search()                                  */
+/* -------------------------------------------------------------------------- */
+
+const kelime3 = "to, be or not to be, 5 that is The questions."
+
+console.log(kelime3.search(/[A-Z]/)); // 31
+console.log(kelime3.search(/[a-z]/)); // 0
+console.log(kelime3.search(/[0-9]/)); // 21
+
+//? Cumledeki buyuk harfi bul onu kucult
+console.log(kelime3.charAt(kelime3.search(/[A-Z]/)).toLowerCase()); //t
+
+console.log(kelime3.search(/[^0-9a-zA-Z]/));//2 
+
+
+/* -------------------------------------------------------------------------- */
+//*                 startWith(), endWith(), -- case sensitive                 */
+/* -------------------------------------------------------------------------- */
+
+const cumle = "Salina salina  sinsice olurum sana!";
+
+console.log(cumle.startsWith("sa")); // false
+console.log(cumle.startsWith("Sa")); // true
+console.log(cumle.endsWith("!")); // true
+console.log(cumle.startsWith("sa", 7)); //true  //7 baslangic dahil
+console.log(cumle.endsWith("salina", 13)); //true  //13 bitis 13 dahil degil 
+
+
+/* -------------------------------------------------------------------------- */
+//*         replace(searchFor, replaceWith) --immutable (değiştirmez)         */
+/* -------------------------------------------------------------------------- */
+
+let oku="Oku Johny gibi saf olma saf olma saf olma"
+
+console.log(oku.replace("saf olma" , "akilli ol"));
+
+// oku = oku.replace("saf olma" , "akilli ol")
+// console.log(oku);
+
+//! /SAF/i;  (i=incase sensitive) yazımı büyük küçük harfe duyarsız ara demek
+console.log(oku.replace(/SAF/i, "fakir"));
+
+console.log(oku.replace(/Saf olma/gi, "zengin ol"));
+
+//! replaceAll
+console.log(oku.replaceAll("saf olma", "zeki ol"));
+
+
+
+
+/* -------------------------------------------------------------------------- */
+//*                     slice(beginIndex, endIndex)                           */
+//*                     substring(beginIndex, endIndex)                       */
+/* -------------------------------------------------------------------------- */
+
+const veysel="UZUN İNCE BİR YOLDAYIM YÜRÜYORUM GUNDUZ GECE";
+
+console.log(veysel.slice(10));
+console.log(veysel.slice(10,21)); // BİR YOLDAYI 21 dahil degil
+console.log(veysel.substring(10,21)); // BİR YOLDAYI 21 dahil degil
+
+console.log(veysel.slice(-10)); // UNDUZ GECE //sondan 1 saymaya baslar 
+
+console.log(veysel.slice(-10, -6)); //UNDU
+
+//? DAYIM YÜRÜYORUM
+console.log(veysel.slice(17, -12)); //DAYIM YÜRÜYORUM
+
+//! substring de eksi index calismaz
+
+
