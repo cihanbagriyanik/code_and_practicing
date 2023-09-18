@@ -157,3 +157,40 @@ console.log(veysel.slice(17, -12)); //DAYIM YÜRÜYORUM
 //! substring de eksi index calismaz
 
 
+ /* -------------------------------------------------------------------------------------------------- */
+ //* split= string i diziye çevirir                                                                    */
+ //* split(seperator , limit ) =>ikisi de optional                                                     */
+ //* split("x")=>x lerden ayırır, virgül+boşluk yapar ve yeni dizi döndürür.orjinal diziyi değiştirmez */
+ /* ---------------------------------------------------------------------------------------------------*/
+
+const tarkan = "Gel gunduzle gece olalim";
+
+console.log(tarkan.split()); // 1 elemeani array e cevirir
+console.log(tarkan.split(" ")); // bosluklardan ayirir
+console.log(tarkan.split("")); // hicliklerden ayirir
+console.log(tarkan.split("e")); // e ler iptal, yerine virgul ve bosluk koyar
+console.log(tarkan.split("e",3)); // dizinin 3 elemanini al
+console.log(tarkan);
+
+/* -------------------------------------------------------------------------- */
+//*                                  trim();                                  */
+/* -------------------------------------------------------------------------- */
+
+const ramazan = "     Hos geldin ya Sehr i Ramazan      "
+
+console.log(ramazan);
+console.log(ramazan.trim());
+console.log(ramazan.trim().endsWith("n"));
+
+//? chaning
+//1.yol
+let abc = "         Clarusway Full Stack";
+
+let abc1 = abc.trim() // Clarusway Full Stack
+
+let abc2 = abc1.slice(0,9) // Clarusway
+
+let abc3 = abc2.toUpperCase() // CLARUSWAY
+
+//2.yol
+console.log(abc.trim().slice(0,9).toUpperCase());
