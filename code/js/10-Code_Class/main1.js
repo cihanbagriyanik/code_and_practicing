@@ -196,7 +196,6 @@ for (let i=0; i<parca.length;i++){
         case "I":
          sum +=1;   
             break;
-
         default:
             break;
     }
@@ -209,6 +208,27 @@ const romen="XVI"
  console.log(cevir(romen));
 
 
-//*  "Run-Length Encoding" (RLE) sıkıştırma algoritması
-//*  "aaabbbccddddeee";
-//*  3a3b2c4d2e
+//?     "Run-Length Encoding" (RLE) sıkıştırma algoritması
+//todo  "aaabbbccddddeee";
+//todo   3a3b2c4d2e
+
+function runLengthEncoding(input) {
+    let result = '';
+    let count = 1;
+
+    for (let i = 0; i < input.length; i++) {
+        if (input[i] === input[i + 1]) {
+            count++;
+        } else {
+            result += count + input[i];
+            count = 1;
+        }
+    }
+
+    return result;
+}
+
+const originalString = "aaabbbccddddeee";
+const compressedString = runLengthEncoding(originalString);
+console.log(compressedString); // Output: "3a3b2c4d2e"
+
