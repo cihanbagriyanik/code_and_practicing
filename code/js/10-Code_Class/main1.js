@@ -210,7 +210,7 @@ const romen="XVI"
 //todo  "aaabbbccddddeee";
 //todo   3a3b2c4d2e
 
-function runLengthEncoding(input) {
+const Rle =(input) => {
     let result = '';
     let count = 1;
 
@@ -227,6 +227,6 @@ function runLengthEncoding(input) {
 }
 
 const originalString = "aaabbbccddddeee";
-const compressedString = runLengthEncoding(originalString);
+const compressedString = Rle(originalString);
 console.log(compressedString); // Output: "3a3b2c4d2e"
 
