@@ -200,9 +200,7 @@ for (let i=0; i<parca.length;i++){
             break;
     }
 }
-
 return sum
-
 }
 const romen="XVI"
  console.log(cevir(romen));
