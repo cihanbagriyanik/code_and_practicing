@@ -31,7 +31,7 @@ if (nr1 > nr2 && nr1 > nr3) {
 }
 
 //? 4 Islem makinesi yaziniz (2 Adet sayi icin)
-
+/*
 const islem = prompt("Yapmak istediğiniz işlemi seçiniz (+, -, *, /):");
 
 if (islem === "+" || islem === "-" || islem === "*" || islem === "/") {
@@ -60,3 +60,36 @@ if (islem === "+" || islem === "-" || islem === "*" || islem === "/") {
 } else {
     console.log("Geçersiz işlem seçtiniz. Lütfen +, -, *, / işlemlerinden birini seçiniz.");
 }
+*/
+
+//? Clarusway’dekihaftalık ders ve etkinlik programınızı, console’dangirilen gün değerine göre çıktı veren kodu switch-caseyapısı ile yazınız.
+//todo  •Program
+//todo  •Pazartesi, Salı ,Çarşamba, Perşembe -> InClass
+//todo  •Cuma -> Teamwork
+//todo  •Cumartesi -> InClass+ Workshop
+//todo  •Pazar -> Self-Study
+//todo  •Aksi takdirde -> Yanlisgungirildi.
+
+const gun = prompt("Lutfen bir gun giriniz...").toLowerCase();
+
+switch (gun) {
+    case 1 || "pazartesi":
+    case 2 || "sali":
+    case 3 || "carsamba":
+    case 4 || "persembe":
+        console.log("InClass");
+        break;
+    case 5 || "cuma":
+        console.log("TeamWork");
+        break;
+    case 6 || "cumartesi":
+        console.log("InClass+ Workshop");
+        break;
+    case 7 || "pazar":
+        console.log("Self-Study");
+        break;
+    default:
+        console.log("Yanlis gun girildi...");
+        break;
+}
+
