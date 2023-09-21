@@ -200,3 +200,6 @@ console.log(salaries.reduce((toplam, eleman) => toplam + eleman, 0));
 
 const carpim = salaries.reduce((a, b) => a * b, 1)
 console.log(carpim);
+
+
+
