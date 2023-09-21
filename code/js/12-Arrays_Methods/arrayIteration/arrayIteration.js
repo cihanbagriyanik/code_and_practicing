@@ -27,5 +27,11 @@ let toplam1 = 0
 prices.forEach((p, i, price) => {
     
     toplam1 += p
+
+    console.log(` ${i+1}. toplam ${toplam1}`);
     
+    price[i] = prices[i] * 2
+    //* Bu sekilde diziyi kalici degistirmis olduk
+
 })
+console.log(prices);
