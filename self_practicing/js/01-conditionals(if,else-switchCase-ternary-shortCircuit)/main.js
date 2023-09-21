@@ -161,22 +161,22 @@ console.log(kredi);
 const grade = 76
 
 switch (true) {
-    case grade >= 0 && grade <=25:
+    case grade >= 0 && grade <= 25:
         console.log("FF");
         break;
-    case grade >= 26 && grade <=45:
+    case grade >= 26 && grade <= 45:
         console.log("DD");
         break;
-    case grade >= 46 && grade <=65:
+    case grade >= 46 && grade <= 65:
         console.log("CC");
         break;
-    case grade >= 66 && grade <=75:
+    case grade >= 66 && grade <= 75:
         console.log("BB");
         break;
-    case grade >=76 && grade <=90:
+    case grade >= 76 && grade <= 90:
         console.log("BA");
         break;
-    case grade >= 91 && grade <=100:
+    case grade >= 91 && grade <= 100:
         console.log("AA");
         break;
     default:
@@ -238,15 +238,31 @@ const num1 = 4
 const num2 = 7
 const num3 = 4
 
-const toplam = num1+num2+num3
+const toplam = num1 + num2 + num3
 console.log(`Toplam : ${toplam}`)
-const carpim = num1*num2*num3
+const carpim = num1 * num2 * num3
 console.log(`Carpim : ${carpim}`)
 
-const end = (num1 > num2 && num1 > num3) ? `EN buyuk sayi ${num1} sayisidir` : (num2 > num1 && num2>num3) ? `EN buyuk sayi ${num2} sayisidir` : `EN buyuk sayi ${num3} sayisidir`
+const end = (num1 > num2 && num1 > num3) ? `EN buyuk sayi ${num1} sayisidir` : (num2 > num1 && num2 > num3) ? `EN buyuk sayi ${num2} sayisidir` : `EN buyuk sayi ${num3} sayisidir`
 
 console.log(end);
 
 
 //? Soru-4: Girilen sayıların tek veya çift olduğunu bildiren programı tasarlayınız.(Ternary deyimi ile yapınız).
+
+const sayi = 32
+
+const isCift = (sayi % 2 === 0) ? `${sayi} cift bir sayidir...` : `${sayi} tek bir sayidir...`;
+
+console.log(isCift);
+
+
+//? Soru-5: Girilen dereceyi fahrenayta veya fahrenaytı dereceye çeviren programı tasarlayınız.Çevirimin hangi birimden hangi birime olacağı program başında sorulmalıdır?
+
+const tip = 'c'
+const derece = 100
+
+const converter = (tip === "f") ? 5 / 9 * (derece - 32) : (tip === "c") ? (derece * 1.8) + 32 : "ERROR"
+
+console.log(converter);
 
