@@ -88,3 +88,86 @@ console.log(fakt);
 // const result = isPrime(num2) ? `${num2} bir asal sayıdır.` : `${num2} bir asal sayı değildir.`;
 
 // console.log(result);
+
+// const asalMi = (a) => {
+//     (a > 1 && a % 1 === 0 && a % a === 0) ? `${a} ASALDIR...` : `${a} Asal DEGILDIR...`
+// }
+// console.log(asalMi(3));
+
+
+const aasalMi = (a) =>
+    (a > 1 &&
+        Number.isInteger(a) &&
+        ![...Array(Math.floor(Math.sqrt(a)) + 1).keys()].slice(2).some(i => a % i === 0)) ?
+        `${a} ASALDIR...` : `${a} Asal DEGILDIR...`;
+
+console.log(aasalMi(3));
+
+
+//? 1den 10 a kadar olan sayıları yazdıran program
+for (let i = 1; i < 11; i++) {
+    console.log(i);
+}
+
+//? Kullanici 100 ve 200 arasinda bir deger girene kadar islemi devam ettiren program
+
+// let num2;
+
+// do {
+// num2 = +prompt("Lutfen 100 ile 200 arasinda bir sayi giriniz")
+
+
+// } while (num2 < 100 || num2 > 200);
+
+// console.log(num2);
+
+//? Kullanıcıdan vize ve final notlarını isteyen ve vizenin %40 ını finalin %60 ını alarak notunu hesaplayan her işlem bittiğinde devam etmek isteyip istemediğini soran program
+
+// let devamEt = true;
+
+// do {
+//     const vize = +prompt("Vize notunuzu girin:");
+//     const final = +prompt("Final notunuzu girin:");
+
+//     const not = (vize * 0.4) + (final * 0.6);
+
+//     console.log(not);
+
+//     devamEt = confirm("Başka bir not hesaplamak istiyor musunuz?");
+// } while (devamEt);
+
+//? Girilen şifreye yada pin kodu doğru mu kontrolü
+
+let pin = "1q2w3e4R";
+let input;
+
+// while (pin !== input) {
+//     input = prompt("Pin no giriniz")
+//    if (input === pin) {
+//         console.log("Tebrikler");
+//     } else {
+//         console.log("Lutfen tekrar deneyiniz");
+//     }
+// }
+
+
+//? 18 yaşından büyüklerin oy kullanabileceğini 18 yaşından küçüklerin oy kullanamayacağını ternary yapı ile konsola yazdıran kodu yazınız.
+
+let age = 17
+
+let kontrol = (age >= 18) ? console.log("oy kullanabilir") : console.log("oy kullanamaz");
+
+//? (Bonus) girilen yilin yuzyilini veren program 1788 > 18.yuzyil
+
+let yil = 2023;
+console.log(`${yil} => ${Math.ceil(yil / 100)}.Yuzyil`);
+
+
+//? Artık yıl sorusu
+
+let yil1 = 1997
+
+const artikYil = (yil1 % 4 === 0 || yil % 100 === 0 && yil % 400 === 0) ?
+                console.log(`${yil1} artik yildir`) :
+                console.log(`${yil1} artik yil DEGILDIR`) ;
+
