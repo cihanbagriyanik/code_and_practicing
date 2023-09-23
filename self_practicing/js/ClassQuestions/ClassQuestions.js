@@ -168,6 +168,25 @@ console.log(`${yil} => ${Math.ceil(yil / 100)}.Yuzyil`);
 let yil1 = 1997
 
 const artikYil = (yil1 % 4 === 0 || yil % 100 === 0 && yil % 400 === 0) ?
-                console.log(`${yil1} artik yildir`) :
-                console.log(`${yil1} artik yil DEGILDIR`) ;
+    console.log(`${yil1} artik yildir`) :
+    console.log(`${yil1} artik yil DEGILDIR`);
+
+
+//? 1000 ile 2000 arasindaki 13 e bolumunden kalani 3 olan sayilari konsola yazdirin.
+
+
+let sayac = 0;
+
+for (let i = 1000; i <= 2000; i++) {
+
+    if (i % 13 === 3) {
+        console.log(i);
+        sayac++;
+    }
+}
+console.log("Sayac Total: " + sayac);
+
+
+//? Kullanıcıdan alınan 5 adet sayının ortalamasını konsola yazdırınız ?
+
 
