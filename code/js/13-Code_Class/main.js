@@ -119,19 +119,19 @@ console.log(dondur(sentence));
 
 //? Bir isim listesi oluşturmak istiyorsunuz. İlk başta boş bir diziyle başlayın. Kullanıcıdan klavyeden  isimleri alarak listeye ekleyin. Kullanıcı 'q' tuşuna basana kadar isim eklemeye devam edin. Kullanıcı 'q' tuşuna bastığında en son eklediği ismi listeden çıkarın ve sonuçları konsola yazdırın.
 
-let isimListesi = []
+// let isimListesi = []
 
-while (true) {
-    let isim = (prompt("Bir isim giriniz (Cikmak icin 'q' tusuna basiniz): ")).toLowerCase();
+// while (true) {
+//     let isim = (prompt("Bir isim giriniz (Cikmak icin 'q' tusuna basiniz): ")).toLowerCase();
 
-    if (isim === 'q') {
-        isimListesi.pop()
-        break;
-    } else {
-        isimListesi.push(isim);
-    }
-}
-console.log(isimListesi);
+//     if (isim === 'q') {
+//         isimListesi.pop()
+//         break;
+//     } else {
+//         isimListesi.push(isim);
+//     }
+// }
+// console.log(isimListesi);
 
 
 
@@ -267,9 +267,19 @@ function hesapla(isim, tarih) {
   //? findNemo("Nemo is me") ➞ "I found Nemo at 1!"
   
   //? findNemo("I Nemo am") ➞ "I found Nemo at 2!"
-  
-  
-  
+
+  const cumle1 = "I am Nemo finding "
+  const kelimeler = cumle1.split(" ");
+
+  kelimeler.map((kelime, indeks) => {
+    if (kelime === "Nemo") {
+      console.log(`I found Nemo at ${indeks + 1}!`);
+    } else {
+      console.log("I can't find Nemo :( ");
+    }
+  })
+
+
   //! 14- Bir öğe dizisini alan, tüm yinelenen öğeleri kaldıran ve eski diziyle aynı sırada yeni bir dizi döndüren bir fonksiyon oluşturan program 
   
   // removeDups([1, 0, 1, 0]) ➞ [1, 0]
@@ -277,3 +287,17 @@ function hesapla(isim, tarih) {
   // removeDups(["The", "big", "cat"]) ➞ ["The", "big", "cat"]
   
   // removeDups(["John", "Taylor", "John"]) ➞ ["John", "Taylor"]
+
+  function tekrarSil(dizi) {
+  const tekrarsizDizi = dizi.filter((item, index) => {
+    return dizi.indexOf(item) === index;
+  });
+
+  return tekrarsizDizi;
+}
+
+// Örnek kullanımlar:
+console.log(tekrarSil([1, 0, 1, 0])); // [1, 0]
+console.log(tekrarSil(["The", "big", "cat"])); // ["The", "big", "cat"]
+console.log(tekrarSil(["John", "Taylor", "John"])); // ["John", "Taylor"]
+
