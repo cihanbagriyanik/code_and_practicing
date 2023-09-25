@@ -11,7 +11,9 @@ const dizi = [1, 2, 3, 4, 5, 6]
 
 //! Herhangi bir veriye erişim için property (key) adı kullanılır.
 
-//* Object olusturma Yontemleri
+/* -------------------------------------------------------------------------- */
+//*                        Object olusturma Yontemleri                        */
+/* -------------------------------------------------------------------------- */
 //? 1. YONTEM Object() classindan turetme - (//!HIC DENECEK KDR AZ KULLANILIYOR)
 
 const car = new Object() //* Boc bir object urettik
@@ -50,7 +52,7 @@ console.log(personel22);
 
 //* -------------------------------------------------------------------------- */
 
-//? 3. YONTEM OBJECT LITERAL - 
+//? 3. YONTEM OBJECT LITERAL - (En cok kullanilam yontem)
 
 let personelYapisi = {} //* Bos bir object tanimlamak
 console.log(personelYapisi);
@@ -88,12 +90,11 @@ let personel1 = {
     },
 
     ClassicFunction : function () {
-        return `${this.workExperinces}`
+        return `${this.workExperinces}` //* Klassik function da this objedeki elemandir.
     },
     //! Arrow function uretilirken this keyword unden kurtumak icin yapilmistir. 
     //! Arrow function this window objesine karsilik gelir.
     //! Window objesi icinde workExp. isimli bir ozellik bulamadigindan undefined olarak geri doner
-
 
 }
 
@@ -104,3 +105,41 @@ console.log(personel1.formattedName());
 console.log(`Arrow function bana ne dondurdu : ${personel1.arrowFunction()}`);
 console.log(personel1.ClassicFunction());
 
+//* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+//*               Object icindeki  ozellige  erisim yontemleri                */
+/* -------------------------------------------------------------------------- */
+
+//? 1.DOT NOTATION "." (Nokta gosterimi)
+
+console.log(personel1);
+console.log(personel1.dateOfBirth);
+
+
+//? 2.Koseli parantez icinde ozellik belirterek erisim
+//* Degisken Kullanimina olanak saglar
+
+console.log("Ozellik yontemi  ile :",personel1["dateOfBirth"]);
+
+//* Ornek verilecek icice object kullanimda
+
+//* -------------------------------------------------------------------------- */
+//! NOT: object icinde array varsa array metodlarida kullanilabilir
+
+console.log(personel1.name);
+console.log(personel1.workExperinces[1]);
+console.log("*****forEach*****");
+console.log(personel1.workExperinces.forEach((work) => console.log(work)));
+
+//* -------------------------------------------------------------------------- */
+
+//? 3. Destructuring yontemi ile erisim 
+
+//* tanimlama yaparken istenilen bilgiler bilgiler object icinden parcalanip alinabilir.
+
+const{name,lastName,isMarried} = personel1
+console.log(name);
+console.log(lastName);
+console.log(isMarried);
+// console.log(workExperinces); //* Destructure edilmediginde dahil olmadiginda hata verir.
