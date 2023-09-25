@@ -237,9 +237,136 @@ console.log(workerList[`person${x}`].name);
 //* Object.values
 //* Object.entries
 
+
+// let workersList={
+//     person1:{
+//         name:"Harward",
+//         lastName:"Ferty",
+//         dateOfBirth:1990,
+//         salary:40000,
+//         job:"developer"
+
+//     },
+//     person2:{
+//         name:"Ferdinand",
+//         lastName:"Ferty",
+//         dateOfBirth:1990,
+//         salary:40000,
+//         job:"developer"
+
+//     },
+//     person3:{
+//         name:"Lucy",
+//         lastName:"Ferty",
+//         dateOfBirth:1990,
+//         salary:20000,
+//         job:"developer"
+//     }
+// }
+
 console.log(Object.keys(workerList));
 console.log(Object.values(workerList));
 console.log(Object.entries(workerList));
 
 let newValue = Object.entries(workerList);
 console.log(newValue[0]);
+
+/* -------------------------------------------------------------------------- */
+
+for (const x of Object.keys(workersList)){
+    console.log(x);
+}
+
+for (const y of Object.values(workersList)){
+    console.log(y);
+}
+
+for ( [k,v] of Object.entries(workersList)){
+    console.log(`${k} değeri için ${v.salary}`);
+}
+
+/* -------------------------------------------------------------------------- */
+
+const devFilter=Object.values(workersList).filter((p)=> p.job==="developer")
+console.log(devFilter);
+
+const devname=Object.values(workersList).filter((p)=> p.name[0]==="H")
+console.log(devname);
+
+const filterSalary=Object.values(workersList).filter((p)=>p.salary>30000)
+console.log(filterSalary);
+/* -------------------------------------------------------------------------- */
+// FOR IN
+
+for (x in workersList){
+    console.log("for in",x);  // sadece key değerlerine ulaşırız
+    console.log(workersList[x].name);    // workerList[person1].name
+}
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/*                   JSON -Javascript Script Object Notation                  */
+/* -------------------------------------------------------------------------- */
+// JSON ile içiçe obje karıştırmalayalım
+
+
+console.clear()
+const team = [
+    {
+      id:1,
+      name: "Harold",
+      lastname: "Strevy",
+      DateOfBirth: 2000,
+      job: "developer",
+      salary: 8000,
+      drivingLicense: true,
+    },
+  
+    {
+      id:2,
+      name: "Farold",
+      lastname: "Strevy",
+      DateOfBirth: 2002,
+      job: "developer",
+      salary: 40000,
+      drivingLicense: true,
+    },
+    {
+      id:3,
+      name: "Ketty",
+      lastname: "Strevy",
+      DateOfBirth: 2000,
+      job: "devOps",
+      salary: 30000,
+      drivingLicense: true,
+    },
+  ];
+  
+// JSON ile farklı veri türleri barındırılabilir
+// Dillerden bağımsızdır.
+//nesnelerin (objelerin) temsil edilmesi için anahtar-değer çiftlerini kullanır. Bu, verilerin daha iyi organize edilmesini ve ilişkilendirilmesini sağlar.
+//JSON, veri  işleme açısından hızlıdır. Bu nedenle web uygulamalarında ve servislerde yaygın olarak kullanılır.
+
+// Json yeni bir eleman ekleme:
+
+team.push({
+    id:4,
+    name: "Ferdinand",
+    lastname: "Strevy",
+    DateOfBirth: 2011,
+    job: "tester",
+    salary: 30000,
+    drivingLicense: true,
+  })
+
+  console.log(team);
+
+  team.forEach((t)=> console.log(t.name))
+//   workersList.forEach((m)=> console.log(m.name)) // Objelerde map,forEach,filter,reduce kullanılmaz. JSon bir dizi içinde obje olduğu için dizi metodları map,filter,reduce,forEach kullanılabiliyor.
+
+  /* -------------------------------------------------------------------------- */
+  team.forEach((t)=> console.log(`${t.name} ${t.lastname}`))
+  /* -------------------------------------------------------------------------- */
+//   Team objesindeki her elemanın maasına %10 zam yapılmış halini göster
+const zam=team.map((m)=> m.salary *1.1)
+console.log(zam);
+
