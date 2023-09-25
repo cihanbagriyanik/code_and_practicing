@@ -190,3 +190,34 @@ console.log("Sayac Total: " + sayac);
 //? Kullanıcıdan alınan 5 adet sayının ortalamasını konsola yazdırınız ?
 
 
+let sum = 0; // Toplamı saklamak için bir değişken
+const numbers = []; // Kullanıcıdan alınan sayıları saklamak için bir dizi
+
+function getAverage() {
+    let input;
+    do {
+        input = parseFloat(prompt("Lütfen bir sayı girin veya çıkmak için 0'a basın:"));
+        if (!isNaN(input)) {
+            if (input !== 0) {
+                numbers.push(input);
+            }
+        } else {
+            console.log("Geçersiz bir sayı girdiniz. Lütfen bir sayı girin.");
+        }
+    } while (input !== 0);
+
+    // Toplamı ve ortalamayı hesapla
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    const average = (sum / numbers.length).toFixed();
+    console.log("Girdiğiniz sayıların ortalaması: " + average);
+}
+
+getAverage(); // Ortalamayı hesaplamak için fonksiyonu çağır
+
+
+
+
+
+
