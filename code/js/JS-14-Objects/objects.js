@@ -173,3 +173,73 @@ personel1.salary = 300000
 console.log("-----------------------");
 console.log("Personel", personel1);
 console.log("Deep Copy", deepCopyPersonel);
+
+//* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+//*                               OBJECT METHODS                              */
+/* -------------------------------------------------------------------------- */
+////? 1.Icice (Nested) Object Kullnimi
+
+let workerList = {
+    person1:{
+        name:"Harward",
+        lastName:"Ferty",
+        dateOfBirth: 1990,
+        salary: 40000,
+        job: "developer" 
+    },
+    person2:{
+        name:"Ferdinand",
+        lastName:"Ferty",
+        dateOfBirth: 1990,
+        salary: 40000,
+        job: "developer" 
+    },
+    person3:{
+        name:"Lucy",
+        lastName:"Ferty",
+        dateOfBirth: 1990,
+        salary: 40000,
+        job: "tester" 
+    }
+}
+
+//* Bu sekilde bir yapinin icine girmek
+console.log(workerList.person3.name);
+console.log(workerList["person3"].name);
+
+let x = "2";
+console.log(workerList[`person${x}`].name);
+// let x = "person2";
+// console.log(workerList[x].name);
+
+//* -------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+//*                              FOR - OF YAPISI                              */
+/* -------------------------------------------------------------------------- */
+
+//* for of
+// let numbersAndLetters = ["a",4,6,7,"C"]
+// for(const i of numbersAndLetters){
+//     console.log(i);
+// }
+
+//! for of sirali dizilerde kullanilir ama objelerde daha komplex bir yapi oldugu icin for-of kullanilmaz!!!
+// for (const x of workerList){
+//     console.log("for of ile objenin degerleri :",x); //**Uncaught TypeError: workerList is not iterable
+// }
+
+//* -------------------------------------------------------------------------- */
+//! Object kendi icinde var olan ozelliklerdir
+//* Object.keys
+//* Object.values
+//* Object.entries
+
+console.log(Object.keys(workerList));
+console.log(Object.values(workerList));
+console.log(Object.entries(workerList));
+
+let newValue = Object.entries(workerList);
+console.log(newValue[0]);
