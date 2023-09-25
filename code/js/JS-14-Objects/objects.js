@@ -143,3 +143,33 @@ console.log(name);
 console.log(lastName);
 console.log(isMarried);
 // console.log(workExperinces); //* Destructure edilmediginde dahil olmadiginda hata verir.
+
+//* -------------------------------------------------------------------------- */
+console.clear();
+//! Objelere kolaylikla yeni deger eklenebilir
+
+personel1.phoneNumber = "454-659-6969"
+console.log(personel1);
+
+//! Bir objeyi baska bir obje icine aktarabilirz
+const elemanListesi  = personel1
+console.log("Personel Listesi : ",personel1);
+console.log("Eleman Listesi : ",elemanListesi);
+
+personel1.title = "Full Stack Developer"
+personel1.title = "*****Kopyalama yapildiktan sonra*****"
+console.log("Personel Listesi : ",personel1);
+console.log("Eleman Listesi : ",elemanListesi);
+
+//* Shallow copying (sig) kopyalama
+//* Yularidaki sekilde yapildiginda degisimlerden etkilenir
+
+//! -------------------------------------------------------------------------- */
+//! Koyasinin etkilenmesini istemiyorsak - Deep copy yontemi kullnailir
+
+let deepCopyPersonel = JSON.parse(JSON.stringify(personel1))
+console.log(deepCopyPersonel);
+personel1.salary = 300000
+console.log("-----------------------");
+console.log("Personel", personel1);
+console.log("Deep Copy", deepCopyPersonel);
