@@ -190,34 +190,59 @@ console.log("Sayac Total: " + sayac);
 //? Kullanıcıdan alınan 5 adet sayının ortalamasını konsola yazdırınız ?
 
 
-let sum = 0; // Toplamı saklamak için bir değişken
-const numbers = []; // Kullanıcıdan alınan sayıları saklamak için bir dizi
+// let sum = 0; // Toplamı saklamak için bir değişken
+// const numbers = []; // Kullanıcıdan alınan sayıları saklamak için bir dizi
 
-function getAverage() {
-    let input;
-    do {
-        input = parseFloat(prompt("Lütfen bir sayı girin veya çıkmak için 0'a basın:"));
-        if (!isNaN(input)) {
-            if (input !== 0) {
-                numbers.push(input);
-            }
-        } else {
-            console.log("Geçersiz bir sayı girdiniz. Lütfen bir sayı girin.");
-        }
-    } while (input !== 0);
+// function getAverage() {
+//     let input;
+//     do {
+//         input = parseFloat(prompt("Lütfen bir sayı girin veya çıkmak için 0'a basın:"));
+//         if (!isNaN(input)) {
+//             if (input !== 0) {
+//                 numbers.push(input);
+//             }
+//         } else {
+//             console.log("Geçersiz bir sayı girdiniz. Lütfen bir sayı girin.");
+//         }
+//     } while (input !== 0);
 
-    // Toplamı ve ortalamayı hesapla
-    for (let i = 0; i < numbers.length; i++) {
-        sum += numbers[i];
-    }
-    const average = (sum / numbers.length).toFixed();
-    console.log("Girdiğiniz sayıların ortalaması: " + average);
+//     // Toplamı ve ortalamayı hesapla
+//     for (let i = 0; i < numbers.length; i++) {
+//         sum += numbers[i];
+//     }
+//     const average = (sum / numbers.length).toFixed();
+//     console.log("Girdiğiniz sayıların ortalaması: " + average);
+// }
+
+// getAverage(); // Ortalamayı hesaplamak için fonksiyonu çağır
+
+
+//? Kullanıcıdan adını doğum yılını alıp fonksiyonda yaşını hesaplayan programı fonksiyonlar ile yapalım
+
+// const dogumYili = 1988
+
+const yasHesapla = (dogumYili) => {
+    return new Date().getFullYear() - dogumYili
+
 }
+console.log(`Yas = ${yasHesapla(1988)}`);
 
-getAverage(); // Ortalamayı hesaplamak için fonksiyonu çağır
+//? Fonksiyona iki sayi gonderen bu sayilardan 1.sini  ikinci sayi kadar ussunu alan program.
+
+const ussuHesap = (a,b) => a**b 
+console.log(ussuHesap(2,3));
+
+//? 3 sayidan en buyugunu bulduran fonksiyon
+
+function enBuyuk(a,b,c)  {
+    const karsilastirm = (a>b && a>c) ? `${a} En buyuk sayi` : (b>a && b>c) ? `${b} En buyuk sayi` : 
+    `${c} En buyuk sayi`
+    return karsilastirm
+}
+console.log(enBuyuk(5,2,1));
 
 
-
+//? Bir cumlenin kelime sayisini veren fonksiyon.
 
 
 
