@@ -229,20 +229,45 @@ console.log(`Yas = ${yasHesapla(1988)}`);
 
 //? Fonksiyona iki sayi gonderen bu sayilardan 1.sini  ikinci sayi kadar ussunu alan program.
 
-const ussuHesap = (a,b) => a**b 
-console.log(ussuHesap(2,3));
+const ussuHesap = (a, b) => a ** b
+console.log(ussuHesap(2, 3));
 
 //? 3 sayidan en buyugunu bulduran fonksiyon
 
-function enBuyuk(a,b,c)  {
-    const karsilastirm = (a>b && a>c) ? `${a} En buyuk sayi` : (b>a && b>c) ? `${b} En buyuk sayi` : 
-    `${c} En buyuk sayi`
+function enBuyuk(a, b, c) {
+    const karsilastirm = (a > b && a > c) ? `${a} En buyuk sayi` : (b > a && b > c) ? `${b} En buyuk sayi` :
+        `${c} En buyuk sayi`
     return karsilastirm
 }
-console.log(enBuyuk(5,2,1));
+console.log(enBuyuk(5, 2, 1));
 
 
 //? Bir cumlenin kelime sayisini veren fonksiyon.
 
+const kelimeHesap = (cumle) => cumle.split(" ").length;
+
+console.log(kelimeHesap("Seni gidi findik kiran yilani degliginden cikaran"));
+
+//? Bir cumleyi tersten yazan program
+
+const cumle1 = "Seni gidi findik kiran yilani degliginden cikaran"
+
+// function ters(a) {
+//     return a.split(" ").reverse()
+// }
+// console.log(ters(cumle1).join(" "));
 
 
+//? Email giren kisiye kullanici adi olarak @ isaretinden once verdigi degeri veren 
+
+const mail = "cihanbagriyanik@gmail.com"
+
+const userName = (a) => { return a.split("@") }
+
+
+console.log(userName(mail));
+
+
+const a = userName(mail)
+a.pop()
+console.log(a);
