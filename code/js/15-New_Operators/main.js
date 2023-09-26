@@ -279,17 +279,39 @@ const yeniInsanlar = insanlar.map((kisi) => ({
 console.log(yeniInsanlar);
 
 
-//* SPREAD Objede degismesini istemedigimiz elemenalar icin 3 NOKTA(...) kullaniyoruz
+//* SPREAD Objede degismesini istemedigimiz elemenalar icin 3 NOKTA(...) kullaniyoruz ONEMLIIIIIIIII********
 //! ...kisi = name: kisi.name,
 //!           surname: kisi.surname,
 //!           job: kisi.job,
 
 const yeniInsan = insanlar.map((kisi) => ({
 
-            ...kisi,
+    ...kisi,
 
-            age: kisi.age + 5
+    age: kisi.age + 5
 
-        }))
+}))
 console.log(yeniInsan);
 
+//* örnek
+const zeug = ["Aircraft", "Helicopter", "Bicycle"];
+
+const otomobiles = ["Trucks", "Bus", "Car", "SUV"];
+
+
+console.log(zeug, otomobiles);
+
+console.log(zeug.concat(otomobiles))
+
+console.log([...zeug, "otobüs", ...otomobiles, "tır"]);
+
+
+//? SORU ******************* job:father olsun ve location: USA ekleyelim
+const Personel1 = {
+    pName: "Johny",
+    surname: "DEEP",
+    job: "actor",
+    age: 55,
+};
+const yeniPersonel = { ...personel, job: "father", location: "USA", }
+console.log(yeniPersonel);
