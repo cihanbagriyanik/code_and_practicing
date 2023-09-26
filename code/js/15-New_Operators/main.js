@@ -278,7 +278,7 @@ const yeniInsanlar = insanlar.map((kisi) => ({
 }))
 console.log(yeniInsanlar);
 
-
+//**********************************************************************************************************/
 //* SPREAD Objede degismesini istemedigimiz elemenalar icin 3 NOKTA(...) kullaniyoruz ONEMLIIIIIIIII********
 //! ...kisi = name: kisi.name,
 //!           surname: kisi.surname,
