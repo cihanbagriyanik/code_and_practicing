@@ -271,10 +271,25 @@ const insanlar = [
 //! UZUN VE GEREKSIZ VE HIC KULLANMAYACAGIMIZ KULLANIM
 const yeniInsanlar = insanlar.map((kisi) => ({
     name: kisi.name,
-    surname:kisi.surname,
-    job:kisi.job,
+    surname: kisi.surname,
+    job: kisi.job,
     age: kisi.age + 5
 
 }))
 console.log(yeniInsanlar);
+
+
+//* SPREAD Objede degismesini istemedigimiz elemenalar icin 3 NOKTA(...) kullaniyoruz
+//! ...kisi = name: kisi.name,
+//!           surname: kisi.surname,
+//!           job: kisi.job,
+
+const yeniInsan = insanlar.map((kisi) => ({
+
+            ...kisi,
+
+            age: kisi.age + 5
+
+        }))
+console.log(yeniInsan);
 
