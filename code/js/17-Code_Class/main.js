@@ -74,56 +74,63 @@ console.log(notOrtalama);
 // {name: 'Zeki', guncelOrtalama: 100}
 // ]
 
-
-
-// const notOrtalamaa = ogrenciNotlarList.map((ogrenci) => {
-//     let name = ogrenci.name
-//     let ortalama = +(ogrenci.notes.reduce((toplam, not) => toplam + not, 0) / ogrenci.notes.length).toFixed(1);
-    
-//     let kanaatliNot = +ortalama > 100 ? 100 : ortalama >= 70 ? ortalama + 10 : ortalama + 5 ;
-    
-
-//     // ortalama === 100 ? 100 : (ortalama > 70) ? ortalama + 10 : ortalama + 5;
-    
-//     return {
-//         name: ogrenci.name,
-//         kanaatliNot: kanaatliNot,
-//     };
-
-// });
-// console.log(notOrtalamaa);
-
+// 
 const guncelOrtalamaListesi = ({ name, Ortalama }) => {
     // let Ort = Number(Ortalama)
     let Ort = Ortalama;
   
     Ort = Ort >= 70 ? Ort + 10 : Ort + 5;
-    console.log(Ort);
+    // console.log(Ort);
   
     Ort = Ort > 100 ? 100 : Ort;
-    console.log(Ort);
+    // console.log(Ort);
   
     return {
       name: name,
       guncelOrtalama: Ort,
     };
-  };
+};
   
-  const yeniOrtalamalar = notOrtalamlari.map((item) =>
+  const yeniOrtalamalar = notOrtalama.map((item) =>
     guncelOrtalamaListesi(item)
   );
   
   console.log(yeniOrtalamalar);
   
-  //?e- Ortalaması 100 olan öğrencilerine tebrik notu yazmak istiyor.
-  //? 100 olan öğrencilerinin adlarını ve adlarına yazılan tebrik notunu yeni bir liste oluşturun
+
+//? e - Ortalaması 100 olan öğrencilerine tebrik notu yazmak istiyor.
+//? 100 olan öğrencilerinin adlarını ve adlarına yazılan tebrik notunu yeni bir liste oluşturun
+ // [
+// {name: 'Sema', guncelOrtalama: 83.3}
+// {name: 'Neva', guncelOrtalama: 65}
+// {name: 'Salih', guncelOrtalama: 35}
+// {name: 'Ahmet', guncelOrtalama: 100}
+// {name: 'şevval', guncelOrtalama: 46.7}
+// {name: 'Zeki', guncelOrtalama: 100}
+// ] 
+
+const yuzOrtalama = yeniOrtalamalar.filter((student) => student.guncelOrtalama === 100);
+
+const tebrikMesajlari = yuzOrtalama.map((student) => {
+    return {
+      name: student.name,
+      tebrik: `TEBRIKLER ${student.name}! 100 puan ortalamayı başardın.`,
+    };
+  });
+
+  console.log(tebrikMesajlari);
+
   
-  /* -------------------------------------------------------------------------- */
-  //?                                   2.SORU                                  */
-  /* -------------------------------------------------------------------------- */
-  // Bir firmanın müsterilerinin bilgilerinin bululnduğu JSON yapısı aşağıdadır.
-  
-  const customerList = [
+
+
+
+
+/* -------------------------------------------------------------------------- */
+//?                                   2.SORU                                  */
+/* -------------------------------------------------------------------------- */
+// Bir firmanın müsterilerinin bilgilerinin bululnduğu JSON yapısı aşağıdadır.
+
+const customerList = [
     {
       id: 1,
       name: "Leanne Graham",
@@ -354,18 +361,16 @@ const guncelOrtalamaListesi = ({ name, Ortalama }) => {
         bs: "target end-to-end models",
       },
     },
-  ];
+];
   
-  //? Müşteri bilgilerini düzenli bir şekilde göstermek istiyor.Bunun için
-  
-  //   İsim - adres ve telefonlarını yeni bir listeye alarak düzenli bir şekide gösterecektir.
-  
-  // Beklenen Sonuç:
-  // [
-  //     {name: 'LEANNE GRAHAM', adress: 'Gwenborough city, Kulas Light street Apt. 556 suite', phone: '1-770-736-8031 x56442'}
-  //     {name: 'ERVIN HOWELL', adress: 'Wisokyburgh city, Victor Plains street Suite 879 suite', phone: '010-692-6593 x09125'}
-  //     {name: 'CLEMENTINE BAUCH', adress: 'McKenziehaven city, Douglas Extension street Suite 847 suite', phone: '1-463-123-4447'}
-  // ]
+//? Müşteri bilgilerini düzenli bir şekilde göstermek istiyor.Bunun için 
+//   İsim - adres ve telefonlarını yeni bir listeye alarak düzenli bir şekide gösterecektir. 
+// Beklenen Sonuç:
+// [
+//     {name: 'LEANNE GRAHAM', adress: 'Gwenborough city, Kulas Light street Apt. 556 suite', phone: '1-770-736-8031 x56442'}
+//     {name: 'ERVIN HOWELL', adress: 'Wisokyburgh city, Victor Plains street Suite 879 suite', phone: '010-692-6593 x09125'}
+//     {name: 'CLEMENTINE BAUCH', adress: 'McKenziehaven city, Douglas Extension street Suite 847 suite', phone: '1-463-123-4447'}
+// ]
   
   const duzenle = ({ name, address, phone }) => {
     return {
@@ -378,28 +383,29 @@ const guncelOrtalamaListesi = ({ name, Ortalama }) => {
   const yeniListe = customerList.map((x) => duzenle(x));
   
   console.log(yeniListe);
+
+//*************************/
+//? Müşterilerinin bazılarına telefon ile arayıp memnuniyet anketi yapacaktır
+// Baş harfi e ile başlıyorsa Pazartesi,
+// Baş harfi C ile başlıyorsa Çarşamba arayacaktır
+
+// Beklenen Sonuç:
+// Pazartesi Aranacaklar
+// {name: 'ERVIN HOWELL', phone: '010-692-6593 x09125'}
+
+// Çarşamba Aranacaklar
+// {name: 'CLEMENTINE BAUCH', phone: '1-463-123-4447'}
+// {name: 'CHELSEY DIETRICH', phone: '(254)954-1289'}
+// {name: 'CLEMENTINA DUBUQUE', phone: '024-648-3804'}
   
-  //? Müşterilerinin bazılarına telefon ile arayıp memnuniyet anketi yapacaktır
-  // Baş harfi e ile başlıyorsa Pazartesi,
-  // Baş harfi C ile başlıyorsa Çarşamba arayacaktır
   
-  // Beklenen Sonuç:
-  // Pazartesi Aranacaklar
-  // {name: 'ERVIN HOWELL', phone: '010-692-6593 x09125'}
-  
-  // Çarşamba Aranacaklar
-  // {name: 'CLEMENTINE BAUCH', phone: '1-463-123-4447'}
-  // {name: 'CHELSEY DIETRICH', phone: '(254)954-1289'}
-  // {name: 'CLEMENTINA DUBUQUE', phone: '024-648-3804'}
-  
-  
-  // /*/*/*/*/*/*///*/*/*/*/*/*/*/*/*/*/
-  
-  //? id Ad-ve email adreslerini ayrı bir listeye alıp, id numaraları tek sayı olanlara yeni çıkan elektronik cihazları ile ilgili mesaj ekleyecek, çift sayı olanlara yeni çıkan küçük ev aleti mesajını ekleyecektir
-  
-  // Beklenen Sonuc
-  // {name: 'Leanne Graham', phone: 'Sincere@april.biz', mesaj: 'Yeni çıkan XXX elektronik cihazımızı mutlaka denemelisiniz '}
-  // {name: 'Ervin Howell', phone: 'Shanna@melissa.tv', mesaj: ' Yeni Çıkan kahve yapma makinamızı deneyin.Memnun kalacaksınız'}
+//*************************/
+
+//? id Ad-ve email adreslerini ayrı bir listeye alıp, id numaraları tek sayı olanlara yeni çıkan elektronik cihazları ile ilgili mesajekleyecek, çift sayı olanlara yeni çıkan küçük ev aleti mesajını ekleyecektir
+
+// Beklenen Sonuc
+// {name: 'Leanne Graham', phone: 'Sincere@april.biz', mesaj: 'Yeni çıkan XXX elektronik cihazımızı mutlaka denemelisiniz '}
+// {name: 'Ervin Howell', phone: 'Shanna@melissa.tv', mesaj: ' Yeni Çıkan kahve yapma makinamızı deneyin.Memnun kalacaksınız'}
 
 
 

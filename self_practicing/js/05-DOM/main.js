@@ -28,7 +28,7 @@ resim[1].style.borderRadius = "50px"
 const header = document.getElementsByClassName('header');
 header[0].innerHTML = 'DOM Manipülasyonu Çok ilginç';
 header[0].style.fontSize = "25px";
-header[0].style.fontFamily ='Tahoma';
+header[0].style.fontFamily = 'Tahoma';
 header[0].style.color = 'yellow';
 //! NOT: Bu metot ile class (sınıfı) aynı olan tüm elemanlar (<h1>) seçilmektedir. 
 //! Dolayısıyla tek bir eleman seçmek için indisleme kullanmak gerekir.
@@ -39,10 +39,45 @@ body.style.backgroundImage = "linear-gradient(to right, green, yellow)"
 
 const title = document.querySelector(".title");
 title.innerHTML = "DOM Örnekleri 👀";
-title.style.color = "yellow"
-title.style.fontSize = "20px"
 //!  NOT:
 //!  • querySelector metodunda id ile seçim yaparken ‘#id’, class için ise
 //!  ‘.classAdı’ yazılmalıdır.
 //!  • querySelector belirtilen şarta uygun ilk elemanı seçer. Aynı class’daki birden
 //!  fazla elemanı seçmek için querySelectorAll() metodu kullanılmalıdır.
+
+
+//* DOM OLAYLARI (ÖRNEK-1)
+//? <h1> elemanının üzerine Fare ile geldiğimizde yazı rengi mavi, Fare uzaklaştığında yeniden eski rengi olan siyaha çevirecek kodu yazalım.
+//* 1.YOL
+//todo Inline bir sekilde tag in icinde(onmouseover="style.color='black'" onmouseout="style.color='blue'") yaziliyor
+//* 2.YOL
+const h1 = document.querySelector(".h1")
+const yaziMavi = () => h1.style.color = "blue";
+const yaziSiyah = () => h1.style.color = "black";
+//* 3.YOL
+document.querySelector(".headerrr").onmouseover = function () {
+    document.querySelector(".headerrr").style.color = "blue";
+}
+document.querySelector(".headerrr").onmouseout = function () {
+    document.querySelector(".headerrr").style.color = "black";
+}
+//* 4.YOL
+document.querySelector(".h2").addEventListener('mouseover', function () {
+    document.querySelector(".h2").style.color = "blue";
+});
+document.querySelector(".h2").addEventListener("mouseout", () => {
+    document.querySelector(".h2").style.color = "black";
+});
+
+
+//* DOM OLAYLARI (ÖRNEK-2)
+//* 1.YOL
+document.getElementById("btn").onclick = function () {
+    document.getElementById("body").style.backgroundColor = "green";
+    document.getElementById("btn").innerHTML = "BAS";
+};
+//*2.YOL
+document.querySelector("#btn").addEventListener('click', () => {
+    document.querySelector("#body").style.backgroundColor = "green";
+    document.querySelector("#btn").innerHTML = "BAS";
+});
