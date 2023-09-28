@@ -145,7 +145,7 @@ console.log(isMarried);
 // console.log(workExperinces); //* Destructure edilmediginde dahil olmadiginda hata verir.
 
 //* -------------------------------------------------------------------------- */
-console.clear();
+// console.clear();
 //! Objelere kolaylikla yeni deger eklenebilir
 
 personel1.phoneNumber = "454-659-6969"
@@ -273,34 +273,39 @@ console.log(newValue[0]);
 
 /* -------------------------------------------------------------------------- */
 
-for (const x of Object.keys(workersList)){
+for (const x of Object.keys(workerList)){
     console.log(x);
 }
 
-for (const y of Object.values(workersList)){
+for (const y of Object.values(workerList)){
     console.log(y);
 }
 
-for ( [k,v] of Object.entries(workersList)){
+for ( [k,v] of Object.entries(workerList)){
     console.log(`${k} değeri için ${v.salary}`);
 }
 
 /* -------------------------------------------------------------------------- */
 
-const devFilter=Object.values(workersList).filter((p)=> p.job==="developer")
+const devFilter=Object.values(workerList).filter((p)=> p.job==="developer")
 console.log(devFilter);
 
-const devname=Object.values(workersList).filter((p)=> p.name[0]==="H")
+const devname=Object.values(workerList).filter((p)=> p.name[0]==="H")
 console.log(devname);
 
-const filterSalary=Object.values(workersList).filter((p)=>p.salary>30000)
+const filterSalary=Object.values(workerList).filter((p)=>p.salary>30000)
 console.log(filterSalary);
 /* -------------------------------------------------------------------------- */
 // FOR IN
-
-for (x in workersList){
+// For in objectlerde keyleri dönderir
+for (x in workerList){
     console.log("for in",x);  // sadece key değerlerine ulaşırız
-    console.log(workersList[x].name);    // workerList[person1].name
+    console.log(workerList[x].name, "burasi**********************" );    // workerList[person1].name
+}
+// Dizi ise index numarası
+const dizii=[435,565,6,7]
+for (i in dizii){
+    console.log(i,"***** merhaba   ");
 }
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
@@ -309,7 +314,7 @@ for (x in workersList){
 // JSON ile içiçe obje karıştırmalayalım
 
 
-console.clear()
+// console.clear()
 const team = [
     {
       id:1,
