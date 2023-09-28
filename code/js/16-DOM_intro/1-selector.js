@@ -75,4 +75,19 @@ baslik[1].textContent= "IYIMISIN"
 //*                      QUERYSELECTOR,QUERYSELECTORALL                       */
 /* -------------------------------------------------------------------------- */
 
-document.querySelector("title").textContent = "DOM MANIPULASYON"
+document.querySelector("title").textContent = "DOM MANIPULASYON💚"
+
+document.querySelector("#badi");
+badi.style.backgroundImage = "linear-gradient(green, pink)"
+
+
+document.querySelector(".H2").style.color = "pink"
+
+
+
+const parag = document.querySelectorAll("p")
+
+console.log(parag); //NodeList
+
+
+parag[1].style.fontSize = "70px"
