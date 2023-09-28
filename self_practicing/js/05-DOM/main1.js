@@ -18,9 +18,9 @@ document.querySelector('.renk').addEventListener('click', () => {
 /* -------------------------------------------------------------------------- */
 
 
-document.querySelector(".btn-on").addEventListener("click", () => {
-    document.querySelector(".img").src = "./img/lamba_on.gif";
-});
-document.querySelector(".btn-off").addEventListener("click", () => {
-    document.querySelector(".img").src = "./img/lamba_off.gif";
-});
+// document.querySelector(".btn-on").addEventListener("click", () => {
+//     document.querySelector(".img").src = "./img/lamba_on.gif";
+// });
+// document.querySelector(".btn-off").addEventListener("click", () => {
+//     document.querySelector(".img").src = "./img/lamba_off.gif";
+// });

@@ -397,7 +397,17 @@ const customerList = [
 // {name: 'CLEMENTINE BAUCH', phone: '1-463-123-4447'}
 // {name: 'CHELSEY DIETRICH', phone: '(254)954-1289'}
 // {name: 'CLEMENTINA DUBUQUE', phone: '024-648-3804'}
-  
+
+const anket = ({name, phone}) => {
+
+        return{
+            name: name,
+            phone: phone
+        }
+
+}
+
+
   
 //*************************/
 

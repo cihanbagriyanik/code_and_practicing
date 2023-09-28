@@ -60,5 +60,19 @@ baslik[1].style.fontSize = "50px"
 for (let i = 0; i < baslik.length; i++) {
     baslik[i].style.color = "red"
     baslik[i].style.textAlign = "center"
-
 }
+
+//*  DOM SELECTOR yazan h1 etiketini, DOM ÇOK KOLAY yazan a etiketiyle değiştirdim
+baslik[0].innerHTML = "<a href='https://www.google.com/'>DOM COK KOLAY</a>"
+
+
+// baslik[1].innerHTML= "innerHTML IYIMISIN"
+baslik[1].textContent= "IYIMISIN"
+//* sadece içerik değişecekse textContent tercih edilir, ama innerHTML de etiketi değiştirebildiği gibi, içeriği de değiştirebilir
+
+
+/* -------------------------------------------------------------------------- */
+//*                      QUERYSELECTOR,QUERYSELECTORALL                       */
+/* -------------------------------------------------------------------------- */
+
+document.querySelector("title").textContent = "DOM MANIPULASYON"
