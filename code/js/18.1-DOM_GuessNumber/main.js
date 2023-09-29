@@ -18,11 +18,11 @@ document.querySelector(".check").onclick = () => {
     // Tanimladigmiz dizilerin rastgele gelmesini sagliyoruz
     const rasgeleRenk = Math.floor(Math.random() * renkler.length);
     
-    const tahmin = +document.querySelector(".guess").value;
+    const tahmin = document.querySelector(".guess").value;
 
     document.querySelector(".guess").value = "";
     // tahmin doğruysa
-    if (PCsayi === tahmin) {
+    if (PCsayi == tahmin) {
         mesaj.innerHTML = "Tebrikler, Bildiniz";
         document.querySelector(".body").style.backgroundColor = "green";
         document.querySelector(".number").innerHTML = PCsayi;
