@@ -140,8 +140,8 @@ document.querySelector(".ekle").onclick = () => {
 
   //! kısa yol
   const liste = document.querySelector(".liste");
-   const dilInput = document.querySelector(".languages");
-   
+  const dilInput = document.querySelector(".languages");
+
   liste.innerHTML += `<li> ${dilInput.value} </li>`;
 
   dilInput.value = "";
@@ -149,35 +149,33 @@ document.querySelector(".ekle").onclick = () => {
 
 //!sil butonuna basılınca ul listesinden li elemanını silmek için removeChild metodunu kullanacağız
 
- const liste = document.querySelector(".liste");
+const liste = document.querySelector(".liste");
 
-document.querySelector(".sil").onclick=()=>{
+document.querySelector(".sil").onclick = () => {
 
- liste.removeChild(liste.lastElementChild)//ul nin son çocuğunu sil
-// liste.removeChild(liste.firstElementChild)//ul nin ilk çocuğunu sil
-// liste.removeChild(liste.children[2])//ul nin 2 indexli  çocuğunu sil
+  liste.removeChild(liste.lastElementChild)//ul nin son çocuğunu sil
+  // liste.removeChild(liste.firstElementChild)//ul nin ilk çocuğunu sil
+  // liste.removeChild(liste.children[2])//ul nin 2 indexli  çocuğunu sil
 
 }
 
 
 //!klavyedeki keycode ları kullanarak kod yazma
 
- const dilInput = document.querySelector(".languages");
+const dilInput = document.querySelector(".languages");
 
 
 // dilInput.addEventListener("keydown",(tus)=>{})
 
- dilInput.onkeydown=(tus)=>{
-console.log(tus.keyCode);
+dilInput.onkeydown = (tus) => {
+  console.log(tus.keyCode);
 
-//! click() komutu tıklanırsa önündeki tuş tetiklensin demek
+  //! click() komutu tıklanırsa önündeki tuş tetiklensin demek
 
-if(tus.keyCode==13)
-document.querySelector(".ekle").click()
+  if (tus.keyCode == 13)
+    document.querySelector(".ekle").click()
 
+  if (tus.keyCode == 12)
+    document.querySelector(".sil").click()
 
-
- if(tus.keyCode==12)
-document.querySelector(".sil").click()
-
- }
+}
