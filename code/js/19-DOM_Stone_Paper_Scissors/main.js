@@ -57,7 +57,8 @@ const createPcSelection = () => {
     const pcArr = ["rock", "paper", "scissor"]
     pcRandom = pcArr[Math.floor(Math.random() * 3)]
     pcSelectImg.src = `./img/${pcRandom}.png`
-    pcSelectImg.alt = pcRandom
+    // pcSelectImg.alt = pcRandom
+    pcRandom = "rock"
     pcChoiceDiv.appendChild(pcSelectImg)
     calculateResult()
 }
@@ -107,6 +108,13 @@ const youWin = () => {
 //? modal aç
 const openModal = () => {
     modalCardSection.classList.add("show")
+    
+    console.log(yourScoreSpan.textContent);
+    console.log(pcScoreSpan.textContent);
+    localStorage.setItem("pcScoreSpan", pcScoreSpan.textContent)
+    topScoreSpan.innerText = `10 : ${pcScoreSpan.textContent}`
+   
+    
     //? eger kullanici 10 puana usalti ise kullanici kazanmistir.
     if (yourScoreSpan.textContent == "10") {
         finalMessagePar.textContent = `💃 You Win🕺`
@@ -120,39 +128,25 @@ const openModal = () => {
     }
 }
 
+// if (yourScoreSpan > pcScoreSpan) {
+    
+// }
 
+const best = localStorage.getItem("pcScoreSpan")
+console.log(best);
 
-// Top score'u saklamak için kullanılacak anahtar (key)
-const topScoreKey = "topScore";
+topScoreSpan.innerHTML = `<span> 10 - ${best}</span>`
 
-// Mevcut top score'u al
-let topScore = localStorage.getItem(topScoreKey);
+// topScoreSpan.textContent()
 
-// Eğer daha önce top score kaydedilmemişse, varsayılan olarak 0 olarak ayarla
-if (topScore === null) {
-    topScore = 0;
-}
+// localStorage.setItem("high-Score", 10)
+// localStorage.getItem("")
 
-// Top score'u güncelleme fonksiyonu
-const updateTopScore = (newScore) => {
-    if (newScore > topScore) {
-        topScore = newScore;
-        // Yeni top score'u tarayıcı hafızasına kaydet
-        localStorage.setItem(topScoreKey, topScore);
-    }
-};
+//! local storage Veri yazma okuma 
+//! let a = localStorage.getItem("high-Score")
+//! console.log(a)
 
-// Örnek kullanım: Her bir oyun sona erdiğinde top score'u güncelleyebilirsiniz.
-// Örneğin:
-// updateTopScore(yourScore); // yourScore, oyuncunun mevcut puanıdır.
-
-// Top score'u almak için kullanabileceğiniz fonksiyon
-const getTopScore = () => {
-    return topScore;
-};
-
-// Örnek kullanım: Top score'u almak için
-// const currentTopScore = getTopScore();
+// localStorage.setItem("high-Score", 10)
 
 
 
