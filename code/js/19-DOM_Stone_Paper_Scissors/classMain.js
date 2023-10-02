@@ -63,7 +63,7 @@ const createPcSelection = () => {
         pcArr = ["rock", "paper", "scissor"]
         pcRandom = pcArr[Math.trunc(Math.random()*3)]
         pcSelectImg.src = `./img/${pcRandom}.png`
-        pcRandom = "rock"
+        // pcRandom = "rock"
         pcSelectImg.alt = pcRandom
         pcCoiceDiv.appendChild(pcSelectImg)
         calculateResult()
@@ -158,8 +158,8 @@ const openModal = () => {
 //     userSelectImg.src = "./img/rock.png"
 //     userSelectImg.alt = "rock"
 //     yourCoiceDiv.appendChild(userSelectImg)
-//     // innerHTML
-//     // yourCoiceDiv.innerHTML = `<img src="./img/rock.png"/>`
+//    // innerHTML
+//    // yourCoiceDiv.innerHTML = `<img src="./img/rock.png"/>`
 // })
 // paperImg.addEventListener('click', () =>{
 //     userSelectImg.src = "./img/paper.png"

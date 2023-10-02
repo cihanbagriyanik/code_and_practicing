@@ -120,6 +120,45 @@ const openModal = () => {
     }
 }
 
+
+
+// Top score'u saklamak için kullanılacak anahtar (key)
+const topScoreKey = "topScore";
+
+// Mevcut top score'u al
+let topScore = localStorage.getItem(topScoreKey);
+
+// Eğer daha önce top score kaydedilmemişse, varsayılan olarak 0 olarak ayarla
+if (topScore === null) {
+    topScore = 0;
+}
+
+// Top score'u güncelleme fonksiyonu
+const updateTopScore = (newScore) => {
+    if (newScore > topScore) {
+        topScore = newScore;
+        // Yeni top score'u tarayıcı hafızasına kaydet
+        localStorage.setItem(topScoreKey, topScore);
+    }
+};
+
+// Örnek kullanım: Her bir oyun sona erdiğinde top score'u güncelleyebilirsiniz.
+// Örneğin:
+// updateTopScore(yourScore); // yourScore, oyuncunun mevcut puanıdır.
+
+// Top score'u almak için kullanabileceğiniz fonksiyon
+const getTopScore = () => {
+    return topScore;
+};
+
+// Örnek kullanım: Top score'u almak için
+// const currentTopScore = getTopScore();
+
+
+
+
+
+
 //? Ilkel yontem
 // const rockImg = document.getElementById("rock")
 // const scissorImg = document.getElementById("scissor")
