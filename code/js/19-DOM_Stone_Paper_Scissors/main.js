@@ -108,12 +108,12 @@ const youWin = () => {
 //? modal aç
 const openModal = () => {
     modalCardSection.classList.add("show")
-    
+    /* -------------------------------------------------------------------------- */
     console.log(yourScoreSpan.textContent);
     console.log(pcScoreSpan.textContent);
     localStorage.setItem("pcScoreSpan", pcScoreSpan.textContent)
     topScoreSpan.innerText = `10 : ${pcScoreSpan.textContent}`
-   
+   /* -------------------------------------------------------------------------- */
     
     //? eger kullanici 10 puana usalti ise kullanici kazanmistir.
     if (yourScoreSpan.textContent == "10") {
@@ -128,14 +128,15 @@ const openModal = () => {
     }
 }
 
-// if (yourScoreSpan > pcScoreSpan) {
-    
-// }
-
+//? if (yourScoreSpan > pcScoreSpan) {
+//?   ???? 
+//? }
+/* -------------------------------------------------------------------------- */
 const best = localStorage.getItem("pcScoreSpan")
 console.log(best);
 
 topScoreSpan.innerHTML = `<span> 10 - ${best}</span>`
+/* -------------------------------------------------------------------------- */
 
 // topScoreSpan.textContent()
 
