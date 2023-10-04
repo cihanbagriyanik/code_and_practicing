@@ -57,8 +57,8 @@ const createPcSelection = () => {
     const pcArr = ["rock", "paper", "scissor"]
     pcRandom = pcArr[Math.floor(Math.random() * 3)]
     pcSelectImg.src = `./img/${pcRandom}.png`
-    // pcSelectImg.alt = pcRandom
-    pcRandom = "rock"
+    pcSelectImg.alt = pcRandom
+    // pcRandom = "rock"
     pcChoiceDiv.appendChild(pcSelectImg)
     calculateResult()
 }
