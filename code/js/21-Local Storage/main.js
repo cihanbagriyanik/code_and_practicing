@@ -1,3 +1,8 @@
+localStorage.setItem("lastname", "Smith");
+// localStorage.getItem("lastname");
+
+
+
 // localStorage ne demek
 // The localStorage object allows you to save key/value pairs in the browser.
 let liste = localStorage.getItem('liste') ? JSON.parse(localStorage.getItem('liste')) : [];
