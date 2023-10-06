@@ -27,7 +27,7 @@ listeButon.onclick = () => {
     liste.push(listeInput.value);
 
     total += 1;
-  
+
     //!ekranda listeyi ve total i göster
     listeUl.innerHTML =
       `<li class="ayse">
@@ -49,7 +49,7 @@ listeButon.onclick = () => {
   createSilButon();
   // burada querySelectorAll yolunu tercih ettik
   //!check
- createCheckButon()
+  createCheckButon()
 
 
 };
@@ -67,9 +67,9 @@ const createSilButon = () => {
         (yapılacak) =>
           yapılacak != a.closest("li").querySelector("p").textContent
       );
-     
 
-     
+
+
       //!ekrandan silme, sadece ekrandan silersek sonrasında diziyi bastırmaya kalkarsak, eleman hala dizide bulunduğu için yanlış cevap alırız
       a.parentElement.remove();
       total = total - 1;
@@ -79,37 +79,37 @@ const createSilButon = () => {
 
       //! eğer silinen işin classname inde checked varsa (bitirilmiş yapılmış bir işse) completed sayısından da bir eksiltme yap
 
-      if(a.parentElement.classList.contains("checked")){
+      if (a.parentElement.classList.contains("checked")) {
 
-        completed-=1
-        document.querySelector("#tamamlanan").textContent=completed
+        completed -= 1
+        document.querySelector("#tamamlanan").textContent = completed
       }
-    
+
     };
   });
 };
 
 
-const createCheckButon=()=>{
+const createCheckButon = () => {
 
 
-document.querySelectorAll(".fa-check").forEach((a)=>a.onclick=()=>{
-  //!1.yol
-  if(a.parentElement.classList.contains("checked"))
-  {a.parentElement.classList.remove("checked") 
-completed -= 1;
-}else {
-    a.parentElement.classList.add("checked")
-    completed+=1
-  }
-document.querySelector("#tamamlanan").textContent=completed
-  //!2.yol
-  // if (a.parentElement.className == "checked") {
-  //   a.parentElement.className = "";
-  // } else {
-  //   a.parentElement.className = "checked";
-  // }
-})
+  document.querySelectorAll(".fa-check").forEach((a) => a.onclick = () => {
+    //!1.yol
+    if (a.parentElement.classList.contains("checked")) {
+      a.parentElement.classList.remove("checked")
+      completed -= 1;
+    } else {
+      a.parentElement.classList.add("checked")
+      completed += 1
+    }
+    document.querySelector("#tamamlanan").textContent = completed
+    //!2.yol
+    // if (a.parentElement.className == "checked") {
+    //   a.parentElement.className = "";
+    // } else {
+    //   a.parentElement.className = "checked";
+    // }
+  })
 
 
 

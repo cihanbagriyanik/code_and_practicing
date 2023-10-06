@@ -40,11 +40,11 @@ const gosterListe = () => {
   // localstorage daki verileri ekrana baştan yazdır
   // başka türlü olmaz, o an girileni yazdırır. refresh te bütün diziyi ekrana basacağımız için
   //todo *****************
-   listeUl.textContent = "";
-//    ekranı temizleyip, localstroge deki listeyi indexiyle teker teker bastırıyoruz. bunun yerine app.js deki gibi bir yol izlersek, ekran ilk açıldığında gosterliste dediğimizde, listenin sadece son elemanı kayıttan gelir ve ekrana yazdırılır, bütün dizi basılsın diye böyle bir yol izleyebiliriz
-  for(let i=0; i<liste.length;i++){
+  listeUl.textContent = "";
+  //    ekranı temizleyip, localstroge deki listeyi indexiyle teker teker bastırıyoruz. bunun yerine app.js deki gibi bir yol izlersek, ekran ilk açıldığında gosterliste dediğimizde, listenin sadece son elemanı kayıttan gelir ve ekrana yazdırılır, bütün dizi basılsın diye böyle bir yol izleyebiliriz
+  for (let i = 0; i < liste.length; i++) {
     console.log(liste[i]);
-listeUl.innerHTML =
+    listeUl.innerHTML =
       `<li class="ayse">
     <i class="fa fa-check fa-lg"></i>
     <p>${liste[i]}</p>
@@ -52,14 +52,14 @@ listeUl.innerHTML =
     </li>` + listeUl.innerHTML;
 
   }
-//   liste.forEach((todo ) => {
-//     listeUl.innerHTML =
-//       `<li class="ayse">
-//     <i class="fa fa-check fa-lg"></i>
-//     <p>${todo}</p>
-//     <i class="fa fa-trash fa-lg"></i>
-//     </li>` + listeUl.innerHTML;
-//    });
+  //   liste.forEach((todo ) => {
+  //     listeUl.innerHTML =
+  //       `<li class="ayse">
+  //     <i class="fa fa-check fa-lg"></i>
+  //     <p>${todo}</p>
+  //     <i class="fa fa-trash fa-lg"></i>
+  //     </li>` + listeUl.innerHTML;
+  //    });
 
   //todo *****************
   toplam.textContent = liste.length;
