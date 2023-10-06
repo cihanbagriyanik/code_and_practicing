@@ -1,6 +1,9 @@
 
+
+
+
 //! boş liste hem database işini kolaylaştırır, hem ul ye eklenen verinin aynısı tekrar eklenmesin demek için ,bütün p leri çağır içeriğinde input.value deki değer varsa ekleme, demeli ama p oluşmadan bunu diyemeyiz, bu şekilde liste dizisine eklenen veri globalde old için içeriğine (includes) her yerden bakılabilir
-let liste = [];
+let liste = JSON.parse(localStorage.getItem("LISTE")) || [];
 
 let total = 0;
 let completed = 0;
@@ -22,7 +25,9 @@ listeButon.onclick = () => {
         // return=if in içindeki şart true ise hiçbirşey yapma, koda alt satırdan devam et demek
     } else {
         liste.push(listeInput.value);
+        localStorage.setItem("LISTE", JSON.stringify(liste))
         total += 1;
+
 
         //!listeyi ekranda gör
 
@@ -113,8 +118,6 @@ const createCheckButon = () => {
     })
 
 }
-
-
 
 
 
