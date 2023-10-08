@@ -65,51 +65,54 @@ button.onclick = () => {
 
 
         // console.log(list);
-
-        showList();
-
+        
         input.focus();
-
+    
         //? After enter the value return empty input
         input.value = ""
 
-
+        showList();
 
     }
 
 }
 
 const showList = () => {
-    // Temizleme
+    
+    //? Clear the last input in data
     listContainer.innerHTML = "";
-
+    
     for (let i = 0; i < list.length; i++) {
         const li = document.createElement("li");
         li.textContent = list[i];
-
+        
         const span = document.createElement("span");
         span.textContent = "\u00d7";
-
+        
         li.appendChild(span);
         listContainer.appendChild(li);
+        
     }
-
+    
     remove();
     check();
 }
 
 
 const remove = () => {
-    document.querySelectorAll("span").forEach((span) => { // 'span' olarak değiştirildi
+    document.querySelectorAll("span").forEach((span) => {
         span.addEventListener("click", () => {
             // console.log("here we go");
-            span.parentElement.remove(); // 'span' olarak değiştirildi
+             //? change to 'span'
+            span.parentElement.remove();
 
             let taskText = span.parentElement.textContent;
             let taskIndex = list.indexOf(taskText);
 
-            list.splice(taskIndex, 1); // Görevi listeden kaldır
-            localStorage.setItem("LIST", JSON.stringify(list)); // Güncel liste verisini sakla
+            //? delete the task from list
+            list.splice(taskIndex, 1); 
+            //? save the updated version of list
+            localStorage.setItem("LIST", JSON.stringify(list)); 
             showList(); // Görevleri güncel liste ile tekrar göster
 
         });
