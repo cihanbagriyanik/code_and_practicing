@@ -77,8 +77,6 @@ button.onclick = () => {
 
     }
 
-
-
 }
 
 const showList = () => {
@@ -101,7 +99,6 @@ const showList = () => {
 }
 
 
-
 const remove = () => {
     document.querySelectorAll("span").forEach((span) => { // 'span' olarak değiştirildi
         span.addEventListener("click", () => {
@@ -120,38 +117,15 @@ const remove = () => {
 };
 
 
+listContainer.addEventListener("click", function(e){
+    if (e.target.tagName === "LI") {
+        e.target.classList.toggle("checked")
+        
+    } else if (e.target.tagName === "SPAN") {
+        e.target.parentElement.remove();
+        
+    }
+}, false)
 
-const check = () => {
-    const listItemBefores = document.querySelectorAll('ul li::before');
-    listItemBefores.forEach((before, index) => {
-        before.addEventListener("click", () => {
-            // Görevin durumunu değiştir
-            list[index].checked = !list[index].checked;
-
-            // Görseli güncelle
-            if (list[index].checked) {
-                before.style.backgroundImage = 'url(checked.png)';
-            } else {
-                before.style.backgroundImage = 'url(unchecked.png)';
-            }
-
-            localStorage.setItem("LIST", JSON.stringify(list)); // Güncel liste verisini sakla
-        });
-    });
-};
-
-
-// const check = () => {
-
-//     document.querySelector('ul li::before').forEach((a) => {
-//         a.onclick = () => {
-//             console.log("here we go");
-//             // a.parentElement.();
-
-
-//         }
-//     })
-
-// }
 
 showList();
