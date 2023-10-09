@@ -95,26 +95,30 @@ const showList = () => {
     }
     
     remove();
-    check();
+    // check();
 }
 
 
 const remove = () => {
+
     document.querySelectorAll("span").forEach((span) => {
         span.addEventListener("click", () => {
-            // console.log("here we go");
+            
              //? change to 'span'
             span.parentElement.remove();
 
             let taskText = span.parentElement.textContent;
             let taskIndex = list.indexOf(taskText);
-
+            console.log(span.parentElement.textContent);
+            
             //? delete the task from list
-            list.splice(taskIndex, 1); 
+           list.splice(taskIndex,1)
+        
+            
             //? save the updated version of list
             localStorage.setItem("LIST", JSON.stringify(list)); 
             showList(); // Görevleri güncel liste ile tekrar göster
-
+            
         });
     });
 };
