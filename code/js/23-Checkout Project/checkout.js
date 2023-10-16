@@ -75,8 +75,11 @@ sepettekiler.forEach((urun) => {
 })
 
 
-//! SILME 
+hesaplaCardTotal();
 
+
+
+//! SILME 
 sil();
 
 function sil() {
@@ -87,9 +90,12 @@ function sil() {
       
       btn.closest(".card").remove()
 
+      //! Hesapla Total
+      hesaplaCardTotal()
+
     }
 
-    
+
 
   })
 
@@ -110,26 +116,31 @@ function sil() {
 
 
 //! BROWSERDAKI TOTAL I HESAPLAMA
+function hesaplaCardTotal() {
+  
+  const urunToplam = document.querySelectorAll(".ürün-toplam");
+  // console.log(urunToplam); // NodeList cikti
+  
+  
+  //!   querySelectorAll(), statik bir NodeList döndürür.
+  //!burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+  // Dizi Değil!
+  // Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
+  // Bir NodeList içinde döngü yapabilir ve düğümlerine dizine göre başvurabilirsiniz.
+  // Ancak, bir NodeList'te push(), pop() veya join() gibi Array yöntemlerini kullanamazsınız.
+  //* Reduce tam olarak Array istiyor, nodeList yeterli degil
+  // console.log(Array.from(urunToplam)); // Array cikti
+  
+  
+  const araToplam = Array.from(urunToplam).reduce((topl, item) => topl + +item.textContent, 0);
+  
+  document.querySelector(".aratoplam").textContent = araToplam
+  document.querySelector(".vergi").textContent = (araToplam * vergi).toFixed(2)
+  document.querySelector(".kargo").textContent = kargo
+  document.querySelector(".toplam").textContent = (araToplam + (araToplam * vergi) + kargo).toFixed(2)
 
-const urunToplam = document.querySelectorAll(".ürün-toplam");
-// console.log(urunToplam); // NodeList cikti
+}
 
 
-//!   querySelectorAll(), statik bir NodeList döndürür.
-//!burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
-// Dizi Değil!
-// Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
-// Bir NodeList içinde döngü yapabilir ve düğümlerine dizine göre başvurabilirsiniz.
-// Ancak, bir NodeList'te push(), pop() veya join() gibi Array yöntemlerini kullanamazsınız.
-//* Reduce tam olarak Array istiyor, nodeList yeterli degil
-// console.log(Array.from(urunToplam)); // Array cikti
-
-
-const araToplam = Array.from(urunToplam).reduce((topl, item) => topl + +item.textContent, 0);
-
-document.querySelector(".aratoplam").textContent = araToplam
-document.querySelector(".vergi").textContent = (araToplam * vergi).toFixed(2)
-document.querySelector(".kargo").textContent = kargo
-document.querySelector(".toplam").textContent = (araToplam + (araToplam * vergi) + kargo).toFixed(2)
 
 
