@@ -35,7 +35,7 @@ sepettekiler.forEach((urun) => {
 
           <div class="ürün-price">
             <p class="text-warning h2">$
-              <span class="indirim-price">${(price*0.7).toFixed(2)} </span>
+              <span class="indirim-price">${(price * 0.7).toFixed(2)} </span>
               <span class="h5 text-dark text-decoration-line-through">${price} </span>
             </p>
           </div>
@@ -63,13 +63,73 @@ sepettekiler.forEach((urun) => {
           </div>
 
           <div class="mt-2">
-            Ürün Toplam: $<span class="ürün-toplam">${(price*0.7).toFixed(2)*adet} </span>
+            Ürün Toplam: $<span class="ürün-toplam">${(price * 0.7).toFixed(2) * adet} </span>
           </div>
         </div>
       </div>
     </div>
-  </div>`
-
+  </div> 
+  
+  `
 
 })
+
+
+//! SILME 
+
+sil();
+
+function sil() {
+
+  document.querySelectorAll(".remove-ürün").forEach((btn) => {
+  
+    btn.onclick = () => {
+      
+      btn.closest(".card").remove()
+
+    }
+
+    
+
+  })
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//! BROWSERDAKI TOTAL I HESAPLAMA
+
+const urunToplam = document.querySelectorAll(".ürün-toplam");
+// console.log(urunToplam); // NodeList cikti
+
+
+//!   querySelectorAll(), statik bir NodeList döndürür.
+//!burada netten https://softauthor.com/javascript-htmlcollection-vs-nodelist/ adresinden göster
+// Dizi Değil!
+// Bir NodeList bir dizi gibi görünebilir ama öyle değildir.
+// Bir NodeList içinde döngü yapabilir ve düğümlerine dizine göre başvurabilirsiniz.
+// Ancak, bir NodeList'te push(), pop() veya join() gibi Array yöntemlerini kullanamazsınız.
+//* Reduce tam olarak Array istiyor, nodeList yeterli degil
+// console.log(Array.from(urunToplam)); // Array cikti
+
+
+const araToplam = Array.from(urunToplam).reduce((topl, item) => topl + +item.textContent, 0);
+
+document.querySelector(".aratoplam").textContent = araToplam
+document.querySelector(".vergi").textContent = (araToplam * vergi).toFixed(2)
+document.querySelector(".kargo").textContent = kargo
+document.querySelector(".toplam").textContent = (araToplam + (araToplam * vergi) + kargo).toFixed(2)
+
 
