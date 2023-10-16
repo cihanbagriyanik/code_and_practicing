@@ -194,7 +194,7 @@ function hesaplaCardTotal() {
 
   document.querySelector(".aratoplam").textContent = (araToplam).toFixed(2)
   document.querySelector(".vergi").textContent = (araToplam * vergi).toFixed(2)
-  document.querySelector(".kargo").textContent = (araToplam > 0 ? kargo : 0).toFixed(2);
+  document.querySelector(".kargo").textContent = (araToplam < 200 ? kargo : 0).toFixed(2);
   document.querySelector(".toplam").textContent = araToplam > 0 ? (araToplam + (araToplam * vergi) + kargo).toFixed(2) : (0).toFixed(2)
 
 }
