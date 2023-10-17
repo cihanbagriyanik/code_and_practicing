@@ -18,7 +18,6 @@
 
 //! JavaScript throw anahtar kelimesi özel hata oluşturmayı sağlar.
 
-//! JavaScript finally anahtar kelimesi hata oluşması veya oluşmaması durumunda (her durumda) çalışacak kodları yazdırmak için kullanılır.
 
 
 
