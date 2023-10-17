@@ -30,3 +30,24 @@
 //? then() ve catch() metotlari promise dondururler.
 //? Zincirleme olarak kullanilabilirler.
 
+const person = { name: "ipek", surname: "bilir" }
+
+new Promise((resolve, reject) => {
+    if (false) {
+    } else {
+      reject(new Error("promise başarısız"));
+    }
+})
+.then((res) => {
+      console.log(res);
+})
+.catch((err) => console.log(err));
+
+
+//  //?----------------------------------------------------
+// //* 1- XMLHttpRequest (Eski yontem, Ornek: AJAX)
+// //? https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+// //* 2- Promise,
+// //*daha tercih edilenler
+// //! 3- Fetch API (Promise'in basitlestirilmis hali),
+// //! 4- ASYNC-AWAIT (Fetch API'nin makyajlanmis hali)
