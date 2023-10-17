@@ -26,7 +26,7 @@ const veriGetir = async () => {
     try {
 
         //! hata msjini gormek icin url de ? ne kadar silebiliriz
-        const res = await fetch("https://api.tvmaze.com/search/shows")
+        const res = await fetch("https://api.tvmaze.com/search/shows?q=girls")
         // console.log(res);
 
         if (!res.ok) {
@@ -67,6 +67,9 @@ const ekranaBastir = (data) => {
         `
     });
 };
+
+
+
 
 
 
