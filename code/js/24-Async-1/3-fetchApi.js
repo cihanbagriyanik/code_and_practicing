@@ -25,7 +25,7 @@
 const veriGetir = () => {
     fetch("https://api.github.com/users").then((res) => {
     
-        if (res.ok == false) {
+        if (!res.ok) {
             throw new Error("URL de hata var")
         }
         return res.json()
