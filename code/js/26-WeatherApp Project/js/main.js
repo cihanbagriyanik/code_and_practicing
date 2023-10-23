@@ -1,6 +1,5 @@
 
 //DOM
-
 const form = document.querySelector(".top-banner form")
 const input = document.querySelector(".top-banner form input")
 const msgSpan = document.querySelector(".top-banner .msg")
@@ -8,7 +7,6 @@ const list = document.querySelector(".cities")
 const locate = document.getElementById("locate");
 
 //language
-
 const clearAllButton = document.getElementById("clear-all");
 const langButton = document.getElementById("lang");
 const searchEl = document.getElementById("search");
@@ -16,7 +14,6 @@ const searchEl = document.getElementById("search");
 
 
 //variables
-
 const apiKey = 'b4feff817822f13bfa244e29237a03d6';
 
 // localStorage.setItem("apiKey", '4ed283ae2ece6cf1fe2fe7e75b2ea7a5') //localstorage e şifresiz kaydeder
@@ -31,14 +28,13 @@ const apiKey = 'b4feff817822f13bfa244e29237a03d6';
 // console.log(apiKey) 
 
 
-
 let url; //Api isteği için kullanacağımız adres
 let cities = [] //Ekranda sergilenen şehirlerin ismini tutacak
 let units = 'metric'; // f için imperial yazmalıyız
 let lang = 'en'; // Almanca için de kullanılacak
 
-//location find
 
+//? location find
 locate.addEventListener("click",()=>{
     navigator.geolocation?.getCurrentPosition(({ coords }) => {
         const { latitude, longitude } = coords;
@@ -47,8 +43,8 @@ locate.addEventListener("click",()=>{
     });
 })
 
-//language change
 
+//? language change
 langButton.addEventListener("click", (e)=>{
     if(e.target.id == "de"){
         lang = "de"
