@@ -89,7 +89,7 @@ form.addEventListener("submit", (e) => {
 
 
 const getWeatherData = async () => {
-
+    
     try {
         // const response = await fetch(url).then((response)=>response.json()); //fetch ile istek atma
         const response = await axios(url); // axios ile istek atma
@@ -151,6 +151,7 @@ const getWeatherData = async () => {
             })
 
         } else {
+            
             if (lang == "de") {
                 msgSpan.innerText = `Sie kennen das Wetter für die ${name} bereits. Bitte suchen Sie nach einer anderen Stadt 😉`;
             } else {
@@ -164,9 +165,8 @@ const getWeatherData = async () => {
 
 
 
-
-
     } catch (error) {
+        
         if (lang == "de") {
             msgSpan.innerText = `Stadt nicht gefunden`;
         } else {
