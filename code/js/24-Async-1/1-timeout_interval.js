@@ -67,3 +67,5 @@ const interval1 = setInterval(() => {
 
 console.log("Sayac durduruldu");
 
+//! ********************************************************************************/
+//! TEKRAR
