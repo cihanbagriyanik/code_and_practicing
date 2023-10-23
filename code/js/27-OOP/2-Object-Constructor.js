@@ -31,3 +31,52 @@ console.log(book2);
 
 document.querySelector("h2").textContent = book2.ozetFunction()
 
+
+//? new keyword ü  Book Constructor ı parametrelerle çağırır.
+//? Constructor, Book object in bir örneğini kalıbını oluşturur.
+//? Constructor daki tüm variablelar ve functionlar, oluşturulan her  single örneğe (instance) eklenir
+
+//!kalıp ta prototype alanına ulaşmak için alttaki gibi bir syntax kullanılır
+//*Book un prototype alanına yeni bir parametre ekledik ama bellekte yer kaplamaz, ihtiyaç olunca child lar kullanır
+
+
+Book.prototype.tur = "roman"
+Book.prototype.yilHesapla = function() {
+    return 2023 - this.year
+}
+console.log(book2);
+console.log(book2.tur);
+
+// document.querySelector("h2").textContent = book2.tur // out : roman
+
+console.log(book2.yilHesapla());
+
+
+
+//?direk object lerime açıktan bir value eklemek istersem, bellekte yer kaplar, alttaki gibi yazılır
+book1.fiyat = 100
+console.log(book1);
+console.log(book2);
+
+
+//! OKUL YONETIMINI HATIRLA
+//? INHERITANCE (Miras)
+
+function Dergi(title,author,year,d){
+    Book.call(this,title,author,year)
+
+    this.month = d 
+}
+
+//*Book object inden (kalıbından) türetilen Dergi kalıbına, Book un prototype alanındaki bilgiler (ES5 te) direk gelmez,gelmesini istiyorsak alttaki kodu (daha child oluşturmadan önce)yazmalıyız
+Dergi.prototype = Object.create(Book.prototype)
+
+
+const dergi1 = new Dergi("kafa", "ibrahim", 1980, "eylul")
+const dergi2 = new Dergi("nokta", "hasan can", 1960, "kasim")
+
+
+console.log(dergi1);
+console.log(dergi1.ozetFunction());
+
+console.log(dergi1.yilHesapla());
