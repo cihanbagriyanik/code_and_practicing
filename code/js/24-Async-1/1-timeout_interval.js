@@ -58,14 +58,22 @@ console.log("Sayac Basliyor");
 
 let sayac = 0;
 
-const interval1 = setInterval(() => {
-    console.log(sayac++);
+// const interval1 = setInterval(() => {
+//     console.log(sayac++);
 
-    if(sayac == 7) clearInterval(interval1)
+//     if(sayac == 7) clearInterval(interval1)
 
-}, 1000);
+// }, 1000);
 
 console.log("Sayac durduruldu");
 
 //! ********************************************************************************/
 //! TEKRAR
+
+const interval = setInterval(() => {
+
+    console.log(sayac++);
+
+    (sayac == 8) ? clearInterval(interval) : 0
+
+},1000)

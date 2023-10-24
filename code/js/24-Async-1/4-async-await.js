@@ -73,5 +73,24 @@ const ekranaBastir = (data) => {
 //! ********************************************************************************/
 //! TEKRAR
 
+const veriGel = async () => {
+    
+    const res = await fetch("https://api.tvmaze.com/search/shows?q=girls")
+    // console.log(res);
 
 
+
+
+    const ver = await res.json()
+    // console.log(ver);
+
+
+    ekranaBastir(ver)
+    
+}
+
+// veriGel()
+
+document.querySelector("button").onclick = () => {
+    veriGel()
+}

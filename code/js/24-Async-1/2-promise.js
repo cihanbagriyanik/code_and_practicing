@@ -54,3 +54,16 @@ new Promise((resolve, reject) => {
 
 //! ********************************************************************************/
 //! TEKRAR
+
+new Promise((res, rej) => {
+
+  if (true) {
+    res(person)
+  } else {
+    rej(console.error("promise basarisiz"));
+  }
+})
+.then((res) => {
+  console.log(res);
+})
+.catch((err) => console.log(err));

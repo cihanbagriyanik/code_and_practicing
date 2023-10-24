@@ -22,43 +22,81 @@
 
 // }).then((veri) => ekranaBastir(veri))
 
-const veriGetir = () => {
-    fetch("https://api.github.com/users").then((res) => {
-    
-        if (!res.ok) {
-            throw new Error("URL de hata var")
-        }
-        return res.json()
-    
-    }).then((veri) => ekranaBastir(veri))
-}
+// const veriGetir = () => {
+//     fetch("https://api.github.com/users").then((res) => {
+
+//         if (!res.ok) {
+//             throw new Error("URL de hata var")
+//         }
+//         return res.json()
+
+//     }).then((veri) => ekranaBastir(veri))
+// }
 
 
-document.querySelector("button").onclick = () => {
+// document.querySelector("button").onclick = () => {
 
-    veriGetir()
+//     veriGetir()
 
-}
+// }
 
 
-const ekranaBastir = (data) => {
+// const ekranaBastir = (data) => {
 
-    const alan = document.querySelector("section")
+//     const alan = document.querySelector("section")
 
-    data.forEach((eleman) => {
-        // const {login,avatar_url,node_id} = eleman
+//     data.forEach((eleman) => {
+//         // const {login,avatar_url,node_id} = eleman
 
-        alan.innerHTML += `        
-        <h1 class="mt-4">NAME:  <span class="text-danger">${eleman.login}</span></h1>
-        <img src="${eleman.avatar_url}" alt="" width="50%" />
-        <h3>NODE-ID: ${eleman.node_id}</h3>
-        `
-    });
-}
+//         alan.innerHTML += `        
+//         <h1 class="mt-4">NAME:  <span class="text-danger">${eleman.login}</span></h1>
+//         <img src="${eleman.avatar_url}" alt="" width="50%" />
+//         <h3>NODE-ID: ${eleman.node_id}</h3>
+//         `
+//     });
+// }
 
 
 //! ********************************************************************************/
 //! TEKRAR
 
+// fetch("https://api.github.com/users").then((res) => res.json()).then((veri) => console.log(veri))
+
+
+const veriGetir1 = () => {
+
+    fetch("https://api.github.com/users").then((res) => {
+
+        if (!res.ok) {
+            throw new Error("URL de hata var")
+        }
+        return res.json()
+    }).then((veri) => ekranaBastir1(veri))
+
+}
+
+
+document.querySelector("button").onclick = () => {
+
+    veriGetir1()
+
+}
+
+
+
+const ekranaBastir1 = (data => {
+
+    const alan = document.querySelector("section")
+
+    data.forEach((eleman) => {
+
+        alan.innerHTML += `
+            <h1>NAME: <span class="text-danger">${eleman.login}</span></h1>
+            <img src="${eleman.avatar_url}" alt="" width="50%"/>
+            <h3>NODE-ID: ${eleman.node_id}</h3>
+        `;
+
+    })
+})
 
 
