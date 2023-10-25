@@ -19,7 +19,8 @@ function MyNavbar() {
     //! Navbar scrolling modeli
     return (
         //! expand="lg" => linklerin large ekrandan itibaren gozuksun (lg-mg-sm) da olabilir
-        <Navbar expand="sm" bg='light'> //* BURDA ben expand i (sm) yaptim orj ni (lg) */
+        //* BURDA ben expand i (sm) yaptim orj ni (lg) **//
+        <Navbar expand="sm" bg='light'>  
             <Container fluid>
                 <Navbar.Brand href="#">
                     <img src={resim} width="70px" alt="" />
