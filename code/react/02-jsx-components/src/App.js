@@ -1,5 +1,7 @@
 
+
 import Msg from "./msg/Msg"
+import Footer from "./footer/Footer"
 
 
 
@@ -8,7 +10,8 @@ const App = () => {
   return (
     <div>
 
-      <Msg/>
+      <Msg />
+      <Footer />
 
     </div>
   )
