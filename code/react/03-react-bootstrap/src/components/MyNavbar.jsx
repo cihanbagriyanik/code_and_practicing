@@ -15,6 +15,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 //! Import IMG
 import resim from "../img/logo_colorful.png"
 
+
 function MyNavbar() {
     //! Navbar scrolling modeli
     return (
