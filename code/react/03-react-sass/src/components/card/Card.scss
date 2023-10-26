@@ -33,6 +33,13 @@
             color: $kirmizi;
         }
 
+        button {
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+
+        }
+
         .small {
             background-color: $lightGreen;
 
@@ -40,6 +47,11 @@
 
         .large {
             background-color: $darkGreen;
+
+        }
+
+        button:hover {
+            opacity: 0.7;
 
         }
     }
