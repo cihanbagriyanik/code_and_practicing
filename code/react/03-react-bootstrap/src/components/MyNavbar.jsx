@@ -21,15 +21,16 @@ function MyNavbar() {
     return (
         //! expand="lg" => linklerin large ekrandan itibaren gozuksun (lg-mg-sm) da olabilir
         //* BURDA ben expand i (sm) yaptim orj ni (lg) **//
-        <Navbar expand="sm" bg='light'>  
+        <Navbar expand="sm" bg='light' >  
             <Container fluid>
                 <Navbar.Brand href="#">
                     <img src={resim} width="70px" alt="" />
                 </Navbar.Brand>
+                {/* Hamburger butonu ile toggle olayini yapiyor (tiklayinca kaybolan linkler gelsin gitsin) */}
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
-                        className="ms-auto my-2 my-lg-0"  //! **********BURDA KALDIK **************/
+                        className="ms-auto my-2"
                         style={{ maxHeight: '100px' }}
                         navbarScroll
                     >
@@ -45,9 +46,9 @@ function MyNavbar() {
                                 Something else here
                             </NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#" disabled>
+                        {/* <Nav.Link href="#" disabled>
                             Link
-                        </Nav.Link>
+                        </Nav.Link> */}
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control

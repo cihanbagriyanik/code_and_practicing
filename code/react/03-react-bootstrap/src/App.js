@@ -6,6 +6,10 @@ import MyNavbar from "./components/MyNavbar"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+import myData from "./data";
+import CourseCard from "./components/CourseCard";
+
+
 
 const App = () => {
 
@@ -13,6 +17,7 @@ const App = () => {
     <div>
 
       <MyNavbar />
+      <CourseCard data={myData}/>
 
     </div>
   )
