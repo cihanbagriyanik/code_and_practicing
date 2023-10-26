@@ -22,14 +22,19 @@ const CourseCard = ({ data }) => {
     <Container className='mt-4'>
       <Row className="g-4 d-flex justify-content-center">
 
-        {data.map(({img,text,name,id}) => {
+        {data.map(({ img, text, name, id }) => {
           //! dest. map parantezinin icinde yapmak daha iyi yukardaki gibi suslu nun icinde
-          {/* const {img,text,name,id} = eleman */}
+          {/* const {img,text,name,id} = eleman */ }
+
+
           //! arrow (map) süslü kullandığında return ister.reactta süslü koymayabilirsiniz, o zaman returne de ihtiyaç olmaz
           return (
             <Col
+              //?database den çekilen veriler ekrana bastırılırken, en dış div unique bir veri ister bunu da key={id} şeklinde yazarız. id olmak zorunda değil unique herhangi bir property olabilir, mesela img
+              key={id}
               className='col-12 col-md-6 col-lg-4'
-            //! React Bootstrap responsive ligi
+
+            //! React Bootstrap responsive ligi (syntax => xs/md/...={12/8/4/2/...})
             // xs={12}
             // // sm={12}
             // md={6}
@@ -51,7 +56,9 @@ const CourseCard = ({ data }) => {
         })}
 
       </Row>
+
     </Container>
+
   )
 }
 
