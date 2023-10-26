@@ -11,12 +11,14 @@ import Card from './components/card/Card'
 
 import "./App.scss"
 
+import data from "./data"
+
 const App = () => {
 
   return (
     <div>
       <Header />
-      <Card />
+      <Card data={data} />
     </div>
   )
 }

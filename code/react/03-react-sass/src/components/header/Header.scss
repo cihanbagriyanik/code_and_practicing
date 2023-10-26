@@ -1,0 +1,17 @@
+//! sadece variable tarzı scss ler ($ile kendi stilimi topladığım yer), nereden çağırılacklarsa oraya import edilmeli
+@import "../../scss/variable";
+
+
+header {
+    padding: 3rem;
+    background-color: $lightGreen;
+
+
+    h1 {
+        color: darkblue;
+        text-align: center;
+
+    }
+
+    
+}
