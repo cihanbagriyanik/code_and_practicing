@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-import {Card, Col, Row, Container} from "react-bootstrap"
+import { Card, Col, Row, Container, Button } from "react-bootstrap"
 /* -------------------------------------------------------------------------- */
 // import Card from 'react-bootstrap/Card';
 // import Col from 'react-bootstrap/Col';
@@ -19,23 +19,37 @@ const CourseCard = ({ data }) => {
 
 
   return (
-    <Container>
-      <Row xs={1} md={2} className="g-4">
-        {Array.from({ length: 4 }).map((_, idx) => (
-          <Col key={idx}>
-            <Card>
-              <Card.Img variant="top" src="holder.js/100px160" />
-              <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a longer card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
+    <Container className='mt-4'>
+      <Row className="g-4 d-flex justify-content-center">
+
+        {data.map(({img,text,name,id}) => {
+          //! dest. map parantezinin icinde yapmak daha iyi yukardaki gibi suslu nun icinde
+          {/* const {img,text,name,id} = eleman */}
+          //! arrow (map) süslü kullandığında return ister.reactta süslü koymayabilirsiniz, o zaman returne de ihtiyaç olmaz
+          return (
+            <Col
+              className='col-12 col-md-6 col-lg-4'
+            //! React Bootstrap responsive ligi
+            // xs={12}
+            // // sm={12}
+            // md={6}
+            // lg={4}
+            >
+              <Card className='pt-3'>
+                <Card.Img variant="top" src={img} />
+                <Card.Body>
+                  <Card.Title>{name}</Card.Title>
+                  <Card.Text>
+                    {text}
+                  </Card.Text>
+                  <Button variant='danger'>Detaylar</Button>
+                </Card.Body>
+              </Card>
+            </Col>
+          )
+
+        })}
+
       </Row>
     </Container>
   )
