@@ -11,14 +11,14 @@
 }
 
 .links {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     margin: 0 5px;
-    color: #CD890C;
+    color: #000;
 
     &:hover {
         background-color: #000;
-        color: #CD890C;
+        color: #CD890C !important;
         border-radius: 5px;
-
+    
     }
 }

@@ -1,8 +1,13 @@
 import React from 'react'
+import MyCard from './Card'
 
-const Main = () => {
+import "../main/Main.scss"
+
+const Main = ({ data }) => {
   return (
-    <div>Main</div>
+    <div className="box">
+      {data.map((item) => <MyCard {...item} key={item.id} />)}
+    </div>
   )
 }
 

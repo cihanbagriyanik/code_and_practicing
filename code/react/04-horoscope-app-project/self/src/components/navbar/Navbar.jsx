@@ -26,12 +26,12 @@ const MyNavbar = () => {
                 
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="ms-auto links">
-                        <Nav.Link className='link' href="#horoscope">Horoscope</Nav.Link>
-                        <Nav.Link className='link' href="#daily">Daily</Nav.Link>
-                        <Nav.Link className='link' href="#tarot">Tarot</Nav.Link>
-                        <Nav.Link className='link' href="#article">Article</Nav.Link>
-                        <Nav.Link className='link' href="#contact"> Contact </Nav.Link>
+                    <Nav className="ms-auto">
+                        <Nav.Link className='links' href="#horoscope">Horoscope</Nav.Link>
+                        <Nav.Link className='links' href="#daily">Daily</Nav.Link>
+                        <Nav.Link className='links' href="#tarot">Tarot</Nav.Link>
+                        <Nav.Link className='links' href="#article">Article</Nav.Link>
+                        <Nav.Link className='links' href="#contact"> Contact </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
 

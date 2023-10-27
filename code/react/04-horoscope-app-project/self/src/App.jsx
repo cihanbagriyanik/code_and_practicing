@@ -10,7 +10,7 @@ import "../src/App.scss"
 //! Bootstrap in yolunu da import ediyoruz
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import {data} from "../src/helper/data"
+import { data } from "../src/helper/data"
 
 const App = () => {
 
@@ -19,8 +19,9 @@ const App = () => {
 
       <MyNavbar />
       <Header />
-      <Card />
-      <Main />
+      {/* <Card /> */}
+      <Main data={data} />
+
 
     </div>
   )
