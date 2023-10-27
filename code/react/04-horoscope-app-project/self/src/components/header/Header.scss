@@ -1,0 +1,14 @@
+.who-are-you {
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+    letter-spacing: 1.5rem;
+    text-decoration: underline;
+    text-transform:uppercase;
+    margin: 3rem 0 1.5rem;
+    cursor: pointer;
+    // transition: all .5s ease-in-out;
+    animation: flicker .5s ease-in-out infinite alternate;
+    
+
+}

@@ -1,0 +1,24 @@
+.navbar-body {
+    // border: 2px solid black;
+    background-color: #CD890C;
+
+
+}
+
+.logo {
+    width: 6.5rem;
+
+}
+
+.links {
+    font-size: 1.5rem;
+    margin: 0 5px;
+    color: #CD890C;
+
+    &:hover {
+        background-color: #000;
+        color: #CD890C;
+        border-radius: 5px;
+
+    }
+}
