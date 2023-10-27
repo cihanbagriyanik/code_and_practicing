@@ -1,5 +1,5 @@
 import Header from "./components/header/Header"
-import Card from "./components/main/Card"
+// import Card from "./components/main/Card"
 import Main from "./components/main/Main"
 import MyNavbar from "./components/navbar/Navbar";
 
