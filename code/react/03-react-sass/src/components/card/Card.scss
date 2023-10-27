@@ -33,26 +33,31 @@
             color: $kirmizi;
         }
 
-        button {
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
+        .btn-div {
+            button {
+                color: white;
+                border-radius: 5px;
+                margin: 5px 0 5px 5px;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: 0.5;
+                }
+            }
+
+            &--small {
+                padding: 0.6rem;
+                background-color: $lightGreen;
+            }
+
+            &--large {
+                padding: 0.6rem 1.5rem;
+                background-color: $darkGreen;
+
+            }
 
         }
 
-        .small {
-            background-color: $lightGreen;
-
-        }
-
-        .large {
-            background-color: $darkGreen;
-
-        }
-
-        button:hover {
-            opacity: 0.7;
-
-        }
     }
+
 }

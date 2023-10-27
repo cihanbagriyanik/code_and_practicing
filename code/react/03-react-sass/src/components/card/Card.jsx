@@ -13,9 +13,9 @@ const Card = ({ data }) => {
           <p>{comment}</p>
 
           <img src={img} alt="" />
-          <div>
-            <button className='small'>Small</button>
-            <button className='large'>Large</button>
+          <div className='btn-div'>
+            <button className='btn-div--small'>Small</button>
+            <button className='btn-div--large'>Large</button>
           </div>
         </div>
       })}
