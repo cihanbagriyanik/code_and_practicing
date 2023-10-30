@@ -5,7 +5,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div className="header">
-        <span>Who Are You?</span>
+        <span className="text-shadow">Who Are You?</span>
     </div>
   )
 }
