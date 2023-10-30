@@ -35,6 +35,11 @@
             top: 0;
             left: 0;
             z-index: 2;
+            background-color: rgba(0,0,0,0.8);
+            color: $cardNavBgColor ;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 10px;
         }
 
         .date {
@@ -44,6 +49,9 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 2;
+            background-color: rgba(0,0,0,0.8);
+            color: $cardNavBgColor ;
+            border-radius: 5px;
         }
 
         img {
