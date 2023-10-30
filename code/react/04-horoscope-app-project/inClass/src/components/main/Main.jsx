@@ -1,9 +1,9 @@
 import "./Main.scss"
+import Card from "./Card"
+import {data} from "../../helper/data"
 
 import React from 'react'
-import Card from "./Card"
 
-import {data} from "../../helper/data"
 
 
 const Main = () => {
@@ -19,3 +19,4 @@ const Main = () => {
 }
 
 export default Main
+

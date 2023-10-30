@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar"
 
 import "./App.scss"
 import Main from "./components/main/Main"
+import Header from "./components/header/Header"
 
 
 const App = () => {
@@ -13,6 +14,8 @@ const App = () => {
       <Navbar />
 
       <Main />
+
+      <Header />
 
     </div>
   )
