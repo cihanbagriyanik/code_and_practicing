@@ -1,3 +1,6 @@
+
+import Navbar from "./components/navbar/Navbar"
+
 import "./App.scss"
 
 
@@ -6,7 +9,7 @@ const App = () => {
   return (
     <div>
 
-      App
+      <Navbar />
 
     </div>
   )
