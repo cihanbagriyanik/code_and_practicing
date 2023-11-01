@@ -1,4 +1,11 @@
-import Events from "./1-events-hookIntro/Events"
+//! Bootstrap in yolunu da import ediyoruz
+import "bootstrap/dist/css/bootstrap.min.css";
+
+
+
+// import Events from "./1-events-hookIntro/Events"
+// import Hooks from "./2-hooks/Hooks"
+import Counter from "./3-classComponents/Counter";
 
 
 
@@ -7,7 +14,10 @@ const App = () => {
   return (
     <div>
 
-      <Events />
+      {/* <Events />
+      <Hooks /> */}
+
+      <Counter />
 
     </div>
   )
