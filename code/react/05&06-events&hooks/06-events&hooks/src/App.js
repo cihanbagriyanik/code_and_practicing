@@ -1,3 +1,4 @@
+import Events from "./1-events-hookIntro/Events"
 
 
 
@@ -6,7 +7,7 @@ const App = () => {
   return (
     <div>
 
-      App
+      <Events />
 
     </div>
   )
