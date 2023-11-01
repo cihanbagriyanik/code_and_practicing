@@ -15,9 +15,9 @@ import { Component } from 'react'
 
 class Counter extends Component {
 
-  constructor() {
-    super()
-    this.state = { sayac: 0 }
+  constructor(props) {
+    super(props)
+    this.state = { sayac: props.count || 0 }
   }
 
   // Fonksiyonlar
@@ -31,7 +31,8 @@ class Counter extends Component {
     this.setState({ sayac: this.state.sayac - 1 })
   }
 
-
+  //* React tarafından tanımlanan method lar default olarak class a bind edilir (bağlanır).
+  //* Bu nedenle, metodlarımızı constructor daki class a bind etmeliyiz veya automatic binding için arrow function kullanabiliriz.
   render() {
     return (
       <div className='text-center m-5'>

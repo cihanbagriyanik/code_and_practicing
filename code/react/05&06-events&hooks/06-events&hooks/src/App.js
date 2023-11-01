@@ -15,9 +15,12 @@ const App = () => {
     <div>
 
       {/* <Events />
+      
       <Hooks /> */}
 
       <Counter />
+
+      <Counter count={"osman"} />
 
     </div>
   )
