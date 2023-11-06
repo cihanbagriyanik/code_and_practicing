@@ -13,7 +13,7 @@ code {
 }
 
 
- /** DERSTE YAPTIGIMIZ
+/** DERSTE YAPTIGIMIZ
  /* -------------------------------------------------------------------------- */
 
 * {
@@ -27,3 +27,30 @@ body {
 }
 
 /*! Player Component Styling */
+
+.card-konteynir {
+  background-image: url("https://p4.wallpaperbetter.com/wallpaper/661/973/110/cool-nba-logo-wallpaper-preview.jpg");
+
+}
+
+.player-kart {
+  height: 400px;
+  /* width:280px; */
+  max-width: 280px;
+}
+
+.player-logo {
+  height: 350px;
+  transition: transform 0.8s;
+
+}
+
+.player-kart:hover .player-logo {
+  transform:scale(0.95) ;
+
+}
+
+.player-kart:hover {
+  box-shadow: 3px 3px 20px 5px rgba(0, 0, 0, 0.5);
+
+}

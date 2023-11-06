@@ -46,11 +46,14 @@ import PlayerCard from './PlayerCard'
 
 const CardContainer = () => {
   return (
-    <Container>
-      <Row>
-        {data.map((player) => (
+    <Container className='rounded-4 my-4 p-3 card-konteynir'>
+      <Row className='justify-content-center gap-3'>
+        {data.map((player, index) => (
 
-          <Col>{player.name}</Col>
+          <Col md={6} lg={4} xl={3} key={index} >
+            {/* <PlayerCard player={player} /> */}
+            <PlayerCard {...player} />
+          </Col>
 
         ))}
       </Row>
