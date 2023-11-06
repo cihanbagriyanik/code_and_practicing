@@ -38,26 +38,47 @@
 
 import React from 'react'
 
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row, Form } from 'react-bootstrap'
 
 import { data } from "../helper/data"
 import PlayerCard from './PlayerCard'
+import { useState } from 'react'
 
 
 const CardContainer = () => {
+
+  const [search, setSearch] = useState("")
+
+  //! 1.YOL
+  // let filteredDizi = data
+  // filteredDizi = filteredDizi.filter((player) => player.name.toLowerCase().includes(search.toLowerCase()))
+
+  //! 2.YOL
+  // Asagida
+  
   return (
-    <Container className='rounded-4 my-4 p-3 card-konteynir'>
-      <Row className='justify-content-center gap-3'>
-        {data.map((player, index) => (
+    <>
+      <Form.Control placeholder='Search Player...' className='w-50 m-auto' type='search'
+        onChange={(e) => setSearch(e.target.value)}
+      />
 
-          <Col md={6} lg={4} xl={3} key={index} >
-            {/* <PlayerCard player={player} /> */}
-            <PlayerCard {...player} />
-          </Col>
+      <Container className='rounded-4 my-4 p-3 card-konteynir'>
+        <Row className='justify-content-center gap-3'>
+          {/* //! 1.YOL */}
+          {/* {filteredDizi.map((player, index) => ( */}
 
-        ))}
-      </Row>
-    </Container>
+          {/* //! 2.YOL */}
+          {data.filter((player) => player.name.toLowerCase().includes(search.toLowerCase())).map((player, index) => (
+
+            <Col md={6} lg={4} xl={3} key={index} >
+              {/* <PlayerCard player={player} /> */}
+              <PlayerCard {...player} />
+            </Col>
+
+          ))}
+        </Row>
+      </Container>
+    </>
   )
 }
 
