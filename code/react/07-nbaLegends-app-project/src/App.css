@@ -1,4 +1,4 @@
-/* BENIM YAPTIGIM
+/** BENIM YAPTIGIM
 /* 
 //
 * {
@@ -47,5 +47,17 @@ body {
     width: 100%;
 }
  */
- /* DERSTE YAPTIGIMIZ
+ /** DERSTE YAPTIGIMIZ
  /* -------------------------------------------------------------------------- */
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4d467;
+}
+
+/*! Player Component Styling */
