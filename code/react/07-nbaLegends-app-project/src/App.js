@@ -26,13 +26,25 @@
 //* DERSTE YAPTIGIMIZ
 //! -------------------------------------------------------------------------- */
 
-import React from 'react'
-import "../src/App.css"
+import React from 'react';
+import {Container} from "react-bootstrap";
 
-const App  = () => {
+import "../src/App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Header from './components/Header';
+import CardContainer from './components/CardContainer';
+
+
+const App = () => {
   return (
-    <div>App</div>
-  )
-} 
+    <Container className='text-center mt-4'>
+
+      <Header />
+      <CardContainer />
+
+    </Container>
+  )  
+}
 
 export default App

@@ -38,9 +38,23 @@
 
 import React from 'react'
 
+import { Col, Container, Row } from 'react-bootstrap'
+
+import { data } from "../helper/data"
+import PlayerCard from './PlayerCard'
+
+
 const CardContainer = () => {
   return (
-    <div>CardContainer</div>
+    <Container>
+      <Row>
+        {data.map((player) => (
+
+          <Col>{player.name}</Col>
+
+        ))}
+      </Row>
+    </Container>
   )
 }
 

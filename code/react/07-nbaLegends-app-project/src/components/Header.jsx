@@ -10,7 +10,7 @@
 //                 <img className='logo' src={logo} alt="" />
 //                 <h1 className='my-3 font-monospace display-5 fw-bold' >NBA Legends</h1>
 //             </div>
-           
+
 //         </div>
 //     )
 // }
@@ -20,10 +20,19 @@
 //! -------------------------------------------------------------------------- */
 
 import React from 'react'
+import { Container, Image } from 'react-bootstrap'
+
+import logo from "../assets/nba-logo.png"
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <Container>
+
+      <Image src={logo} width="200px"/>
+
+      <h1 className='display-4 my-2 fw-bold font-monospace'>NBA Legends</h1>
+
+    </Container>
   )
 }
 
