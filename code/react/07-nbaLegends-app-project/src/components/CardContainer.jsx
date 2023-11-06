@@ -1,3 +1,4 @@
+//* BENIM YAPTIGIM
 // import React, { useState } from 'react'
 // import PlayerCard from './PlayerCard'
 
@@ -32,7 +33,7 @@
 // }
 
 // export default CardContainer
-
+//*DERSTE YAPTIGIMIZ
 //! -------------------------------------------------------------------------- */
 
 import React from 'react'

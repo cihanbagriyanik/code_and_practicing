@@ -1,5 +1,4 @@
-
-
+//* BENIM YAPTIGIM
 // import { useState } from 'react';
 // import Card from 'react-bootstrap/Card';
 // import ListGroup from 'react-bootstrap/ListGroup';
@@ -32,7 +31,7 @@
 // }
 
 // export default PlayerCard;
-
+//*DERSTE YAPTIGIMIZ
 //! -------------------------------------------------------------------------- */
 
 import React from 'react'

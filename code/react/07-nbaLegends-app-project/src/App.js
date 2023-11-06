@@ -1,3 +1,4 @@
+//* BENIM YAPTIGIM
 // import CardContainer from "./components/CardContainer"
 // import Header from "./components/Header"
 
@@ -21,6 +22,8 @@
 
 
 // export default App
+
+//* DERSTE YAPTIGIMIZ
 //! -------------------------------------------------------------------------- */
 
 import React from 'react'
