@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4d467;
+}
+
+.logo {
+    width: 200px;
+}
+
+.card-container {
+    /* background-image: url(https://p4.wallpaperbetter.com/wallpaper/661/973/110/cool-nba-logo-wallpaper-preview.jpg); */
+    background-color: #1D4289;
+    width: 90%;
+}
+
+.player-card {
+    height: 500px;
+    min-width: 300px;
+    width: 400px;
+}
+
+.cardImg {
+    width: 100%;
+    height: 450px;
+    transition: all ease-in-out 0.8s;
+    cursor: pointer;
+}
+
+.cardImg:hover {
+    scale: 0.9;
+}
+
+.sta-li {
+    border: none;
+}
+
+.cardFooter {
+    border-top: 1px solid rgb(164, 164, 164);
+    width: 100%;
+}
