@@ -1,20 +1,12 @@
-import Header from "./components/Header"
-import TodoList from "./components/TodoList"
-
+import React from 'react'
 import "./App.css"
-
+import Home from './pages/Home'
 const App = () => {
-
   return (
-    <div>
-
-      <Header />
-
-      <TodoList />
-
+    <div className="container">
+    <Home/>
     </div>
   )
 }
-
 
 export default App
