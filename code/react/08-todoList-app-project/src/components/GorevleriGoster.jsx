@@ -6,7 +6,12 @@ const GorevleriGoster = ({ gorevler, setGorevler }) => {
   // console.log(gorevler);
 
   const deleteGorev = (sil) => {
-    setGorevler(gorevler.filter((i) => i.id !== sil))
+    const yeniGorevler = gorevler.filter((i) => i.id !== sil)
+
+    setGorevler(yeniGorevler)
+
+    localStorage.setItem("todos", JSON.stringify(yeniGorevler))
+
   }
 
   return (
@@ -26,8 +31,6 @@ const GorevleriGoster = ({ gorevler, setGorevler }) => {
           </div>
         )
       })}
-
-
 
     </div>
   )

@@ -7,8 +7,12 @@ import { useState } from 'react'
 
 const Home = () => {
 
-  const [gorevler, setGorevler] = useState(Data)
+  // const [gorevler, setGorevler] = useState(Data)
   // console.log(gorevler);
+
+  const [gorevler, setGorevler] = useState(
+    JSON.parse(localStorage.getItem("todos")) || Data
+  );
 
 
   return (

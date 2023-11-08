@@ -12,8 +12,13 @@ const GorevEkle = ({ gorevler, setGorevler }) => {
     const newGorev = { id: id, text: text, day: day, isDone: false }
     setGorevler([...gorevler, newGorev])
 
+    // input alanlarını boşaltmak için, altta inputlara value veriyoruz, burada da temizliyoruz
     setText("")
     setDay("")
+
+
+    localStorage.setItem("todos", JSON.stringify([...gorevler, newGorev]))
+
 
   }
 
