@@ -1,28 +1,40 @@
 import React, { useState } from 'react'
 
-const HastaEkle = ({hastalar,setHastalar,doktorlar}) => {
-const[patientName,setName]=useState("")
-const[tarih,setTarih]=useState("")
- console.log(doktorlar);//doktorlar dizisi tek elemanlı geldi
-const handleSubmiT=(e)=>{
-  e.preventDefault(); //direk submit olayı yapmadan önce alttaki kodlara bak
-  // let yeniHasta = { id: 7, text: patientName, day: tarih, isDone: false };
-  setHastalar([
-    ...hastalar,
-    { id: hastalar.length+1, text: patientName, day: tarih, isDone: false, myDoctor: doktorlar[0].doctorName },
-  ]);
+import { v4 as uuidv4 } from 'uuid';
 
-  // submit sonrası inputlardan value temizlemek için, hem alttaki işlemler yapılır, hemde inputlarda value={isim} yazarak browser da boşluksa boşluk isimse isim gözükmesi sağlanır
+const HastaEkle = ({ hastalar, setHastalar, doktorlar, setDoktorlar, doctorClick }) => {
+  const [patientName, setName] = useState("")
+  const [tarih, setTarih] = useState("")
+  console.log(doktorlar);//doktorlar dizisi tek elemanlı geldi
+  const handleSubmiT = (e) => {
+    e.preventDefault(); //direk submit olayı yapmadan önce alttaki kodlara bak
 
-  setName("");
-  setTarih("");
-}
+    let yeniHasta = {
+      id: uuidv4(),
+      text: patientName,
+      day: tarih,
+      isDone: false,
+      dr: doktorlar[0].doctorName,
+    };
+    setHastalar([...hastalar, yeniHasta]);
+
+    // submit sonrası inputlardan value temizlemek için, hem alttaki işlemler yapılır, hemde inputlarda value={isim} yazarak browser da boşluksa boşluk isimse isim gözükmesi sağlanır
+
+    setName("");
+    setTarih("");
+  }
+
+  const yenile = () => {
+    setHastalar(hastalar)
+    setDoktorlar(doktorlar)
+
+  }
 
 
 
 
 
-console.log(hastalar);
+  // console.log(hastalar);
 
   return (
     <div>
@@ -51,6 +63,12 @@ console.log(hastalar);
           <button className="dok" type="submit">
             <span style={{ color: "#6a0707" }}>{doktorlar[0].doctorName}</span> için kayıt
             oluştur
+          </button>
+        </div>
+        <div>
+          <button className="dok" type="button"
+            onClick={yenile}>
+            Ana Sayfa
           </button>
         </div>
       </form>

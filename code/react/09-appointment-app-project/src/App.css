@@ -5,21 +5,25 @@
   margin: 0;
   padding: 0;
 }
+
 h1 {
   color: #ed5252;
   font-weight: 900;
   margin-bottom: 30px;
 }
+
 body {
   font-family: "Poppins", sans-serif;
 
   background-image: url("https://wallpapers.com/images/hd/white-old-paper-with-dark-stains-tlxzuvap31mxywve-tlxzuvap31mxywve.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  
 }
+
 .container {
   background-image: url("https://wallpapers.com/images/hd/blank-crumpled-paper-ce2xfk1vk85mutcp-ce2xfk1vk85mutcp.webp");
-
+  
   margin: 3rem auto;
   max-width: 950px;
   padding: 2rem;
@@ -31,12 +35,13 @@ body {
   text-align: center;
   margin: 1rem;
 }
+
 /* doktor resimleri  */
 .btn {
   border: none;
   cursor: pointer;
- 
-/* outline: none; */
+
+  /* outline: none; */
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -46,7 +51,7 @@ body {
 .dok {
   color: #fff;
 
-   text-transform: uppercase;
+  text-transform: uppercase;
   font-weight: 700;
   font-size: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -76,7 +81,13 @@ body {
 }
 
 /*! data daki bittiMi kısmı false iken görünecek stil */
+
+.hastalar{
+  margin-top: 5.5rem;
+  margin-left: 2rem;
+}
 .falseBitmediStil {
+  
   display: flex;
   justify-content: space-between;
 
@@ -88,12 +99,15 @@ body {
   padding: 10px 40px;
   cursor: pointer;
 }
+
 .falseBitmediStil h2 {
   color: green;
 }
+
 .falseBitmediStil h3 {
   color: #152bbb;
 }
+
 /*! data daki bittiMi kısmı true iken görünecek stil */
 .trueBittiStil {
   display: flex;
@@ -108,11 +122,13 @@ body {
   text-decoration: line-through;
   color: blue;
 }
-.btn + h4 {
+
+.btn+h4 {
   padding: 10px 20px;
-/* btn className li img den sonraki h4 */
-  
+  /* btn className li img den sonraki h4 */
+
 }
+
 /* ilk sayfadaki 4 doktor resmi */
 .dr {
   display: flex;

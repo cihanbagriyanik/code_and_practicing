@@ -5,22 +5,22 @@ import { doctorData, hastaData } from "../helper/Data";
 const Home = () => {
   const [hastalar, setHastalar] = useState(hastaData);
   const [doktorlar, setDoktorlar] = useState(doctorData);
-const [tikla,setTikla]=useState(true)
+  const [tikla, setTikla] = useState(true)
 
 
-const doctorClick=(abc)=>{
-//tıkla yı değiştir
-setTikla(!tikla)
+  const doctorClick = (abc) => {
+    //tıkla yı değiştir
+    setTikla(!tikla)
 
-//doktorlar dizisini tıklanan doktorla güncelle
-setDoktorlar(tikla ? doktorlar.filter((i)=>i.id===abc):doctorData)
+    //doktorlar dizisini tıklanan doktorla güncelle
+    setDoktorlar(tikla ? doktorlar.filter((i) => i.id === abc) : doctorData)
 
-}
+  }
   return (
     <div style={{ display: tikla ? "block" : "flex" }}>
       <div>
         <header className="header">
-          <h1>HOSPITAL</h1>
+          <h1>HOSPITAL APPOINTMENT</h1>
 
           <div className="dr">
             {doktorlar.map((dr) => (
@@ -50,8 +50,10 @@ setDoktorlar(tikla ? doktorlar.filter((i)=>i.id===abc):doctorData)
 
         {!tikla && (
           <HastaEkle
+            setTikla={setTikla}
             hastalar={hastalar}
             setHastalar={setHastalar}
+            setDoktorlar={setDoktorlar}
             doktorlar={doktorlar}
           />
         )}

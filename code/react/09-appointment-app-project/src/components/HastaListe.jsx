@@ -2,16 +2,16 @@ import React from "react";
 import { FaTimesCircle } from "react-icons/fa";
 const HastaListe = ({ hastalar, setHastalar,doktorlar }) => {
   return (
-    <div>
+    <div className="hastalar">
       {/* doktorlar dizisi 4 elemanlıysa bütün hastalar basılır, doktor dizisi tek elemanlı olduğunda ise o doktorun ismiyle doktoru eşleşen hastalar basılır */}
       {hastalar.map((patient) => (
-        <div key={patient.id}>
+        <div  key={patient.id}>
           {doktorlar.map(
             (a) =>
               a.doctorName === patient.myDoctor && (
                 <div
                   key={a.id}
-                  className={
+                  className={ 
                     patient.isDone ? "trueBittiStil" : "falseBitmediStil"
                   }
                   onDoubleClick={() =>
