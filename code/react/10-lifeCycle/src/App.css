@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
- 
-.container{
- font-family: "Press Start 2P";
-  color: black;
-  background-color: #369582;
-  font-size:60px;
- }
-  h5{color:rgb(195, 81, 81)}
- h6{
-    color:purple;
-   
- }
+
+.container {
+   font-family: "Press Start 2P";
+   color: black;
+   background-color: #369582;
+   font-size: 60px;
+}
+
+h5 {
+   color: rgb(195, 81, 81)
+}
+
+h6 {
+   color: purple;
+
+}
