@@ -13,7 +13,7 @@ const BilgiList = ({ tutorial, getTutorialS }) => {
 
   //!backend kodunu yazan developer ların hangi endpointleri seçtiği önemli, burada id nin sonuna / getirmişler, ama sondaki / i eksik yazarsanız hata almazsanız, çünkü otomatik tamamlanır
   const deleteBilgi = async (id) => {
-    await axios.delete(`${BASE_URL}  ${id}`)
+    await axios.delete(`${BASE_URL}  ${id}/`)
 
     getTutorialS()
   }
