@@ -6,16 +6,16 @@ const AddBilgi = ({ postBilgi }) => {
   const [desc, setDesc] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     //backend e yolla
     // axios.post(url,{title:title,description:desc}) //! Bu islem sadece bpest practice icin babada yapilir asagidaki gibi buraya gonderilir
 
-    postBilgi({ title: title, description: desc })
+    postBilgi({ title: title, description: desc });
 
-    setTitle("")
-    setDesc("")
-  }
+    setTitle("");
+    setDesc("");
+  };
 
   return (
     <div className="container text-center mt-4">
