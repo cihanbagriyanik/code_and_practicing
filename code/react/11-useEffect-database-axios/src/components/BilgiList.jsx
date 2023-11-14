@@ -1,11 +1,23 @@
+import axios from 'axios';
 import React from 'react'
 import { AiFillDelete } from "react-icons/ai"
 import { FaEdit } from "react-icons/fa"
 
 
 
-const BilgiList = ({ tutorial }) => {
+const BilgiList = ({ tutorial, getTutorialS }) => {
   // console.log(tutorial);
+  const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
+
+
+
+  //!backend kodunu yazan developer ların hangi endpointleri seçtiği önemli, burada id nin sonuna / getirmişler, ama sondaki / i eksik yazarsanız hata almazsanız, çünkü otomatik tamamlanır
+  const deleteBilgi = async (id) => {
+    await axios.delete(`${BASE_URL}  ${id}`)
+
+    getTutorialS()
+  }
+
 
 
   return (
@@ -31,6 +43,7 @@ const BilgiList = ({ tutorial }) => {
                     type="button"
                     size={22}
                     className="text-danger cursor-pointer"
+                    onClick={() => deleteBilgi(id)}
                   />
 
                   <FaEdit
