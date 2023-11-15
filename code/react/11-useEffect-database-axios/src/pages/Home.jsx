@@ -18,8 +18,9 @@ const Home = () => {
   };
 
   //!then zinciriyle de yazabilirsiniz
-  // useEffect(()=>{
-  // axios.get(url).then((res) => setBilgiler(res.data))},[])
+  // useEffect(() => {
+  //   axios.get(url).then((res) => setBilgiler(res.data));
+  // }, []);
   // console.log(bilgiler);
 
   useEffect(() => {
@@ -28,31 +29,25 @@ const Home = () => {
 
   // console.log(tutorial);
 
-
-
   //!POST İşlemi
   const postBilgi = async (veri) => {
     await axios.post(BASE_URL, veri);
 
-    getTutorialS()
-  }
+    getTutorialS();
+  };
 
-
-
+  //! Bu sefet farklilik olsun die silme islemi ni cocukta yaptik fakat best practice burda babada olmasidir cunku url yi gondermek iyi degil
   // const deleteBilgi = async (id) => {
   //   await axios.delete(BASE_URL / id)
   // }
 
+  return (
+    <>
+      <AddBilgi postBilgi={postBilgi} />
 
-
-  return <>
-
-    <AddBilgi postBilgi={postBilgi} />
-
-    <BilgiList tutorial={tutorial} getTutorialS={getTutorialS} />
-
-  </>
-
+      <BilgiList tutorial={tutorial} getTutorialS={getTutorialS} />
+    </>
+  );
 };
 
 export default Home;

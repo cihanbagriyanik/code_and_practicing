@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import EditBilgi from "./EditBilgi";
 
 const AddBilgi = ({ postBilgi }) => {
   const [title, setTitle] = useState("");
@@ -9,7 +10,7 @@ const AddBilgi = ({ postBilgi }) => {
     e.preventDefault();
 
     //backend e yolla
-    // axios.post(url,{title:title,description:desc}) //! Bu islem sadece bpest practice icin babada yapilir asagidaki gibi buraya gonderilir
+    // axios.post(url,{title:title,description:desc}) //! Bu islem sadece best practice icin babada(Home) yapilir asagidaki gibi buraya gonderilir
 
     postBilgi({ title: title, description: desc });
 
@@ -20,7 +21,6 @@ const AddBilgi = ({ postBilgi }) => {
   return (
     <div className="container text-center mt-4">
       <h1 className="text-danger display-6">Add Your Tutorial</h1>
-
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
@@ -55,6 +55,7 @@ const AddBilgi = ({ postBilgi }) => {
           Submit
         </button>
       </form>
+      <EditBilgi /> {/*****************/}
     </div>
   );
 };
