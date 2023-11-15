@@ -55,7 +55,6 @@ const AddBilgi = ({ postBilgi }) => {
           Submit
         </button>
       </form>
-      <EditBilgi /> {/*****************/}
     </div>
   );
 };
