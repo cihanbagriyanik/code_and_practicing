@@ -12,7 +12,6 @@ const Home = () => {
   //! GET işlemi
   const getTutorialS = async () => {
     const veri = await axios.get(BASE_URL);
-
     // console.log(veri.data);
     setTutorial(veri.data);
   };
