@@ -1,9 +1,0 @@
-@mixin myBox($backColor, $color) {
-    background-color: $backColor;
-    color: $color;
-    width: 25%;
-    height: 15rem;
-    border: $myBorder;
-    border-radius: 5px;
-  }
-  
