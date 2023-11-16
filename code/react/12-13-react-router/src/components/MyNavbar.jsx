@@ -19,7 +19,7 @@ const MyNavbar = () => {
               className="nav-link"
               to="/"
               style={({ isActive }) => ({
-                backgroundColor: isActive && "red" ,
+                backgroundColor: isActive ? "red"  : "",
               })}
             >
               Home

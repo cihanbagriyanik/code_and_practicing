@@ -11,7 +11,7 @@ const CourseCard = () => {
   //!alttaki ilk return react ın ekrana bastırılan kısmı
   return (
     <Container>
-      <Row className="g-3 text-center ">
+      <Row className="g-3 text-center mt-4">
         {data.map(({ img, text, name, id }) => {
           //!arrow (map) süslü kullandığında return ister.reactta süslü koymayabilirsiniz, o zaman returne de ihtiyaç olmaz
           //?database den çekilen veriler ekrana bastırılırken, en dış div unique bir veri ister bunu da key={id} şeklinde yazarız. id olmak zorunda değil unique herhangi bir property olabilir, mesela img

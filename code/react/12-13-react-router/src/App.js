@@ -18,15 +18,16 @@ const App = () => {
       {/* "/" (ana yol) tüm yollara dahil edilmiştir, bu nedenle onu "/" ile
       başlayan diğer yollardan ayırt etmek için exact anahtar kelimesine sahip
       olması gerekir . */}
+
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/teacher" element={<Teacher />} />
         <Route path="/courses" element={<CourseCard />} />
         <Route path="/courses/:namE" element={<CardDetails />} />
 
-
         <Route path="/contact" element={<ContactForm />} />
       </Routes>
+
       <Footer />
     </Router>
   );
