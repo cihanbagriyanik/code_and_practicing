@@ -1,0 +1,172 @@
+body {
+    background-color: black;
+    color: white;
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    background-color: rgb(255, 0, 120);
+}
+
+#button{
+    text-decoration: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(255, 0, 120);
+    width: 7rem;
+    height: 1.3rem;
+    border: 2px solid rgb(255, 0, 120);
+    border-radius: 20px;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 3px;
+    font-size: xx-small;
+    padding-top: 9px;
+    margin: 4rem auto;
+
+ 
+}
+
+#button:hover{
+    background-color: white;
+    color: rgb(255, 0, 120);
+    border: 2px solid rgb(255, 0, 120);
+    cursor:default;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.p2:hover{
+    color: rgb(255, 0, 120);
+    text-decoration: underline rgb(255, 0, 120);
+    /* cursor: pointer; */
+    font-size: 2em;
+}
+
+ul {
+    display: inline;
+}
+
+li {
+    display: inline;
+    padding: 10px;
+}
+
+.topfont{
+   font-family: 'Rubik Beastly', cursive; 
+   font-variant: small-caps;
+   font-size: 1.3rem;
+   
+
+}
+
+nav{
+    padding: 0.5rem 0rem;
+}
+
+.img {
+
+    background-image: url(./img/background.jpg);
+    width: auto;
+    height: 35rem;
+    background-size: cover;
+    padding-top: 1.5rem;
+}
+
+.imgbox {
+    text-align: center;
+    display: block;
+}
+
+.p2{
+    line-height: 3rem;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5rem;
+}
+
+.p3{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.newRelease {
+    padding-top: 10rem;
+    padding-bottom: 1.2rem;
+    letter-spacing: 5px;
+    font-variant:small-caps;
+    text-transform: capitalize;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    border-bottom: 2px solid rgb(255, 0, 120);
+    width: 150px;
+    margin: auto;
+    
+
+}
+
+.altP {
+    display: inline-block;
+    height: 70px;
+    width: 300px;
+    text-align: center;
+    padding: 30px;
+
+    display: flex;
+    align-content: center
+}
+
+.icon1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(255, 0, 120);
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.icon2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(246, 240, 51);
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.icon3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    background-color: rgb(126, 210, 41);
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 2rem;
+}

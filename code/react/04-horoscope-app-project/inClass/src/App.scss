@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Noto+Sans:ital@1&display=swap');
+
+@import "../src/scss/mixins";
+@import "../src/scss/reset";
+@import "../src/scss/variables";
+
+body {
+    font-family: 'Concert One', sans-serif;
+}
+
+p {
+    font-family: 'Noto Sans', sans-serif;
+}

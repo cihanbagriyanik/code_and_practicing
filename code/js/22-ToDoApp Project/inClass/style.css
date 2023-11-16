@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(#a514df, #d43bc0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 60vw;
+    height: 80vh;
+    border-radius: 50px;
+    box-shadow: 2px 2px 20px rgba(34, 24, 24, 0.911);
+    background-color: rgb(234, 193, 253);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    font-size: 3rem;
+    color: rgb(41, 41, 41);
+    text-shadow: 3px 5px 10px black;
+    text-align: center;
+    padding: 1rem;
+}
+
+.todo-add {
+    width: 80%;
+    display: flex;
+    margin-top: 2rem;
+}
+
+#todo-input {
+    height: 3rem;
+    width: 80%;
+    margin-right: 10px;
+    border-color: #fff;
+    border-radius: 10px;
+    outline: none;
+    padding: 10px;
+}
+
+#todo-button {
+    height: 3rem;
+    width: 20%;
+    background-color: #5d20bf;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#todo-button:hover {
+    opacity: 0.3;
+}
+
+.todos {
+    width: 80%;
+    margin-top: 2rem;
+    overflow: auto;
+}
+
+.todos ul {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+ul li {
+    color: rgb(41, 41, 41);
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul li {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+ul li:nth-child(even) {
+    background: #dde6f5;
+}
+
+li i {
+    padding: 1rem;
+    color: #ea0a0a;
+    cursor: pointer;
+}
+
+li i:hover {
+    opacity: 0.3;
+}
+
+
+
+/*! buradan sonraki kodlarla ilgili açıklamayı yarın yapacağım :) */
+/* li checked class ı varsa .fa-check e olacaklar altta yazıyor*/
+li.checked>.fa-check {
+    color: #00e676;
+}
+
+li p {
+    flex: 1;
+    /* diğer kardeşlerim cürmü kadar yer alsın, parentta geri kalan bütün yer benim olsun */
+
+    font-size: 1.3rem;
+    padding: 5px;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+/* li checked class ı varsa p ye olacaklar altta yazıyor*/
+li.checked>p {
+    color: rgb(41, 41, 41);
+    text-decoration: line-through;
+    font-weight: normal;
+}

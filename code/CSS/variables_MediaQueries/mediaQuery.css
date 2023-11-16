@@ -1,0 +1,143 @@
+@import "./mediaQueryTheme.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    font-family: var(--ff-roboto);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    /* background-color: var(--grey-7); */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 200px;
+}
+
+button {
+    border: 2px solid var(--red-dark);
+    padding: var(--fs-md) 1.2rem;
+    border-radius: 5px;
+    box-shadow: var(--shadow-dark);
+    margin: 1rem .5rem;
+    font-family: var(--ff-yeon);
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(0.96);
+}
+
+.btn-dark {
+    background-color: var(--red-dark);
+    color: var(--white);
+}
+
+.btn-light {
+    color: var(--red-dark)
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hero img {
+    width: 100%;
+}
+
+.hero section {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: var(--fs-lg);
+    text-align: justify;
+    line-height: var(--line-h-xl);
+}
+
+.hero p {
+    font-size: var(--fs-lg);
+    text-align: justify;
+    line-height: var(--line-h-lg);
+
+}
+
+main .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow-light);
+    padding: 1rem;
+}
+
+main .card img {
+    width: 100%;
+
+}
+
+main .card article {
+    flex: 1;
+    line-height: var(--line-h-xl);
+}
+
+
+
+@media screen and (max-width:700px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero p {
+        font-size: var(--fs-lg);
+    }
+
+    .hero img {
+        width: 70%;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    body {
+        background-color: var(--grey-9);
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    body {
+        background-color: var(--green-light);
+    }
+
+    header img {
+        width: 300px;
+    }
+}

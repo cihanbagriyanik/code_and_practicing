@@ -1,0 +1,61 @@
+body{
+    height: 100vh;
+    /* display: flex;
+    align-items: center; */
+    /* background-color: #4158D0;
+    background-image: linear-gradient(160deg, #0093e9, #80D0c7, 100% ); */
+
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+}
+
+.container{
+    border: 3px solid red;
+    width: 20rem;
+    height: 20rem;
+    overflow: auto;
+    margin: auto;
+    padding: 10px;
+
+    
+    /* background-size: contain;
+    background-size: auto; */
+
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.371), rgba(0, 0, 0, 0.406));
+    background-image: url(./img/resim-2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.container::-webkit-scrollbar{
+    /* visibility: hidden; */
+    display: none;
+}
+
+.paragraf{
+    text-align: justify;
+    color: rgb(248, 193, 40);
+    text-shadow: 5px 5px 10px yellow;
+}
+
+img{
+    width: 20%;
+}
+
+#img1,
+#img2,
+#img3,
+#img4{
+    opacity: 0.7;
+}
+
+#img1:hover,
+#img2:hover,
+#img3:hover,
+#img4:hover{
+    opacity: 1;
+    transition: all ease-in-out 400ms;
+}
+

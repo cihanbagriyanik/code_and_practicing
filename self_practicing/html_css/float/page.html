@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Float</title>
+</head>
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    body{
+        height: 60rem;
+        width: 30rem;
+        border: 10 solid rgb(218, 112, 112);
+    }
+
+    header{
+        background-color: red;
+        height: 3rem ;
+
+        /* opacity: 0.5; */
+    }
+    header div{
+        text-align: center;
+        padding:1rem;
+        color: white;
+    }
+    nav{
+        background-color: rgb(94, 107, 229);
+        height: 1.5rem;
+
+        /* opacity: 0.5; */
+    }
+    nav div{
+        text-align: center;
+        padding:3px;
+        color: rgb(0, 0, 0);
+
+    }
+    aside{
+        background-color: yellow;
+        height: 15rem;
+        width: 8rem;
+        float:left;
+
+        /* opacity: 0.5; */
+    }
+
+    aside div{
+        text-align: center;
+        margin-top: 6rem;
+    }
+
+    main{
+        background-color: gainsboro;
+        height: 15rem;
+        width: 22rem;
+        float: left;
+
+        /* opacity: 0.5; */
+    }
+    main div {
+        text-align: center;
+        margin-top: 5px;
+    }
+    footer{
+        background-color: gray;
+        height:4rem;
+        color: black;
+
+        /* opacity: 0.4; */
+    }
+
+    footer div{
+        text-align: center;
+        padding: 23px;
+        margin-top: 15rem;
+    }
+
+    .clearfix1{
+        overflow: auto;
+    }
+    .clearfix{
+        overflow: auto;
+    }
+    div{
+        margin: 2px;
+    }
+
+
+</style>
+
+<body>
+
+    <header>
+        <div class="clearfix">
+            <p>HEADER: Baslik bolumu</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="clearfix">
+            <p>NAV: Menu bolumu</p>
+        </div>
+    </nav>
+
+    <aside>
+        <div class="clearfix">
+            <p>ASIDE: sol ya da sagdaki bolum</p>
+        </div>
+    </aside>
+
+    <main>
+        <div class="clearfix">
+            <p>MAIN: Ana icerik</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="clearfix1">
+            <p>FOOTER: Sayfanin son bolumu</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

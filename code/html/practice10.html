@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice 10</title>
+
+    <style>
+
+        #kutu{
+           float:right;
+        }
+
+        /* label{
+            display: inline-block;
+            width: 150px;
+        } */
+
+    </style>
+</head>
+
+<!-- Bir form oluşturabilmek için öncelikle form etiketi ile başlanır. Form içinde kullanıcı adı,şifre gibi bilgileri yazı ile yazmak için label etiketi kullanılır. Form içinde en fazla kullanılan etiketlerden biri input etiketidir.İnput ile text,password,number,email,tel,date radio,checkbox özellikleri kullanılabilir.-->
+
+<body>
+
+    <form action="formResult.html" style="border: 1px solid black; padding-left: 5px; padding-top: 5px; padding-right: 50px; padding-bottom: 20px; position:fixed;">
+        <div> 
+            <label>USERNAME: </label>
+            <input id="kutu" type="text" name="username" placeholder="En fazla 8 karakter giriniz">
+        </div>
+    
+        <br>
+
+        <div>
+            <label for="">PASSWORD: </label>
+            <input id="kutu" type="password" step="" name="password"> 
+        </div>
+        
+        <br>
+
+        <div>
+            <label for="guvemnlikKodu">SECURITY CODE: </label>
+            <input id="kutu" type="number" name="security code"> 
+        </div>
+        
+        <br>
+
+        <div>
+            <input type="submit" value="SAVE">
+            <input type="reset" value="RESET"> 
+        </div>
+      
+
+    </form>    
+    
+</body>
+</html>

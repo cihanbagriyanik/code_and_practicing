@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        button {
+            background-color: rgb(79, 79, 79);
+            color: white;
+            cursor: pointer;
+            width: 5rem;
+            height: 2rem;
+            margin: 3rem;
+        }
+        .menu {
+            position: fixed;
+            top: 72px;
+            left: 56px;
+            display: none;
+            list-style-position:outside;
+
+        }
+        /* .container {
+            position: relative;
+        } */
+        .container:hover .menu {
+            display: block;
+            border: 1px solid black;
+            
+        }
+        /* li{
+            list-style-position:outside;
+        } */
+</style>
+
+</head>
+<body>
+
+    <div class="container">
+        <button>Urunler</button>
+        <ul class="menu">
+            <li> Notebook </li>
+            <li> Klavye </li>
+            <li> Fare </li>
+            <li> Monitor </li>
+        </ul>
+    </div>
+
+</body>
+</html>

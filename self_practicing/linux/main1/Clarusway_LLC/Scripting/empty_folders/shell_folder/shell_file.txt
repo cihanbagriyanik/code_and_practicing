@@ -1,0 +1,2 @@
+I love linux
+script ran successfully

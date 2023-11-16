@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+}
+
+ul {
+    background-color: rgb(213, 213, 87);
+    padding: 1rem;
+    list-style-type: none;
+    /* height: 50vh; */
+
+
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+
+
+    /*? gap, flex icerisindeki elemanlarin dikey ve yatay bosluklarini belirlemek icin kullanilabilir.
+    //*? ilk yazilan yatay (satilar arasi) bosluk, 2. yazilan ise dikey (sutunlar arasi) bosluktur */
+    gap: 1rem 0.5rem;
+
+    /*! Elemanların dizilis yonu : column, row, row-reverse, column-reverse*/
+    flex-direction: row;
+
+    /*? sikistirma veya alt satira gecebilme:flex-wrap: wrap, nowrap, wrap-reverse*/
+    flex-wrap: wrap;
+
+    text-align: center;
+
+
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+li {
+    background-color: fuchsia;
+    width: 6rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+
+
+/* ***************************************** */
+
+
+.container {
+    background-color: orange;
+    padding: 1rem 0;
+    margin-top: 50px;
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+
+.box1 {
+    background-color: magenta;
+    width: 100px;
+    height: 50px;
+    flex: 1;
+}
+
+.box2 {
+    background-color: blue;
+    width: 100px;
+    height: 50px;
+    flex-basis: 50%;
+    flex: 4;
+}
+
+.box3 {
+    background-color: olive;
+    width: 100px;
+    height: 50px;
+    flex: 1;
+}
+
+/* ********************************************* */
+
+.container1 {
+    margin-top: 50px;
+    background-color: bisque;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.container1 * {
+    background-color: crimson;
+    margin-bottom: .5rem;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+.container1 header {
+    width: 100%;
+}
+
+.container1 .right {
+    width: 20%;
+}
+
+.container1 .left {
+    width: 20%;
+}
+
+.container1 main {
+    width: 50%;
+}
+
+.container1 footer {
+    width: 100%;
+}
+
+/* ********************************************* */
+
+.container2 {
+    margin-top: 50px;
+    background-color: bisque;
+    padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem 1rem;
+
+}
+
+.container2 * {
+    background-color: olive;
+    margin-bottom: .5rem;
+    padding: 1rem;
+    text-align: center;
+
+}
+
+.container2 header {
+    width: 100%;
+
+}
+
+.container2 .right {
+    flex: 1;
+
+}
+
+.container2 .left {
+    flex: 1;
+}
+
+.container2 main {
+    background-color: fuchsia;
+    flex: 3;
+}
+
+.container2 footer {
+    width: 100%;
+
+}
