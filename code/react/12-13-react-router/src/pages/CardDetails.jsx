@@ -11,7 +11,7 @@ const CardDetails = () => {
       {data.map(
         (i) =>
           i.name === namE && (
-            <div className="text-center mt-4">
+            <div className="text-center mt-4" key={i.id}>
               <h3>{i.text}</h3>
               <img src={i.img} width={300} alt="" />
             </div>
