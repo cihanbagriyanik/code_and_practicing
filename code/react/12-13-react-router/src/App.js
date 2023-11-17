@@ -11,6 +11,7 @@ import CardDetails from "./pages/CardDetails";
 import TeacherDetails from "./pages/TeacherDetails";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/courses/:namE" element={<CardDetails />} />
 
         <Route path="/contact" element={<ContactForm />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
