@@ -49,7 +49,7 @@ const About = () => {
               <div className="buttons">
                 <button className="btn btn-outline-primary px-4">
                   <a
-                    className="text-decoration-none text-black "
+                    className="buttonA text-decoration-none text-black "
                     href="https://github.com/anthonyharold67"
                     target="true">
                     Message
