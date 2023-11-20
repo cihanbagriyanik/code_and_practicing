@@ -25,7 +25,7 @@ const CardTotal = () => {
         <tr className="text-end">
           <th className="text-start">Shipping</th>
           <td>
-            $<span className="shipping"></span>
+            $<span className="shipping">{shipping}</span>
           </td>
         </tr>
         <tr className="text-end">

@@ -4,14 +4,14 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-md bg-secondary bg-opacity-75 bg-body-tertiary">
+      <nav className="navbar navbar-expand-md bg-secondary bg-opacity-75 bg-body-tertiary">
         <div className="container-fluid">
-          <span class=" navbar-brand text-white">
+          <span className=" navbar-brand text-white">
             {/* <a className="nav-link" href="/">Shopping Cart</a> */}
             Shopping Cart
           </span>
           <button
-            class="navbar-toggler collapsed"
+            className="navbar-toggler collapsed"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -19,7 +19,7 @@ const Navbar = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div
             className="navbar-collapse text-end w-full collapse"
