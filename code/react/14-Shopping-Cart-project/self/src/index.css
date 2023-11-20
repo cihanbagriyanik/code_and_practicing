@@ -15,35 +15,31 @@ body {
   background-size: 100% 100%;
   min-height: calc(100vh - 60px);
   position: relative;
+  > div {
+    text-align: center;
+    color: white;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    .main-buttons {
+      margin-top: 1.5rem;
+    }
+  }
 }
-
-.mainDiv {
-  text-align: center;
-  color: white;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, 0%);
-}
-
-.main-buttons {
-  margin-top: 1.5rem;
-}
-
 .nav-link {
   color: white !important;
+  &:hover {
+    color: red !important;
+  }
 }
-
-.nav-link:hover {
-  color: red !important;
-}
-
 .active {
   text-decoration: underline !important;
 }
 
 .card {
   border: none;
+
   position: relative;
   overflow: hidden;
   border-radius: 8px;
@@ -120,10 +116,9 @@ body {
   border: 1px solid #135058 !important;
   height: 40px;
   background-color: #135058;
-}
-
-.buttonA {
-  color: #fff !important;
+  & a {
+    color: #fff !important;
+  }
 }
 
 .buttons button:nth-child(2) {

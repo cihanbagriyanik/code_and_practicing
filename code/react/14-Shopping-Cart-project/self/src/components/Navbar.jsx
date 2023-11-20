@@ -7,7 +7,8 @@ const Navbar = () => {
       <nav class="navbar navbar-expand-md bg-secondary bg-opacity-75 bg-body-tertiary">
         <div className="container-fluid">
           <span class=" navbar-brand text-white">
-            <a className="nav-link" href="/">Shopping Cart</a>
+            {/* <a className="nav-link" href="/">Shopping Cart</a> */}
+            Shopping Cart
           </span>
           <button
             class="navbar-toggler collapsed"
