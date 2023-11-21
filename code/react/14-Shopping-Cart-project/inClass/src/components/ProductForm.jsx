@@ -1,13 +1,25 @@
+
+
 const ProductForm = () => {
+  
+
   return (
-    <article id="add-product" className="mb-4 mt-4">
-      <h1 className="text-center">Product</h1>
-      <form className="p-2">
+    <article
+      id="add-product"
+      className="mb-4 mt-4 col col-lg-6 mx-auto border rounded-2 bg-opacity-50 bg-light">
+      <h1 className="text-center"> Product</h1>
+      <form className="p-2" >
         <div className="mb-3">
           <label htmlFor="add-name" className="form-label">
             Product Name
           </label>
-          <input type="text" className="form-control" id="add-name" required />
+          <input
+            type="text"
+            className="form-control"
+            name="name"
+            value=""
+            required
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="add-price" className="form-label">
@@ -16,7 +28,8 @@ const ProductForm = () => {
           <input
             type="number"
             className="form-control"
-            id="add-price"
+            name="price"
+            value=""
             required
           />
         </div>
@@ -27,7 +40,8 @@ const ProductForm = () => {
           <input
             type="number"
             className="form-control"
-            id="add-quantity"
+            name="amount"
+            value=""
             required
           />
         </div>
@@ -41,14 +55,15 @@ const ProductForm = () => {
           <input
             type="url"
             className="form-control"
-            id="add-image"
+            name="image"
+            value=""
             aria-describedby="basic-addon3"
             required
           />
         </div>
         <div className="text-center">
           <button type="submit" className="add-to-cart btn btn-success btn-sm">
-            <i className="fa-solid fa-cart-plus me-2"></i>Save To Product
+            <i className="fa-solid fa-cart-plus me-2"></i>Save To  Product
           </button>
         </div>
       </form>
