@@ -1,14 +1,11 @@
-
-
-const ProductForm = () => {
-  
-
+const ProductForm = ({ handleSubmit, formData, setFormData }) => {
   return (
     <article
       id="add-product"
-      className="mb-4 mt-4 col col-lg-6 mx-auto border rounded-2 bg-opacity-50 bg-light">
+      className="mb-4 mt-4 col col-lg-6 mx-auto border rounded-2 bg-opacity-50 bg-light"
+    >
       <h1 className="text-center"> Product</h1>
-      <form className="p-2" >
+      <form className="p-2" onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="add-name" className="form-label">
             Product Name
@@ -17,7 +14,8 @@ const ProductForm = () => {
             type="text"
             className="form-control"
             name="name"
-            value=""
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
           />
         </div>
@@ -29,7 +27,10 @@ const ProductForm = () => {
             type="number"
             className="form-control"
             name="price"
-            value=""
+            value={formData.price}
+            onChange={(e) =>
+              setFormData({ ...formData, price: e.target.value })
+            }
             required
           />
         </div>
@@ -41,7 +42,10 @@ const ProductForm = () => {
             type="number"
             className="form-control"
             name="amount"
-            value=""
+            value={formData.amount}
+            onChange={(e) =>
+              setFormData({ ...formData, amount: e.target.value })
+            }
             required
           />
         </div>
@@ -56,14 +60,17 @@ const ProductForm = () => {
             type="url"
             className="form-control"
             name="image"
-            value=""
+            value={formData.image}
             aria-describedby="basic-addon3"
+            onChange={(e) =>
+              setFormData({ ...formData, image: e.target.value })
+            }
             required
           />
         </div>
         <div className="text-center">
           <button type="submit" className="add-to-cart btn btn-success btn-sm">
-            <i className="fa-solid fa-cart-plus me-2"></i>Save To  Product
+            <i className="fa-solid fa-cart-plus me-2"></i>Save To Product
           </button>
         </div>
       </form>
