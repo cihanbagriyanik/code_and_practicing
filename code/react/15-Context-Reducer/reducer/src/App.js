@@ -1,10 +1,13 @@
-
-
+import UseReducerExamples from "./UseReducerExamples";
+import UseStateExamples from "./UseStateExamples"
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div>
+      {/* <UseStateExamples /> */}
+      <UseReducerExamples />
+    </div>
+  );
+};
 
-export default App
+export default App;
