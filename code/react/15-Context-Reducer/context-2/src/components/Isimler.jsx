@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { KullaniciContext } from "../App";
+import AnaUser from "./AnaUser";
 
 const Isimler = () => {
-  return (
-    <div>Isimler</div>
-  )
-}
+  const { users } = useContext(KullaniciContext);
 
-export default Isimler
+  return (
+    <div>
+      {/* diziden 4 kisinin ismini bastir */}
+      {users.slice(0, 4).map((i) => (
+        <div style={{ textAlign: "center", background: "pink" }} key={i.id}>
+          {" "}
+          {i.login}{" "}
+        </div>
+      ))}
+      <AnaUser users={users} />
+    </div>
+  );
+};
+
+export default Isimler;

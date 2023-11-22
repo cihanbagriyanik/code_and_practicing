@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import Baslik from "../components/Baslik";
+import Isimler from "../components/Isimler";
 
 const GosterUsers = () => {
   return (
-    <div>GosterUsers</div>
-  )
-}
+    <div>
+      <h2>GosterUsers Sayfasi</h2>
 
-export default GosterUsers
+      <Baslik />
+      <Isimler />
+    </div>
+  );
+};
+
+export default GosterUsers;

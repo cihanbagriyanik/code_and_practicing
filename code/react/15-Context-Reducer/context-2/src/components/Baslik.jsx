@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Baslik = () => {
   return (
-    <div>Baslik</div>
-  )
-}
+    <div>
+      <h1> INSANLARIN ISIMLERI </h1>
+    </div>
+  );
+};
 
-export default Baslik
+export default Baslik;
