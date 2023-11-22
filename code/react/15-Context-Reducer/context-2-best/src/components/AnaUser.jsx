@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import { KullaniciContext } from "../App";
+
+import { useKullaniciContext } from "../context/KullaniciProvider";
 
 const AnaUser = ({ users }) => {
-  const { changeWidth } = useContext(KullaniciContext);
+  const { changeWidth } = useKullaniciContext();
 
   return (
     <div>

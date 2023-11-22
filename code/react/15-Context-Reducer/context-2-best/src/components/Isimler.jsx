@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import { KullaniciContext } from "../App";
+
 import AnaUser from "./AnaUser";
+import { useKullaniciContext } from "../context/KullaniciProvider";
 
 const Isimler = () => {
-  const { users } = useContext(KullaniciContext);
+  const { users } = useKullaniciContext();
 
   return (
     <div>
