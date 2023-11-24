@@ -2,26 +2,28 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { NavLink } from "react-router-dom";
+import { MenuLink, Logo, MyNavbar, Span } from "./style";
 
 const myNavbar = () => {
   return (
-    <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
-          <Navbar.Brand href="/">{"< Cihan / > Recipe"}</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <NavLink to="/">Home</NavLink>
-              <NavLink to="/about">About</NavLink>
-              <NavLink to="/login">Login</NavLink>
-              <NavLink to="#">Register</NavLink>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+    <MyNavbar expand="md" className="bg-body-tertiary">
+      <Container fluid>
+        <Logo href="/">
+          {" "}
+          <Span>{"< Cihan / >"}</Span> Recipe App{" "}
+        </Logo>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="d-flex justify-content-end flex-grow-1">
+            <MenuLink to="/">Home</MenuLink>
+            <MenuLink to="/about">About</MenuLink>
+            <MenuLink to="/login">Login</MenuLink>
+            <MenuLink to="#">Register</MenuLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </MyNavbar>
   );
 };
 

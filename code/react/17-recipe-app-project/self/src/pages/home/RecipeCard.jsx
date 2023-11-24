@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const RecipeCard = () => {
   const navigate = useNavigate();
   const { card } = useCardContext();
-  console.log(card);
+  // console.log(card);
   return (
     <div>
       {card.map((i) => {

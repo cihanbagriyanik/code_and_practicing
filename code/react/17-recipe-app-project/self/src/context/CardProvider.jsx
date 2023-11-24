@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -17,16 +17,12 @@ const CardProvider = ({ children }) => {
     e.preventDefault();
     try {
       const { data } = await axios(BASE_URL);
-      console.log(data);
+      // console.log(data);
       setCard(data.hits);
     } catch (error) {
       console.log(error);
     }
   };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
 
   const values = { card, setCard, query, setQuery, meal, setMeal, getData };
 
