@@ -1,16 +1,12 @@
-
-
+import UserProvider from "./context/UserProvider";
+import AppRouter from "./router/AppRouter";
 
 const App = () => {
-
   return (
-    <div>
+    <UserProvider>
+      <AppRouter />
+    </UserProvider>
+  );
+};
 
-      App
-
-    </div>
-  )
-}
-
-
-export default App
+export default App;
