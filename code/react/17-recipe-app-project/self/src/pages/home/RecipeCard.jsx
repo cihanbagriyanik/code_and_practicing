@@ -2,6 +2,7 @@ import React from "react";
 import { useCardContext } from "../../context/CardProvider";
 import { useNavigate } from "react-router-dom";
 
+
 const RecipeCard = () => {
   const navigate = useNavigate();
   const { card } = useCardContext();

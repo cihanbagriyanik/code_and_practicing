@@ -5,11 +5,12 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useCardContext } from "../../context/CardProvider";
 
+
 const MyForm = () => {
   const { setQuery, setMeal, getData } = useCardContext();
   return (
     <div>
-      <Form onSubmit={getData}>
+      <Form className="w-75 m-auto" onSubmit={getData}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="search">
             <Form.Control

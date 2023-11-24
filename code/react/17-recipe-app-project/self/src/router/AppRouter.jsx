@@ -10,7 +10,7 @@ const AppRouter = () => {
   return (
     <Router>
       <MyNavbar />
-      <Routes>
+      <Routes >
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/details" element={<Details />} />
