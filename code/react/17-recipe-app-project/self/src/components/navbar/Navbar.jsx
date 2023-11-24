@@ -9,14 +9,14 @@ const myNavbar = () => {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
-          <Navbar.Brand href="/">{"< Cihan / Recipe >"}</Navbar.Brand>
+          <Navbar.Brand href="/">{"< Cihan / > Recipe"}</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <NavLink to="/">Home</NavLink>
               <NavLink to="/about">About</NavLink>
+              <NavLink to="/login">Login</NavLink>
               <NavLink to="#">Register</NavLink>
-              <NavLink to="#">Login</NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>

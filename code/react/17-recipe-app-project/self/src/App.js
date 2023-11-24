@@ -1,11 +1,11 @@
-import UserProvider from "./context/UserProvider";
+import CardProvider from "./context/CardProvider";
 import AppRouter from "./router/AppRouter";
 
 const App = () => {
   return (
-    <UserProvider>
+    <CardProvider>
       <AppRouter />
-    </UserProvider>
+    </CardProvider>
   );
 };
 
