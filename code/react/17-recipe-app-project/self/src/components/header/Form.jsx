@@ -4,24 +4,28 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import { useCardContext } from "../../context/CardProvider";
-
+import Buttonn, { FormDiv } from "./style";
 
 const MyForm = () => {
   const { setQuery, setMeal, getData } = useCardContext();
   return (
-    <div>
-      <Form className="w-75 m-auto" onSubmit={getData}>
-        <Row className="mb-3">
+    <FormDiv>
+      <Form
+        className="w-50 p-2 border border-3 border-white rounded"
+        onSubmit={getData}
+      >
+        <Row>
           <Form.Group as={Col} controlId="search">
             <Form.Control
               type="search"
               placeholder="Search for Recipe"
+              required
               onChange={(e) => setQuery(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary w-25 h-25" type="submit">
+          <Buttonn variant="primary w-25 h-25" type="submit">
             Search
-          </Button>
+          </Buttonn>
           <Form.Group as={Col} controlId="meal">
             <Form.Select
               defaultValue="Choose..."
@@ -38,7 +42,7 @@ const MyForm = () => {
           </Form.Group>
         </Row>
       </Form>
-    </div>
+    </FormDiv>
   );
 };
 
