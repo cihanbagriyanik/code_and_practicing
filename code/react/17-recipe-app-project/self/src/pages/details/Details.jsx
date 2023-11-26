@@ -7,6 +7,7 @@ import DetailsMainDiv, {
   DetailsImg,
   DetailsButton,
   TextDiv,
+  DetailsButtonA,
 } from "./style";
 
 const Details = () => {
@@ -21,20 +22,13 @@ const Details = () => {
       <DetailsUnderDiv>
         <DetailsTitle>{i?.recipe?.label}</DetailsTitle>
         <DetailsImg src={i?.recipe?.image} />
-
-        <DetailsButton
-          className="mt-3"
-          variant="primary"
-          target="blank"
-          href={i?.recipe?.url}
-        >
-          Go to Detail recipe
+        <DetailsButton>
+          <DetailsButtonA href={i?.recipe?.url} target="blank">Go to Detail recipe</DetailsButtonA>
         </DetailsButton>
       </DetailsUnderDiv>
-
       <TextDiv>
         {card.map((i) => (
-          <li className="mt-3" key={i?.recipe?.calories}>
+          <li className="mb-2" key={i?.recipe?.calories}>
             {i?.recipe?.ingredientLines}
           </li>
         ))}

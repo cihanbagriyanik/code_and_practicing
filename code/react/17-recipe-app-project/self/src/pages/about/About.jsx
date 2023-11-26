@@ -1,11 +1,19 @@
 import React from "react";
+import AboutMainDiv, {
+  CardDiv,
+  AboutLi,
+  AboutUl,
+  AboutA,
+  AboutButton,
+} from "./style";
 
 const About = () => {
   return (
-    <div className="container mt-5">
-      <div className="row d-flex justify-content-center">
-        <div className="col-md-7">
-          <div className="card p-3 py-4">
+    <AboutMainDiv>
+      {/* <div className="container"> */}
+      <div className="row d-flex justify-content-center ">
+        <div className="col-md-7 mt-5">
+          <CardDiv className="card p-3 py-4">
             <div className="text-center">
               <img
                 src="https://avatars.githubusercontent.com/u/132518854?s=400&u=0efc72b62c05db69764f95edf879a00501263527&v=4"
@@ -29,34 +37,34 @@ const About = () => {
                   dolores?
                 </p>
               </div>
-              <ul className="social-list">
-                <li>
-                  <i className="fa-brands fa-facebook" />
-                </li>
-                <li>
-                  <i className="fa-brands fa-github" />
-                </li>
-                <li>
-                  <i className="fa-brands fa-instagram" />
-                </li>
-                <li>
-                  <i className="fa-brands fa-linkedin" />
-                </li>
-                <li>
-                  <i className="fa-regular fa-envelope" />
-                </li>
-              </ul>
-              <div className="buttons">
-                <button className="btn btn-outline-primary px-4">
+              <AboutUl className="social-list">
+                <AboutLi>
+                  <AboutA className="fa-brands fa-facebook" />
+                </AboutLi>
+                <AboutLi>
+                  <AboutA className="fa-brands fa-github" />
+                </AboutLi>
+                <AboutLi>
+                  <AboutA className="fa-brands fa-instagram" />
+                </AboutLi>
+                <AboutLi>
+                  <AboutA className="fa-brands fa-linkedin" />
+                </AboutLi>
+                <AboutLi>
+                  <AboutA className="fa-regular fa-envelope" />
+                </AboutLi>
+              </AboutUl>
+              <div>
+                <AboutButton>
                   <a
-                    className="text-decoration-none text-black "
+                    className="text-decoration-none text-white"
                     href="https://www.linkedin.com/in/bagriyanik/"
                     target="true"
                   >
                     Message
                   </a>
-                </button>
-                <button className="btn btn-primary px-4 ms-3">
+                </AboutButton>
+                <AboutButton>
                   <a
                     className="text-decoration-none text-white"
                     href="https://github.com/cihanbagriyanik"
@@ -64,13 +72,14 @@ const About = () => {
                   >
                     Contact
                   </a>
-                </button>
+                </AboutButton>
               </div>
             </div>
-          </div>
+          </CardDiv>
         </div>
       </div>
-    </div>
+      {/* </div> */}
+    </AboutMainDiv>
   );
 };
 
