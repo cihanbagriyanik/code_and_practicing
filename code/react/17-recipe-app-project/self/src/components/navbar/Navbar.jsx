@@ -19,7 +19,7 @@ const myNavbar = () => {
             <MenuLink to="/">Home</MenuLink>
             <MenuLink to="/about">About</MenuLink>
             <MenuLink to="/login">Login</MenuLink>
-            <MenuLink to="#">Register</MenuLink>
+            <MenuLink to="/register">Register</MenuLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
