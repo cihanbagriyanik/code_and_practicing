@@ -1,28 +1,29 @@
 import React from "react";
 import { useCardContext } from "../../context/CardProvider";
 import { useNavigate } from "react-router-dom";
+import { MainCardDiv, CardH3, CardDiv, CardButton, CardImg } from "./style";
 
 const RecipeCard = () => {
   const navigate = useNavigate();
   const { card } = useCardContext();
   // console.log(card);
   return (
-    <div className="">
+    <MainCardDiv>
       {card.map((i) => {
         return (
-          <div className="" key={i?.recipe?.calories}>
-            <h3> {i?.recipe?.label} </h3>
-            <img src={i?.recipe?.image} alt="" />
+          <CardDiv key={i?.recipe?.calories}>
+            <CardH3> {i?.recipe?.label} </CardH3>
+            <CardImg src={i?.recipe?.image} alt="" />
             <div>
-              <button onClick={() => navigate("/details", { state: { i } })}>
+              <CardButton onClick={() => navigate("/details", { state: { i } })}>
                 {" "}
                 View Recipe{" "}
-              </button>
+              </CardButton>
             </div>
-          </div>
+          </CardDiv>
         );
       })}
-    </div>
+    </MainCardDiv>
   );
 };
 
