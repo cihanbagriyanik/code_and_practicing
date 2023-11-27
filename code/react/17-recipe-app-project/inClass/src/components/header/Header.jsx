@@ -8,23 +8,30 @@ import {
   Select,
 } from "./HeaderStyles";
 
+const Header = ({ setQuery, setOgun, getData }) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const Header = () => {
+    getData();
+  };
 
   return (
     <HeaderContainer>
       <MainHeader>FOOD APP</MainHeader>
-      <FormContainer >
+
+      <FormContainer onSubmit={handleSubmit}>
         <FoodInput
           type="text"
           placeholder="Search"
-         
+          onChange={(e) => setQuery(e.target.value)}
         />
+
         <Button type="submit">Search</Button>
 
         <Select
-          name="ögünTypes"
-          id="ögünTypes"
+          name="ogunTypes"
+          id="ogunTypes"
+          onChange={(e) => setOgun(e.target.value)}
         >
           <option>Breakfast</option>
           <option>Lunch</option>

@@ -10,7 +10,10 @@ import {
 } from "./DetailsStyles";
 import dietsvg from "../../assets/diet.svg";
 const Details = () => {
- const a="merhaba"
+  const {
+    state: { a },
+  } = useLocation();
+
   return (
     <DetailContainer>
       <HeaderContainer>
