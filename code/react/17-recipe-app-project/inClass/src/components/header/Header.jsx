@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Button,
   FoodInput,
@@ -7,8 +7,12 @@ import {
   MainHeader,
   Select,
 } from "./HeaderStyles";
+import { RecipeContext } from "../../App";
 
-const Header = ({ setQuery, setOgun, getData }) => {
+// const Header = ({ setQuery, setOgun, getData }) => {
+const Header = () => {
+  const { setQuery, setOgun, getData } = useContext(RecipeContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
