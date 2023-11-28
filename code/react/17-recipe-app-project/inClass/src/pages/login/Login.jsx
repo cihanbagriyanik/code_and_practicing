@@ -9,11 +9,21 @@ import {
   StyledInput,
 } from "./LoginStyles";
 import mealSvg from "../../assets/meal.svg";
-
-
+import { useNavigate } from "react-router";
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [pass, setPass] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    localStorage.setItem("username", name);
+    localStorage.setItem("password", pass);
+
+    navigate("/home");
+  };
 
   return (
     <LoginContainer>
@@ -21,17 +31,19 @@ const Login = () => {
         <StyledImg src={mealSvg} />
         <Header>{"<Clarusway/>"}Recipe</Header>
 
-        <StyledForm >
+        <StyledForm onSubmit={handleSubmit}>
           <StyledInput
             type="text"
             placeholder="username"
             required
+            onChange={(e) => setName(e.target.value)}
           />
 
           <StyledInput
             type="password"
             placeholder="password"
             required
+            onChange={(e) => setPass(e.target.value)}
           />
 
           <StyledButton type="submit">Login</StyledButton>

@@ -21,7 +21,7 @@ const Navbar = () => {
         <a href="https://github.com/cihanbagriyanik" target="_blank">
           GitHub
         </a>
-        <MenuLink to="/">Logout</MenuLink>
+        <MenuLink to="/login">Logout</MenuLink>
       </Menu>
     </Nav>
   );
