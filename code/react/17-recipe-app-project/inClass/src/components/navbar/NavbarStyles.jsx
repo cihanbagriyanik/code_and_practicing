@@ -64,7 +64,7 @@ export const Menu = styled.div`
      /* max-height: ${({ osman }) => (osman ? "300px" : "0")};  */
 
      /*  alttaki gibi de kontrol edebiliriz . Menu div i display flex ve flex-direction column old için alt altalar*/
-   display: ${({osman})=>(osman ? "flex" : "none" )}
+   display: ${({muhammed})=>(muhammed ? "flex" : "none" )}
 
     /* max-height:300px; */
     /* 3 çizgiye ilk tıklandığında 300 px açılsın, sonraki tıklamada kapansın */
