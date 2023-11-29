@@ -1,7 +1,7 @@
 <p>Clarusway<img align="right"
   src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"  width="15px"></p>
 
-# Project-06 : Movie App (RP-06)
+# Project-009 : Movie App (RP-09)
 
 ## Description
 
@@ -14,7 +14,7 @@ Project aims to create a Movie App.
 ## Project Skeleton
 
 ```
-006 - Movie App (folder)
+009 - Movie App (folder)
 |
 |----readme.md         # Given to the students (Definition of the project)
 SOLUTION
@@ -48,7 +48,7 @@ SOLUTION
 
 ## Expected Outcome
 
-![Project Snapshot](movie.gif)
+![Project Snapshot](movie-app.gif)
 
 ## Objective
 
@@ -80,7 +80,7 @@ Build a Movie App using ReactJS.
 - Step 2 : Signup `https://firebase.google.com/` and create new app in firebase.
   Firebase is a backed application development software that enables developers to develop iOS, Android and Web apps. It provides developers with a variety of tools and services to help them develop quality apps, grow their user base, and earn profit. It is built on Google’s infrastructure. Firebase offers a number of services, including: analytics,authentication, cloud messaging, realtime database, performance and test lab. Firebase is categorized as a NoSQL database program, which stores data in JSON-like documents.
 
-![Project  Snapshot](firebase-create-app.gif)
+![Project 005 Snapshot](firebase-create-app.gif)
 
 - Step 3 : Use `https://firebase.google.com/docs/auth/web/start` and create `Authentication` operations.
   - Add the Firebase Authentication JS codes in your `firebase.js` file and initialize Firebase Authentication:
@@ -205,8 +205,5 @@ sendPasswordResetEmail(auth, email)
 ## Notes
 
 - You can add additional functionalities to your app.
-
-## Demo
-<a href="https://firebase-movie-app-tailwind.vercel.app/" target="_blank">Movie App</a>
 
 **<p align="center">&#9786; Happy Coding &#9997;</p>**
