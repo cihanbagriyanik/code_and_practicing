@@ -4,6 +4,7 @@ import { getAuth } from "firebase/auth";
 
 //* https://firebase.google.com/docs/auth/web/start
 //* https://console.firebase.google.com/ => project settings
+
 //! firebase console settings bölümünden firebaseconfig ayarlarını al
 // TODO: Replace the following with your app's Firebase project configuration
 //!.env dosyası hazırladıktan sonra projeyi durdurup tekrar çalıştırmak lazım
