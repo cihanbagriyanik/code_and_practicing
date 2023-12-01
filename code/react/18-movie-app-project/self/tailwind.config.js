@@ -1,5 +1,5 @@
-//* https://tailwindcss.com/docs/guides/create-react-app
 
+//https://tailwindcss.com/docs/installation
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
