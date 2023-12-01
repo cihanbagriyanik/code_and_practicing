@@ -1,8 +1,9 @@
 import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
-import avatar from "../assets/icons/avatar.png";
+import avatar from "../assets/icons/avatar.png"
 import { AuthContextt } from "../context/AuthContext";
+
 
 //tailwindui.com/components/preview navigation, mobile menu button, open, Disclosure.Panel sil
 
@@ -11,8 +12,9 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const { currentUser, cikis } = useContext(AuthContextt);
-  // console.log(currentUser.displayName);
+ 
+  const{currentUser,cikis}=useContext(AuthContextt)
+
   // referrerPolicy = "no-referrer"; google dan gelen resimde bazen sıkıntı oluyor, olmasın diye
   return (
     <>
@@ -26,6 +28,8 @@ export default function Navbar() {
               React Movie App
             </Link>
             <div className="absolute inset-y-0 right-0 flex items-center">
+
+            {/* kullanıcı giriş yaptıysa displayName ekranda görünsün */}
               {currentUser && (
                 <h5 className="mr-2 capitalize">{currentUser.displayName}</h5>
               )}
@@ -34,10 +38,11 @@ export default function Navbar() {
               <Menu as="div" className="relative ml-3">
                 <div>
                   <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                    {/* <span className="sr-only ">Open user menu</span> */}
+                   
                     <img
                       className="h-8 w-8 rounded-full"
-                      src={currentUser?.photoURL || avatar}
+                      // src={avatar}
+                       src={currentUser?.photoURL||avatar}
                       referrerPolicy="no-referrer"
                       alt=""
                     />
@@ -86,7 +91,8 @@ export default function Navbar() {
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
                           )}
-                          onClick={() => cikis()}
+
+                          onClick={()=>cikis()}
                         >
                           Log out
                         </span>

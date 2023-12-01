@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
 import { AuthContextt } from "../context/AuthContext";
-// const IMG_API = "https://image.tmdb.org/t/p/w1280";
-// const defaultImage =
-//   "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
 
-const MovieCard = ({ title, overview, poster_path, vote_average, id }) => {
-  const { currentUser } = useContext(AuthContextt);
+
+
+const MovieCard = ({title,overview,poster_path,vote_average,id}) => {
+
+const{currentUser}=useContext(AuthContextt)
+
   return (
     <div className="movie" id="container">
+
+    {/* img için base adrese endpoint olaraka dizideki poster_path eklenecek */}
       <img
         loading="lazy"
         src={`https://image.tmdb.org/t/p/w1280${poster_path}`}
@@ -16,11 +19,9 @@ const MovieCard = ({ title, overview, poster_path, vote_average, id }) => {
       <div className="flex align-baseline justify-between p-1 text-white">
         <h5>{title}</h5>
 
-        {currentUser && (
-          <span className={`tag ${vote_average > 7 ? "green" : "red"}`}>
-            {vote_average}
-          </span>
-        )}
+
+{/* kullanıcı login, register yada google ile giriş yaptıysa, AuthContext te currentUser oluşuyor, giriş yapıldıysa vote_average yi görebilsin */}
+        {currentUser && <span className={`tag ${vote_average >7 ? "green": vote_average>6.8 ? "orange":"red"}`}>{vote_average}</span>}
       </div>
       <div className="movie-over">
         <h2>Overview</h2>

@@ -3,15 +3,17 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { Link } from "react-router-dom";
 import { AuthContextt } from "../context/AuthContext";
 const Login = () => {
-  const { signIn, signUpGoogle } = useContext(AuthContextt);
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+const{signIn,signUpGoogle}=useContext(AuthContextt)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    signIn(email, password);
-  };
+ const handleSubmit = (e) => {
+   e.preventDefault();
+
+  signIn(email,password)
+ };
+
 
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
@@ -23,7 +25,7 @@ const Login = () => {
 
           <div className="relative z-0 w-full mb-5 group">
             <input
-              className=" peer"
+              class=" peer"
               placeholder=" "
               name="floating_email"
               type="email"
@@ -34,7 +36,7 @@ const Login = () => {
           </div>
           <div className="relative z-0 w-full mb-5 group">
             <input
-              className=" peer"
+              class=" peer"
               placeholder=" "
               name="floating_password"
               type="password"
@@ -45,7 +47,10 @@ const Login = () => {
           </div>
 
           <div className="flex justify-between">
-            <span className="py-3 font-[0.75em] cursor-pointer decoration-none text-gray-500 hover:text-[#ff4b45]">
+            <span
+             
+              className="py-3 font-[0.75em] cursor-pointer decoration-none text-gray-500 hover:text-[#ff4b45]"
+            >
               Forgot Password
             </span>
             <Link
@@ -62,7 +67,7 @@ const Login = () => {
           <button
             type="button"
             className="btn-danger flex justify-between text-center "
-            onClick={() => signUpGoogle()}
+            onClick={()=>signUpGoogle()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
