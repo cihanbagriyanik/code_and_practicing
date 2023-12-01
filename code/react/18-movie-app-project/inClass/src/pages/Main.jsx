@@ -3,7 +3,7 @@ import MovieCard from "../components/MovieCard";
 import { MovieContext } from "../context/MovieContext";
 
 const Main = () => {
-  const { movies, loading } = useContext(MovieContext);
+  const { movies, loading, getirMovies } = useContext(MovieContext);
 
   return (
     <>
