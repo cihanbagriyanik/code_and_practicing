@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import GoogleIcon from "../assets/icons/GoogleIcon";
 import { Link } from "react-router-dom";
+import { AuthContextt } from "../context/AuthContext";
 const Login = () => {
-  const { signIn } = useContext(AuthContextt);
+  const { signIn, signUpGoogle } = useContext(AuthContextt);
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -61,6 +62,7 @@ const Login = () => {
           <button
             type="button"
             className="btn-danger flex justify-between text-center "
+            onClick={() => signUpGoogle()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />

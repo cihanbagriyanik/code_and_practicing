@@ -1,6 +1,11 @@
 import { auth } from "../auth/firebase";
 import React, { createContext } from "react";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { toastErrorNotifY, toastSuccessNotifY } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +29,6 @@ const AuthContextProvider = ({ children }) => {
   };
 
   //!login
-
   const signIn = async (email, password) => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -35,7 +39,28 @@ const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const values = { createUser, signIn };
+  //! Google ile giris
+  //* https://console.firebase.google.com/
+  //* => Authentication => sign-in-method => enable Google
+  //! Google ile girişi enable yap
+  //* => Authentication => settings => Authorized domains => add domain
+  //! Projeyi deploy ettikten sonra google sign-in çalışması için domain listesine deploy linkini ekle
+  const signUpGoogle = () => {
+    //?Google hesaplarima ulasmak icin firebase methodu
+    const provider = new GoogleAuthProvider();
+
+    //?acilir pencere ile giris yapilmasi icin firebase methodu
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        toastSuccessNotifY("Logged in Successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const values = { createUser, signIn, signUpGoogle };
 
   return (
     <AuthContextt.Provider value={values}>{children}</AuthContextt.Provider>

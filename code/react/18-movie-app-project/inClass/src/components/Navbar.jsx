@@ -1,8 +1,7 @@
 import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
-
-
+import avatar from "../assets/icons/avatar.png"
 
 //tailwindui.com/components/preview navigation, mobile menu button, open, Disclosure.Panel sil
 
@@ -11,9 +10,6 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
- 
-  
-
   // referrerPolicy = "no-referrer"; google dan gelen resimde bazen sıkıntı oluyor, olmasın diye
   return (
     <>
@@ -27,11 +23,8 @@ export default function Navbar() {
               React Movie App
             </Link>
             <div className="absolute inset-y-0 right-0 flex items-center">
-           
+              <h5 className="mr-2 capitalize">{"Ipek Bilir"}</h5>
 
-                <h5 className="mr-2 capitalize">{}</h5>
-             
-         
               {/* Profile dropdown */}
               <Menu as="div" className="relative ml-3">
                 <div>
@@ -39,7 +32,7 @@ export default function Navbar() {
                     {/* <span className="sr-only ">Open user menu</span> */}
                     <img
                       className="h-8 w-8 rounded-full"
-                      src=""
+                      src={avatar}
                       referrerPolicy="no-referrer"
                       alt=""
                     />
@@ -58,7 +51,7 @@ export default function Navbar() {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          to=""
+                          to="/register"
                           className={classNames(
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700"
@@ -71,7 +64,7 @@ export default function Navbar() {
                     <Menu.Item>
                       {({ active }) => (
                         <Link
-                          to=""
+                          to="/login"
                           className={classNames(
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700"
@@ -88,7 +81,6 @@ export default function Navbar() {
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
                           )}
-                       
                         >
                           Log out
                         </span>
