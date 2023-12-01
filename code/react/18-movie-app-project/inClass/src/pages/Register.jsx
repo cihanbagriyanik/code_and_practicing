@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const displayName = `${firstName}${lastName}`;
+    const displayName = `${firstName} ${lastName}`;
     createUser(email, password, displayName);
   };
   return (

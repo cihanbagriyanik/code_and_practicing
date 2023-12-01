@@ -1,10 +1,13 @@
 import { auth } from "../auth/firebase";
-import React, { createContext } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signOut,
+  updateProfile,
 } from "firebase/auth";
 import { toastErrorNotifY, toastSuccessNotifY } from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
@@ -15,6 +18,11 @@ export const AuthContextt = createContext();
 //!component
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
+  const [currentUser, setCurrentUser] = useState();
+
+  useEffect(() => {
+    userTakip();
+  }, []);
 
   //!register
   const createUser = async (email, password, displayName) => {
@@ -22,6 +30,11 @@ const AuthContextProvider = ({ children }) => {
       await createUserWithEmailAndPassword(auth, email, password);
       toastSuccessNotifY("Registered Successfully");
       navigate("/");
+
+      //? USERTAKİPTEN SONRA -----kullanıcı profilini güncellemek için kullanılan firebase metodu, login logout da userTakip sayesinde güncelleniyor ama register da isim güncellemesi yok, o da bu şekilde oluyor
+      await updateProfile(auth.currentUser, {
+        displayName: displayName,
+      });
     } catch (error) {
       console.log(error);
       toastErrorNotifY(error.message);
@@ -60,7 +73,26 @@ const AuthContextProvider = ({ children }) => {
       });
   };
 
-  const values = { createUser, signIn, signUpGoogle };
+  //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. bir kere çalıştır login logout takip eder
+  const userTakip = () => {
+    onAuthStateChanged(auth, (user) => {
+      console.log(user);
+      if (user) {
+        const { email, displayName, photoURL } = user;
+        setCurrentUser({ email, displayName, photoURL });
+      } else {
+        setCurrentUser(false);
+      }
+    });
+  };
+
+  //! Siteden cikis
+  const cikis = () => {
+    signOut(auth);
+    toastSuccessNotifY("Logout is successfully");
+  };
+
+  const values = { createUser, signIn, signUpGoogle, currentUser, cikis };
 
   return (
     <AuthContextt.Provider value={values}>{children}</AuthContextt.Provider>

@@ -23,7 +23,7 @@ const Login = () => {
 
           <div className="relative z-0 w-full mb-5 group">
             <input
-              class=" peer"
+              className=" peer"
               placeholder=" "
               name="floating_email"
               type="email"
@@ -34,7 +34,7 @@ const Login = () => {
           </div>
           <div className="relative z-0 w-full mb-5 group">
             <input
-              class=" peer"
+              className=" peer"
               placeholder=" "
               name="floating_password"
               type="password"
