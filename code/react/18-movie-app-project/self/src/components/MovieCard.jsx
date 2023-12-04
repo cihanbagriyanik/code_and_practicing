@@ -25,7 +25,7 @@ const MovieCard = ({ title, overview, poster_path, vote_average, id }) => {
         {currentUser && (
           <span
             className={`tag ${
-              vote_average > 7 ? "green" : vote_average > 6.8 ? "orange" : "red"
+              vote_average > 7.5 ? "green" : vote_average > 5 ? "orange" : "red"
             }`}
           >
             {vote_average.toFixed(1)}
