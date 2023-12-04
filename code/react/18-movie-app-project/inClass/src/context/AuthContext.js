@@ -4,12 +4,17 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
-import { toastErrorNotifY, toastSuccessNotifY } from "../helpers/ToastNotify";
+import {
+  toastErrorNotifY,
+  toastSuccessNotifY,
+  toastWarnNotifY,
+} from "../helpers/ToastNotify";
 import { useNavigate } from "react-router-dom";
 
 //!context alanı
@@ -18,14 +23,11 @@ export const AuthContextt = createContext();
 //!component
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
- const[currentUser,setCurrentUser]=useState()
+  const [currentUser, setCurrentUser] = useState();
 
-
- useEffect(()=>{
-
-  userTakip();
- },[])
-
+  useEffect(() => {
+    userTakip();
+  }, []);
 
   //!register
   const createUser = async (email, password, displayName) => {
@@ -78,36 +80,50 @@ const AuthContextProvider = ({ children }) => {
       });
   };
 
-//? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. bir kere çalıştır login logout takip eder
-const userTakip=()=>{
-onAuthStateChanged(auth, (user) => {
-  console.log(user);
-  if (user) {
-   const{email,displayName,photoURL}=user
-    setCurrentUser({email,displayName,photoURL})
-  } else {
-   setCurrentUser(false)
-  }
-});
+  //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. bir kere çalıştır login logout takip eder
+  const userTakip = () => {
+    onAuthStateChanged(auth, (user) => {
+      // console.log(user);
+      if (user) {
+        const { email, displayName, photoURL } = user;
+        setCurrentUser({ email, displayName, photoURL });
+      } else {
+        setCurrentUser(false);
+      }
+    });
+  };
 
+  //!siteden çıkış
 
+  const cikis = () => {
+    signOut(auth);
 
-}
+    toastSuccessNotifY("logout is successfully");
+  };
 
+  const forgotPassword = (email) => {
+    //? Email yoluyla şifre sıfırlama için kullanılan firebase metodu
+    sendPasswordResetEmail(auth, email)
+      .then(() => {
+        // Password reset email sent!
+        toastWarnNotifY("Please check your mail box!");
+        // alert("Please check your mail box!");
+      })
+      .catch((err) => {
+        toastErrorNotifY(err.message);
+        // alert(err.message);
+        // ..
+      });
+  };
 
-//!siteden çıkış
-
-const cikis =()=>{
-signOut(auth)
-
-toastSuccessNotifY("logout is successfully")
-
-}
-
-
-
-
-  const values = { createUser, signIn, signUpGoogle,currentUser,cikis };
+  const values = {
+    createUser,
+    signIn,
+    signUpGoogle,
+    currentUser,
+    cikis,
+    forgotPassword,
+  };
 
   return (
     <AuthContextt.Provider value={values}>{children}</AuthContextt.Provider>

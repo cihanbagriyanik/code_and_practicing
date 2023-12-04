@@ -3,17 +3,15 @@ import GoogleIcon from "../assets/icons/GoogleIcon";
 import { Link } from "react-router-dom";
 import { AuthContextt } from "../context/AuthContext";
 const Login = () => {
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-const{signIn,signUpGoogle}=useContext(AuthContextt)
+  const { signIn, signUpGoogle, forgotPassword } = useContext(AuthContextt);
 
- const handleSubmit = (e) => {
-   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  signIn(email,password)
- };
-
+    signIn(email, password);
+  };
 
   return (
     <div className="overflow-hidden flex-1 h-screen justify-center items-center bg-[#23242a]">
@@ -25,7 +23,7 @@ const{signIn,signUpGoogle}=useContext(AuthContextt)
 
           <div className="relative z-0 w-full mb-5 group">
             <input
-              class=" peer"
+              className="peer"
               placeholder=" "
               name="floating_email"
               type="email"
@@ -36,7 +34,7 @@ const{signIn,signUpGoogle}=useContext(AuthContextt)
           </div>
           <div className="relative z-0 w-full mb-5 group">
             <input
-              class=" peer"
+              className="peer"
               placeholder=" "
               name="floating_password"
               type="password"
@@ -48,7 +46,7 @@ const{signIn,signUpGoogle}=useContext(AuthContextt)
 
           <div className="flex justify-between">
             <span
-             
+              onClick={() => forgotPassword(email)}
               className="py-3 font-[0.75em] cursor-pointer decoration-none text-gray-500 hover:text-[#ff4b45]"
             >
               Forgot Password
@@ -67,7 +65,7 @@ const{signIn,signUpGoogle}=useContext(AuthContextt)
           <button
             type="button"
             className="btn-danger flex justify-between text-center "
-            onClick={()=>signUpGoogle()}
+            onClick={() => signUpGoogle()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
