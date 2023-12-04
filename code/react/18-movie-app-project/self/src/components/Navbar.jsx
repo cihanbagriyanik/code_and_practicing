@@ -1,9 +1,9 @@
 import { Fragment, useContext } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
-import avatar from "../assets/icons/avatar.png"
+import avatar from "../assets/icons/avatar.png";
 import { AuthContextt } from "../context/AuthContext";
-
+import Switch from "./Switch";
 
 //tailwindui.com/components/preview navigation, mobile menu button, open, Disclosure.Panel sil
 
@@ -12,15 +12,14 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
- 
-  const{currentUser,cikis}=useContext(AuthContextt)
+  const { currentUser, cikis } = useContext(AuthContextt);
 
   // referrerPolicy = "no-referrer"; google dan gelen resimde bazen sıkıntı oluyor, olmasın diye
   return (
     <>
       <Disclosure
         as="nav"
-        className="bg-neutral-100 dark:bg-gray-900 py-3 dark:text-white fixed top-0 w-full "
+        className="bg-neutral-100 dark:bg-gray-900 py-3 dark:text-white fixed top-0 w-full z-20 "
       >
         <div className="mx-auto px-2 sm:px-6 lg:px-8">
           <div className="relative flex items-center justify-between">
@@ -28,21 +27,19 @@ export default function Navbar() {
               React Movie App
             </Link>
             <div className="absolute inset-y-0 right-0 flex items-center">
-
-            {/* kullanıcı giriş yaptıysa displayName ekranda görünsün */}
+              {/* kullanıcı giriş yaptıysa displayName ekranda görünsün */}
               {currentUser && (
                 <h5 className="mr-2 capitalize">{currentUser.displayName}</h5>
               )}
-
+              <Switch />
               {/* Profile dropdown */}
               <Menu as="div" className="relative ml-3">
                 <div>
                   <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                   
                     <img
                       className="h-8 w-8 rounded-full"
                       // src={avatar}
-                       src={currentUser?.photoURL||avatar}
+                      src={currentUser?.photoURL || avatar}
                       referrerPolicy="no-referrer"
                       alt=""
                     />
@@ -91,8 +88,7 @@ export default function Navbar() {
                             active ? "bg-gray-100" : "",
                             "block px-4 py-2 text-sm text-gray-700 cursor-pointer"
                           )}
-
-                          onClick={()=>cikis()}
+                          onClick={() => cikis()}
                         >
                           Log out
                         </span>
