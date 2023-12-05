@@ -23,8 +23,10 @@ const CardGrid = () => {
   //   console.log(products);
 
   return (
-    <Container>
-      <Typography>CARDS & GRİD</Typography>
+    <Container sx={{ marginTop: 4 }}>
+      <Typography variant="h4" align="center" color="error">
+        CARDS & GRİD
+      </Typography>
 
       {/* spacing={2}=card lar arası boşluk */}
       <Grid container spacing={2}>
