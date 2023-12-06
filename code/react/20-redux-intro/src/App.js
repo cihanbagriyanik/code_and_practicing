@@ -21,7 +21,7 @@ const App = () => {
   return (
     <div className="app">
       <Provider store={store}>
-        {/* <Counter /> */}
+        <Counter />
         <Todo />
       </Provider>
     </div>
