@@ -4,7 +4,7 @@ import "./App.css";
 
 import { combineReducers, legacy_createStore as createStore } from "redux";
 import counterReducer from "./redux/reducers/counterReducer";
-import todoreducer from "./redux/reducers/todoReducer";
+import todoReducer from "./redux/reducers/todoReducer";
 
 import { Provider } from "react-redux";
 
@@ -14,14 +14,14 @@ import Todo from "./components/todo/Todo";
 const App = () => {
   const topluReducer = combineReducers({
     counterReducer: counterReducer,
-    todoreducer: todoreducer,
+    todoReducer: todoReducer,
   });
   const store = createStore(topluReducer);
 
   return (
     <div className="app">
       <Provider store={store}>
-        <Counter />
+        {/* <Counter /> */}
         <Todo />
       </Provider>
     </div>
