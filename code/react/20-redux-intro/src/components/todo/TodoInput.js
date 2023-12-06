@@ -1,9 +1,12 @@
-import React from 'react'
-
 const TodoInput = () => {
   return (
-    <div>TodoInput</div>
-  )
-}
+    <form>
+      <input className="todo-input" type="text" placeholder="Add Todo" />
+      <button type="submit" className="add-button">
+        Add
+      </button>
+    </form>
+  );
+};
 
-export default TodoInput
+export default TodoInput;
