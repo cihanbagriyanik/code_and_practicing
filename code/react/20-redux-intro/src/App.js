@@ -1,9 +1,31 @@
-import React from 'react'
+import React from "react";
+
+import "./App.css";
+
+import { combineReducers, legacy_createStore as createStore } from "redux";
+import counterReducer from "./redux/reducers/counterReducer";
+import todoreducer from "./redux/reducers/todoReducer";
+
+import { Provider } from "react-redux";
+
+import Counter from "./components/counter/Counter";
+import Todo from "./components/todo/Todo";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  const topluReducer = combineReducers({
+    counterReducer: counterReducer,
+    todoreducer: todoreducer,
+  });
+  const store = createStore(topluReducer);
 
-export default App
+  return (
+    <div className="app">
+      <Provider store={store}>
+        <Counter />
+        <Todo />
+      </Provider>
+    </div>
+  );
+};
+
+export default App;
