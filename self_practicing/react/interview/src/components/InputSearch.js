@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-const SearchUser = () => {
+const SearchUser = ({setUser}) => {
     return (
         <div className="row">
             <div className="col-md-4 mx-auto">
@@ -11,6 +11,7 @@ const SearchUser = () => {
                         placeholder="Github's username"
                         aria-label="Github's username"
                         aria-describedby="basic-addon2"
+                        onChange={(e) => setUser(e.target.value)}
                     />
                     <Button variant="outline-secondary" id="button-addon2">
                         Search
