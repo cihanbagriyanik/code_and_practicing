@@ -13,11 +13,10 @@ const yetkiSlice = createSlice({
       state.password = action.payload.password;
     },
     kullaniciSil: (state) => {
-    
+      state.email = "";
+      state.password = "";
     },
   },
-
-  
 });
 
 export const { olusturKullanici, kullaniciSil } = yetkiSlice.actions;
