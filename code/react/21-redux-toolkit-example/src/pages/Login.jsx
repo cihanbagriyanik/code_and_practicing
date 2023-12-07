@@ -1,17 +1,27 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Box from '@mui/material/Box';
-import Avatar from '@mui/material/Avatar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Link from "@mui/material/Link";
+import Box from "@mui/material/Box";
+import Avatar from "@mui/material/Avatar";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
 
-
+import { useSelector, useDispatch } from "react-redux";
+import { olusturKullanici } from "../features/yetkiSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
- 
+  let { email, password } = useSelector((state) => state.yetkiSlice);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(olusturKullanici({ email, password }));
+    navigate("/");
+  };
   return (
     <Container component="main" maxWidth="xs">
       <Box
@@ -31,7 +41,7 @@ export default function Login() {
           Sign in
         </Typography>
         {/* noValidate=doğrulanmasın */}
-        <Box component="form" noValidate sx={{ mt: 1 }}>
+        <Box component="form" noValidate sx={{ mt: 1 }} onSubmit={handleSubmit}>
           <TextField
             margin="normal"
             required
@@ -41,6 +51,7 @@ export default function Login() {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => (email = e.target.value)}
           />
           <TextField
             margin="normal"
@@ -50,6 +61,7 @@ export default function Login() {
             label="Password"
             type="password"
             id="password"
+            onChange={(e) => (password = e.target.value)}
           />
 
           <Button
