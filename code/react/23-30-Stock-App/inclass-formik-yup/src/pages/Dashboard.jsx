@@ -6,6 +6,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import useAuthCall from "../hooks/useAuthCall";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 function Dashboard() {
   const { signOut } = useAuthCall();
@@ -25,7 +26,7 @@ function Dashboard() {
               signOut();
             }}
           >
-            Logout
+            Logout <LogoutIcon style={{marginLeft:"7px"}} />
           </Button>
         </Toolbar>
       </AppBar>
