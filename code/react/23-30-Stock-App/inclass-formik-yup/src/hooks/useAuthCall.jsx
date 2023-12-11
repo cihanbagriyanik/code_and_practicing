@@ -30,7 +30,9 @@ const useAuthCall = () => {
       );
       console.log("signIn", data);
       dispatch(signInSuccess(data));
+      console.log("hata");
       navigate("/stock");
+      
     } catch (error) {
       dispatch(fetchFail());
     }

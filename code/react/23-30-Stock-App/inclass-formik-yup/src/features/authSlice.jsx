@@ -22,9 +22,9 @@ const authSlice = createSlice({
     },
     signInSuccess: (state, { payload }) => {
       state.loading = false;
-      state.currentUser = payload?.data?.username;
-      state.token = payload?.key;
-      state.isAdmin = payload?.user?.isAdmin
+      state.currentUser = payload?.user?.username;
+      state.token = payload?.token;
+      state.isAdmin = payload?.user?.isAdmin;
     },
     fetchFail: (state) => {
       state.loading = false;
