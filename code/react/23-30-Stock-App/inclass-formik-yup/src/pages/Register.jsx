@@ -92,7 +92,7 @@ const Register = () => {
             validationSchema={SignupSchema}
             onSubmit={(values, actions) => {
               // same shape as initial values
-              console.log(values);
+              // console.log(values);
               register(values);
               actions.resetForm();
             }}

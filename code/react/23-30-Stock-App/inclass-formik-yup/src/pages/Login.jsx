@@ -68,7 +68,7 @@ const Login = () => {
             validationSchema={SigninSchema}
             onSubmit={(values, actions) => {
               // same shape as initial values
-              console.log(values);
+              // console.log(values);
               signIn(values);
               actions.resetForm();
             }}

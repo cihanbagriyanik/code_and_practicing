@@ -1,6 +1,12 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFail, fetchStart, registerSuccess, signInSuccess, signOutSuccess } from "../features/authSlice";
+import {
+  fetchFail,
+  fetchStart,
+  registerSuccess,
+  signInSuccess,
+  signOutSuccess,
+} from "../features/authSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +24,7 @@ const useAuthCall = () => {
         "https://stock-api-js.fullstack.clarusway.com/users/",
         userInfo
       );
-      console.log("register", data);
+      // console.log("register", data);
       dispatch(registerSuccess(data));
       toastSuccessNotify("Registration is successfully");
       navigate("/stock");
@@ -35,7 +41,7 @@ const useAuthCall = () => {
         "https://stock-api-js.fullstack.clarusway.com/auth/login",
         userInfo
       );
-      console.log("signIn", data);
+      // console.log("signIn", data);
       dispatch(signInSuccess(data));
       toastSuccessNotify("Sign In is successfully");
       navigate("/stock");
