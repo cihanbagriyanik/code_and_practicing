@@ -5,9 +5,10 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import useAuthCall from "../hooks/useAuthCall";
 
 function Dashboard() {
-
+  const { signOut } = useAuthCall();
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -16,7 +17,16 @@ function Dashboard() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             STOCK APP
           </Typography>
-          <Button color="inherit">Logout</Button>
+          <Button
+            color="inherit"
+            onClick={() => {
+              // same shape as initial values
+              // console.log(values);
+              signOut();
+            }}
+          >
+            Logout
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
