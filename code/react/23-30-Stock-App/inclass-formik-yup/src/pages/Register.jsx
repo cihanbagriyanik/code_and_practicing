@@ -8,6 +8,28 @@ import { Link } from "react-router-dom";
 import { Box } from "@mui/material";
 import AuthHeader from "../components/AuthHeader";
 import AuthImage from "../components/AuthImage";
+import { Formik, Form } from "formik";
+import * as Yup from "yup";
+import TextField from "@mui/material/TextField";
+
+//! Yup ile istediğimiz alanlara istediğimiz validasyon koşullarını
+//  oluşturuyoruz. Sonra oluşturduğumuz bu şemayı formike tanımlayarak
+//  kullanıyoruz. Böylelikle formik hem formumuzu yönetiyor hem de verdiğimiz
+//  validationSchema yı uyguluyor. Dikkat edilmesi gereken husus; formikte
+//  tanımladığımız initialValues daki keylerle, Yupta tanımladığımız keylerin
+//  aynı olması. Eğer bir harf bile farklı olsa o alanla ilgili yazdığınız
+//  validation çalışmaz.
+const SignupSchema = Yup.object().shape({
+  firstName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  lastName: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  email: Yup.string().email().required("Required"),
+});
 
 const Register = () => {
   return (
@@ -44,12 +66,95 @@ const Register = () => {
             Register
           </Typography>
 
-          <Box sx={{ textAlign: "center", mt: 2, color:"secondary.main" }}>
+          <Formik
+            initialValues={{
+              username: "",
+              password: "",
+              email: "",
+              firstName: "",
+              lastName: "",
+            }}
+            validationSchema={SignupSchema}
+            onSubmit={(values) => {
+              // same shape as initial values
+              console.log(values);
+            }}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+              /* and other goodies */
+            }) => (
+              <Form>
+                <TextField
+                  id="outlined-error-helper-text"
+                  name="username" //formik name attributedından eşleştirme yapıyor.
+                  label="Username"
+                  value={values.username}
+                  onChange={handleChange}
+                  onBlur={handleBlur} // kullanıcının input alanından ayrıldığını yaklayan event
+                  helperText={touched.username && errors.username} //validationda verdiğimiz kalıba uymazsa ilgili mesajları göstermesi için errors dan gelen mesajı yakalıyoruz.
+                  error={touched.username && Boolean(errors.username)} //validationda verdiğimiz kalıba uymazsa rengi errora çevirmesi için error attribute ı benden false/true degeri bekliyor ondan dolayı daha sağlıklı olması için boolean deger döndürüyoruz.
+                  // touched da kullanıcının inputa tıklayıp tıklamadığını yakalıyor
+                />
+                <TextField
+                  id="outlined-error-helper-text"
+                  name="firstName"
+                  label="First Name"
+                  value={values.firstName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  helperText={touched.firstName && errors.firstName}
+                  error={touched.firstName && Boolean(errors.firstName)}
+                />
+                <TextField
+                  id="outlined-error-helper-text"
+                  name="lastName"
+                  label="Last Name"
+                  value={values.lastName}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  helperText={touched.lastName && errors.lastName}
+                  error={touched.lastName && Boolean(errors.lastName)}
+                />
+                <TextField
+                  id="outlined-error-helper-text"
+                  label="Email"
+                  name="email" //formik name attributedından eşleştirme yapıyor.
+                  onChange={handleChange}
+                  onBlur={handleBlur} // kullanıcının input alanından ayrıldığını yaklayan event
+                  value={values.email}
+                  error={touched.email && Boolean(errors.email)} //validationda verdiğimiz kalıba uymazsa rengi errora çevirmesi için error attribute ı benden false/true degeri bekliyor ondan dolayı daha sağlıklı olması için boolean deger döndürüyoruz.
+                  // touched da kullanıcının inputa tıklayıp tıklamadığını yakalıyor
+                  helperText={touched.email && errors.email} //validationda verdiğimiz kalıba uymazsa ilgili mesajları göstermesi için errors dan gelen mesajı yakalıyoruz.
+                />
+                {/* error ve helperText propertyleri Textfield componentine ait propertyler. */}
+                {/* mui textfield kullanmadığımzda <span>{touched.username && errors.username}</span> */}
+                <TextField
+                  id="outlined-error-helper-text"
+                  name="password"
+                  label="Password"
+                  value={values.password}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  helperText={touched.password && errors.password}
+                  error={touched.password && Boolean(errors.password)}
+                />
+              </Form>
+            )}
+          </Formik>
+
+          <Box sx={{ textAlign: "center", mt: 2, color: "secondary.main" }}>
             <Link to="/">Already have an account? Sign in</Link>
           </Box>
         </Grid>
 
-    <AuthImage image={image} />
+        <AuthImage image={image} />
       </Grid>
     </Container>
   );
