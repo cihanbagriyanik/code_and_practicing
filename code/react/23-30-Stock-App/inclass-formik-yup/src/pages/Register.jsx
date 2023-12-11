@@ -12,6 +12,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import useAuthCall from "../hooks/useAuthCall";
 
 //! Yup ile istediğimiz alanlara istediğimiz validasyon koşullarını
 //  oluşturuyoruz. Sonra oluşturduğumuz bu şemayı formike tanımlayarak
@@ -24,26 +25,28 @@ const SignupSchema = Yup.object().shape({
   firstName: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
-    .required("Required"),
-  userName: Yup.string()
+    .required("Notwendig!"),
+  username: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
-    .required("Required"),
+    .required("Notwendig!"),
   lastName: Yup.string()
     .min(2, "Too Short!")
     .max(50, "Too Long!")
-    .required("Required"),
-  email: Yup.string().email().required("Required"),
+    .required("Notwendig!"),
+  email: Yup.string().email().required("Notwendig!"),
   password: Yup.string()
-    .min(8, "Too Short!")
-    .max(50, "Too Long!")
-    .matches(/\d+/, "Must contain at least one number")
-    .matches(/[A-Z]/, "Must at least one uppercase letter")
-    .matches(/[@$!%*?&]+/, "Must contain at least one special character")
-    .required("Required"),
+    .min(8, "Er muss mindestens 8 Zeichen lang sein!")
+    .max(50, "Er darf maximal 50 Zeichen lang sein!")
+    .matches(/\d+/, "Muss mindestens eine Ziffer enthalten!")
+    .matches(/[A-Z]/, "Muss mindestens einen Großbuchstaben enthalten!")
+    .matches(/[a-z]/, "Muss mindestens einen Kleinbuchstaben enthalten!")
+    .matches(/[@$!%*?&]+/, "Muss mindestens ein Sonderzeichen enthalten!")
+    .required("Notwendig!"),
 });
 
 const Register = () => {
+  const { register } = useAuthCall();
   return (
     <Container maxWidth="lg">
       <Grid
@@ -90,6 +93,7 @@ const Register = () => {
             onSubmit={(values, actions) => {
               // same shape as initial values
               console.log(values);
+              register(values);
               actions.resetForm();
             }}
           >
@@ -117,7 +121,7 @@ const Register = () => {
                     // touched da kullanıcının inputa tıklayıp tıklamadığını yakalıyor
                   />
                   <TextField
-                    id="firstname"
+                    id="firstName"
                     name="firstName"
                     label="First Name"
                     value={values.firstName}
@@ -127,7 +131,7 @@ const Register = () => {
                     error={touched.firstName && Boolean(errors.firstName)}
                   />
                   <TextField
-                    id="lastname"
+                    id="lastName"
                     name="lastName"
                     label="Last Name"
                     value={values.lastName}
@@ -138,8 +142,8 @@ const Register = () => {
                   />
                   <TextField
                     id="email"
-                    type="email"
                     label="Email"
+                    type="email"
                     name="email" //formik name attributedından eşleştirme yapıyor.
                     onChange={handleChange}
                     onBlur={handleBlur} // kullanıcının input alanından ayrıldığını yaklayan event
@@ -161,7 +165,6 @@ const Register = () => {
                     helperText={touched.password && errors.password}
                     error={touched.password && Boolean(errors.password)}
                   />
-
                   <Button
                     variant="contained"
                     type="submit"
