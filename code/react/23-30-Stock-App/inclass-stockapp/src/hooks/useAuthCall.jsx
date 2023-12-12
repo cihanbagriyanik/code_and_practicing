@@ -1,77 +1,51 @@
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import {
   fetchFail,
   fetchStart,
   registerSuccess,
-  signInSuccess,
-  logOutSuccess,
+  loginSuccess,
 } from "../features/authSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const useAuthCall = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { token } = useSelector((state) => state.auth);
-
   const register = async (userInfo) => {
     dispatch(fetchStart());
     try {
       const { data } = await axios.post(
-        "https://17102.fullstack.clarusway.com/users/",
+        "https://10002.fullstack.clarusway.com/users/",
         userInfo
       );
-      // console.log("register", data);
+      console.log("register", data);
       dispatch(registerSuccess(data));
-      toastSuccessNotify("Registration is successfully");
       navigate("/stock");
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify("Registration is NOT successfully");
     }
   };
-
-  const signIn = async (userInfo) => {
+  const login = async (userInfo) => {
     dispatch(fetchStart());
     try {
       const { data } = await axios.post(
-        "https://17102.fullstack.clarusway.com/auth/login",
+        `https://10002.fullstack.clarusway.com/auth/login/`,
         userInfo
       );
-      // console.log("signIn", data);
-      dispatch(signInSuccess(data));
-      toastSuccessNotify("Sign In is successfully");
+      dispatch(loginSuccess(data));
+      toastSuccessNotify("Login performed");
       navigate("/stock");
+      console.log(data);
     } catch (error) {
       dispatch(fetchFail());
-      toastErrorNotify("Sign In is NOT successfully");
+      console.log(error);
+      toastErrorNotify("Login can not be performed");
     }
   };
 
-  const logOut = async () => {
-    dispatch(fetchStart());
-    try {
-      await axios.get(
-        "https://17102.fullstack.clarusway.com/auth/logout",
-        {
-          headers: {
-            Authorization: `Token ${token}`,
-          },
-        }
-      );
-
-      dispatch(logOutSuccess());
-      toastSuccessNotify("Log Out is successfully");
-      navigate("/");
-    } catch (error) {
-      dispatch(fetchFail());
-      toastErrorNotify("Log Out is NOT successfully");
-    }
-  };
-
-  return { register, signIn, logOut };
+  return { register, login };
 };
 
 export default useAuthCall;
