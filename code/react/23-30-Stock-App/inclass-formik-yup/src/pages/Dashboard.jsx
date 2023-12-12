@@ -11,7 +11,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 function Dashboard() {
   const { signOut } = useAuthCall();
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", zIndex:"100" }}>
       <CssBaseline />
       <AppBar position="fixed">
         <Toolbar>

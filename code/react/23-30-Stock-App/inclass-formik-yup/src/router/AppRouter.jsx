@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRouter from "./PrivateRouter";
 import Dashboard from "../pages/Dashboard";
+// import MenuBar from "../components/MenuBar";
 
 const AppRouter = () => {
   return (
@@ -12,6 +13,7 @@ const AppRouter = () => {
         <Route path="/" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="stock" element={<PrivateRouter />}>
+          {/* <Route path="" element={<MenuBar />} /> */}
           <Route path="" element={<Dashboard />} />
         </Route>
       </Routes>
