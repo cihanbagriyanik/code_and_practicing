@@ -24,6 +24,7 @@ const AppRouter = () => {
         <Route path="register" element={<Register />} />
         <Route path="stock" element={<PrivateRouter />}>
           <Route path="" element={<Dashboard />}>
+          
             {/* nested route yapılarında index dediğimzde boş path vermemize gerek kalmaz. kapsayıcısının pathi geldğinde çalışır */}
             <Route index element={<Home />} />
 
