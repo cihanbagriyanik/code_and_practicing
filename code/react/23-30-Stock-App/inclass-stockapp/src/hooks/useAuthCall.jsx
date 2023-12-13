@@ -20,7 +20,7 @@ const useAuthCall = () => {
   const register = async (userInfo) => {
     dispatch(fetchStart());
     try {
-      const { data } = await axios.post("${BASE_URL}users/", userInfo);
+      const { data } = await axios.post(`${BASE_URL}users/`, userInfo);
       // console.log("register", data);
       dispatch(registerSuccess(data));
       navigate("/stock");
@@ -51,7 +51,6 @@ const useAuthCall = () => {
           Authorization: `Token ${token}`,
         },
       });
-
       dispatch(logOutSuccess());
       toastSuccessNotify("Log Out is successfully");
       navigate("/");
