@@ -11,7 +11,7 @@ export const loginAsync = createAsyncThunk(
     console.log(values);
     try {
       const { data } = await axios.post(
-        `https://10002.fullstack.clarusway.com/auth/login/`,
+        `https://17102.fullstack.clarusway.com/auth/login/`,
         values
       );
       toastSuccessNotify("Login performed");
@@ -31,7 +31,7 @@ export const registerAsync = createAsyncThunk(
     console.log(values)
     try {
       const { data } = await axios.post(
-        `https://10002.fullstack.clarusway.com/users/`,
+        `https://17102.fullstack.clarusway.com/users/`,
         values
       );
       toastSuccessNotify("Register performed");
@@ -49,7 +49,7 @@ export const logoutAsync = createAsyncThunk(
   async (navigate, { dispatch, getState }) => {
     const { token } = getState().auth; // storedan tokeni okuduk
     try {
-      await axios.get(`https://10002.fullstack.clarusway.com/auth/logout/`, {
+      await axios.get(`https://17102.fullstack.clarusway.com/auth/logout/`, {
         headers: {
           Authorization: `Token ${token}`,
         },
