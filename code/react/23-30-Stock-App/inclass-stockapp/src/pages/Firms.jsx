@@ -3,7 +3,8 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import useStockCall from "../hooks/useStockCall";
 import Container from "@mui/material/Container";
-import { Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
+import FirmCard from "../components/Cards/FirmsCard";
 
 const Firms = () => {
   //? firms verileri bana birden fazla yerde lazım olduğu için fonksiyonu burada değil de her yerden erişebileceğim bir noktada tanımlıyorum. İçerisinde react hookları lazım olduğu için de bu ortak nokta en iyi custom hook olmuş oluyor.
@@ -33,10 +34,23 @@ const Firms = () => {
   // console.log(firms);
 
   return (
-    <Container>
-      <Typography variant="h4" component="h1">
+    <Container maxWidth={"xl"}>
+      <Typography
+        align="center"
+        variant="h4"
+        component="h1"
+        color={"secondary.second"}
+      >
         Firms
       </Typography>
+      <Button variant="contained">New Firm</Button>
+      <Grid container spacing={2} mt={3}>
+        {firms?.map((firm) => (
+          <Grid item key={firm._id} xs={12} md={6} lg={4} xl={3}>
+            <FirmCard {...firm} />
+          </Grid>
+        ))}
+      </Grid>
     </Container>
   );
 };
