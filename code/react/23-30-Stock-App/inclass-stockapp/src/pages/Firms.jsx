@@ -5,6 +5,7 @@ import useStockCall from "../hooks/useStockCall";
 import Container from "@mui/material/Container";
 import { Button, Grid, Typography } from "@mui/material";
 import FirmCard from "../components/Cards/FirmsCard";
+import FirmModal from "../components/Modals/FirmModal"
 
 const Firms = () => {
   //? firms verileri bana birden fazla yerde lazım olduğu için fonksiyonu burada değil de her yerden erişebileceğim bir noktada tanımlıyorum. İçerisinde react hookları lazım olduğu için de bu ortak nokta en iyi custom hook olmuş oluyor.
@@ -24,8 +25,15 @@ const Firms = () => {
   //   }
   // }
 
-  const { getFirms, getStockData } = useStockCall();
+  const {
+    // getFirms,
+    getStockData,
+  } = useStockCall();
   const { firms } = useSelector((state) => state.stock);
+
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     // getFirms();
@@ -43,11 +51,16 @@ const Firms = () => {
       >
         Firms
       </Typography>
-      <Button variant="contained">New Firm</Button>
+      <Button variant="contained" onClick={handleOpen}>
+        New Firm
+      </Button>
+
+      <FirmModal open={open} handleClose={handleClose} />
+
       <Grid container spacing={2} mt={3}>
         {firms?.map((firm) => (
           <Grid item key={firm._id} xs={12} md={6} lg={4} xl={3}>
-            <FirmCard {...firm} />
+            <FirmCard {...firm} handleOpen={handleOpen} />
           </Grid>
         ))}
       </Grid>

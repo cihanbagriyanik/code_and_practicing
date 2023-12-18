@@ -8,8 +8,11 @@ import Typography from "@mui/material/Typography";
 
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
+import useStockCall from "../../hooks/useStockCall";
 
-export default function FirmCard({ _id, name, phone, address, image }) {
+export default function FirmCard({ _id, name, phone, address, image, handleOpen }) {
+  const { deleteStockData } = useStockCall();
+
   return (
     <Card
       sx={{
@@ -46,8 +49,8 @@ export default function FirmCard({ _id, name, phone, address, image }) {
           gap: 2,
         }}
       >
-        <EditIcon />
-        <DeleteOutlineIcon />
+        <EditIcon onClick={handleOpen} />
+        <DeleteOutlineIcon onClick={() => deleteStockData("firms", _id)} />
       </CardActions>
     </Card>
   );
