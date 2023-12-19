@@ -5,8 +5,8 @@ import useStockCall from "../hooks/useStockCall";
 // import Container from "@mui/material/Container" //! bu yöntem daha performanslı
 import { Button, Container, Grid, Typography } from "@mui/material"; //! birden fazla olduğunda yazım kolaylığı sağlıyor.
 import FirmCard from "../components/Cards/FirmsCard";
-import FirmModal from "../components/Modals/firmModal";
-
+import FirmModal from "../components/modals/FirmModal";
+import PageHeader from "../components/PageHeader";
 const intialState = {
   name: "",
   phone: "",
@@ -50,14 +50,15 @@ const Firms = () => {
   console.log(open);
   return (
     <Container maxWidth={"xl"}>
-      <Typography
+      {/* <Typography
         align="center"
         variant="h4"
         component={"h1"}
         color={"secondary.second"}
       >
         Firms
-      </Typography>
+      </Typography> */}
+      <PageHeader text="Firms" />
       <Button variant="contained" onClick={handleOpen}>
         New Firm
       </Button>
