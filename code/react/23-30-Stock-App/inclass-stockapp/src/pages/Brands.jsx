@@ -8,6 +8,8 @@ import BrandModal from "../components/Modals/BrandModal";
 import BrandCard from "../components/Cards/BrandsCard";
 import PageHeader from "../components/PageHeader";
 
+import loadingGif from "../assets/loading.gif";
+
 const Brands = () => {
   const { getStockData } = useStockCall();
   const { brands, loading } = useSelector((state) => state.stock);
