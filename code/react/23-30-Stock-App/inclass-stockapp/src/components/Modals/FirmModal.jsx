@@ -27,7 +27,7 @@ export default function FirmModal({ open, handleClose, info, setInfo }) {
   //   const [address,setAddress] = React.useState("")
 
   //   const [info, setInfo] = React.useState(intialState);
-  console.log(info);
+  // console.log(info);
   const { postStockData,putStockData } = useStockCall();
   const handleChange = (e) => {
     console.log(e.target.id);
