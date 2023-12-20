@@ -35,15 +35,18 @@ const Products = () => {
   return (
     <Container maxWidth={"xl"}>
       <PageHeader text="Products" />
+
       <Button variant="contained" onClick={() => setOpen(true)}>
         New Products
       </Button>
+
       <ProductModal
         open={open}
         handleClose={handleClose}
         info={info}
         setInfo={setInfo}
       />
+
       <ProductTable />
     </Container>
   );

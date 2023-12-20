@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import { DataGrid } from "@mui/x-data-grid";
+import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useSelector } from "react-redux";
 import { Button } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
@@ -31,7 +31,7 @@ export default function ProductTable() {
       headerAlign: "center",
       align: "center",
       flex: 2,
-      valueGetter: (params) => params.row.categoryId.name,
+      valueGetter: (params) => params.row?.categoryId?.name,
     },
     {
       field: "brandId",
@@ -40,7 +40,7 @@ export default function ProductTable() {
       headerAlign: "center",
       align: "center",
       flex: 2,
-      valueGetter: (params) => params.row.brandId.name,
+      valueGetter: (params) => params.row?.brandId?.name,
     },
     {
       field: "name",
@@ -73,13 +73,13 @@ export default function ProductTable() {
         // console.log(params)
         <DeleteOutlineIcon
           sx={btnStyle}
-          onClick={() => deleteStockData("products", params.id)}
+          onClick={() => deleteStockData("products", params?.id)}
         />
       ),
     },
   ];
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", mt: 3 }}>
       <DataGrid
         rows={products}
         columns={columns}
@@ -92,6 +92,7 @@ export default function ProductTable() {
         }}
         getRowId={getRowId}
         pageSizeOptions={[5, 10, 15, 20, 25]}
+        slots={{ toolbar: GridToolbar }}
         // checkboxSelection
         disableRowSelectionOnClick
       />
