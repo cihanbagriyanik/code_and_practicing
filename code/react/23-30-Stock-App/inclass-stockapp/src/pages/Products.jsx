@@ -15,7 +15,7 @@ const initialState = {
 };
 
 const Products = () => {
-  const { getStockData } = useStockCall();
+  const { getStockData, getProCatBrand } = useStockCall();
   const { products } = useSelector((state) => state.stock);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -27,9 +27,10 @@ const Products = () => {
   const [info, setInfo] = useState(initialState);
 
   useEffect(() => {
-    getStockData("products");
-    getStockData("categories");
-    getStockData("brands");
+    // getStockData("products");
+    // getStockData("categories");
+    // getStockData("brands");
+    getProCatBrand();
   }, []);
 
   return (
