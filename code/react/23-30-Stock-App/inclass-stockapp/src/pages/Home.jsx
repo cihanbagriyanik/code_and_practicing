@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div style={{marginTop:"15rem"}}>Home</div>
   )
 }
 

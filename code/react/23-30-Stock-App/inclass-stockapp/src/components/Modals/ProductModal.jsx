@@ -21,7 +21,7 @@ const ProductModal = ({ open, handleClose, info, setInfo }) => {
     postStockData("products", info);
     handleClose();
   };
-  // console.log(info)
+    console.log(info)
   return (
     <div>
       <Modal
@@ -31,7 +31,11 @@ const ProductModal = ({ open, handleClose, info, setInfo }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <Box component="form" onSubmit={handleSubmit} sx={flexColumn}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={flexColumn}
+          >
             <FormControl fullWidth>
               <InputLabel id="demo-simple-select-category">
                 Category Name

@@ -19,8 +19,7 @@ const BrandCard = ({ brand, handleOpen, setInfo }) => {
         height: "400px",
         display: "flex",
         flexDirection: "column",
-      }}
-    >
+      }}>
       <CardHeader title={brand?.name} />
 
       <CardMedia

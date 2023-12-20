@@ -32,14 +32,30 @@ const stockSlice = createSlice({
       state.loading = false;
       state[url] = data; // state["firms"], state["brands"] anlamlarına gelerek tek bir actionla tüm stateleri doldurabilmiş olduk.
     },
-
     getProCatBrandSuccess: (state, { payload }) => {
       state.loading = false;
       state.products = payload[0];
       state.brands = payload[1];
       state.categories = payload[2];
     },
-
+    getProPurcFirBrandsSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.products = payload[0].data;
+      state.purchases = payload[1].data;
+      state.firms = payload[2].data;
+      state.brands = payload[3].data;
+    },
+    getProSalBrandsSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.products = payload[0].data;
+      state.brands = payload[1].data;
+      state.sales = payload[2].data;
+    },
+    getPurSalesSuccess: (state, { payload }) => {
+      state.loading = false;
+      state.purchases = payload[0].data;
+      state.sales = payload[1].data;
+    },
     fetchFail: (state) => {
       state.loading = false;
       state.error = true;
@@ -51,8 +67,11 @@ export const {
   fetchStart,
   //   firmsSuccess,
   //   brandsSuccess,
-  getSuccess,
   getProCatBrandSuccess,
+  getSuccess,
   fetchFail,
+  getProPurcFirBrandsSuccess,
+  getProSalBrandsSuccess,
+  getPurSalesSuccess,
 } = stockSlice.actions;
 export default stockSlice.reducer;

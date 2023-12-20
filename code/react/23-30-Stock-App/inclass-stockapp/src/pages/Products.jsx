@@ -5,7 +5,7 @@ import { Button, Container, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
 import loadingGif from "../assets/loading.gif";
 import PageHeader from "../components/PageHeader";
-import ProductModal from "../components/Modals/ProductModal";
+import ProductModal from "../components/modals/ProductModal";
 import ProductTable from "../components/tables/ProductTable";
 
 const initialState = {
@@ -15,7 +15,7 @@ const initialState = {
 };
 
 const Products = () => {
-  const { getStockData, getProCatBrand } = useStockCall();
+  const { getStockData,getProCatBrand } = useStockCall();
   const { products } = useSelector((state) => state.stock);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -28,27 +28,25 @@ const Products = () => {
 
   useEffect(() => {
     // getStockData("products");
-    // getStockData("categories");
+    // getStockData("categori");
     // getStockData("brands");
-    getProCatBrand();
+
+    getProCatBrand()
   }, []);
 
   return (
     <Container maxWidth={"xl"}>
       <PageHeader text="Products" />
-
       <Button variant="contained" onClick={() => setOpen(true)}>
         New Products
       </Button>
-
       <ProductModal
         open={open}
         handleClose={handleClose}
         info={info}
         setInfo={setInfo}
       />
-
-      <ProductTable />
+      <ProductTable/>
     </Container>
   );
 };

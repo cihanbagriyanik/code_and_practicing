@@ -46,8 +46,8 @@ const Firms = () => {
     // getFirms();
     getStockData("firms");
   }, []);
-  // console.log(firms);
-  // console.log(open);
+  console.log(firms);
+  console.log(open);
   return (
     <Container maxWidth={"xl"}>
       {/* <Typography

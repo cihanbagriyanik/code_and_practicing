@@ -8,6 +8,7 @@ import Typography from "@mui/material/Typography";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import EditIcon from "@mui/icons-material/Edit";
 import useStockCall from "../../hooks/useStockCall";
+import { btnStyle } from "../../styles/globalStyle";
 
 export default function FirmCard({
   _id,
@@ -60,8 +61,12 @@ export default function FirmCard({
             handleOpen();
             setInfo({ _id, name, phone, address, image });
           }}
+          sx={btnStyle}
         />
-        <DeleteOutlineIcon onClick={() => deleteStockData("firms", _id)} />
+        <DeleteOutlineIcon
+          onClick={() => deleteStockData("firms", _id)}
+          sx={btnStyle}
+        />
       </CardActions>
     </Card>
   );

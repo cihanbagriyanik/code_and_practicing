@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "../features/authSlice";
 import stockReducer from "../features/stockSlice";
+
 // import authMidReducer from "../features/authSliceMiddleware"; //!middleware ile olan kullanım
 import {
   persistStore,
@@ -25,16 +26,14 @@ const store = configureStore({
   reducer: {
     auth: persistedReducer,
     // auth:authMidReducer,
-    stock: stockReducer,
+    stock:stockReducer,
   },
-
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-
   devTools: process.env.NODE_ENV !== "production",
 });
 

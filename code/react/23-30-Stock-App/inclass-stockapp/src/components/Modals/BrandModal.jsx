@@ -8,6 +8,7 @@ import useStockCall from "../../hooks/useStockCall";
 import { Formik, Form } from "formik";
 // import { object, string } from "yup";//* destructure ederek yup içerisinden ilgili metotları aldık.
 
+
 // export const brandSchema = object({
 //   name: string()
 //     .min(1, "Too short!")
@@ -18,8 +19,7 @@ import { Formik, Form } from "formik";
 
 export default function BrandModal({ open, handleClose, info, setInfo }) {
   const { postStockData, putStockData } = useStockCall();
-  const handleSubmit = (values) => {
-    //! handleSubmit diye bir fonksiyon tanımlayıp formike bu fonksiyıonu verdik. Formikten gelen valuesu böylelikle yakaladık.
+  const handleSubmit = values => {//! handleSubmit diye bir fonksiyon tanımlayıp formike bu fonksiyıonu verdik. Formikten gelen valuesu böylelikle yakaladık.
     if (values._id) {
       //! update yaptığımızda yine infodan dolayı values içerisinde artık id bilgisi olduğu için ona göre burada da kontrol yaptık
       putStockData("brands", values);
@@ -33,15 +33,13 @@ export default function BrandModal({ open, handleClose, info, setInfo }) {
       open={open}
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
-    >
+      aria-describedby="modal-modal-description">
       <Box sx={modalStyle}>
         {/* stillendirme özelliklerini birkaç modal da kullandığımız için aynı özellikleri tekrar tekrar yazmak yerine ortak bir alana yani globalsStyle içerisine taşımış olduk. */}
         <Formik
           initialValues={info} //!nitialValuesa üst componentten gelen info stateini verdik. İnputlarımızdakl name attributeları ile Yup daki keyleri aynı tanımladık.
           // validationSchema={brandSchema}//* eğer validasyon yapmak istemezsek bunlara ihtiyacımız yok.
-          onSubmit={handleSubmit}
-        >
+          onSubmit={handleSubmit}>
           {({
             values,
             handleChange,

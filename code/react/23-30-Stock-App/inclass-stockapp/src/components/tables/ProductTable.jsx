@@ -6,12 +6,13 @@ import { Button } from "@mui/material";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import useStockCall from "../../hooks/useStockCall";
 import { btnStyle } from "../../styles/globalStyle";
+import DataTable from "./DataTable";
 
 export default function ProductTable() {
   const { products } = useSelector((state) => state.stock);
   const { deleteStockData } = useStockCall();
   function getRowId(row) {
-    // console.log(row);
+    console.log(row);
     return row._id;
   }
   const columns = [
@@ -31,7 +32,7 @@ export default function ProductTable() {
       headerAlign: "center",
       align: "center",
       flex: 2,
-      valueGetter: (params) => params.row?.categoryId?.name,
+      valueGetter: (params) => params.row.categoryId.name,
     },
     {
       field: "brandId",
@@ -40,7 +41,7 @@ export default function ProductTable() {
       headerAlign: "center",
       align: "center",
       flex: 2,
-      valueGetter: (params) => params.row?.brandId?.name,
+      valueGetter: (params) => params.row.brandId.name,
     },
     {
       field: "name",
@@ -73,29 +74,30 @@ export default function ProductTable() {
         // console.log(params)
         <DeleteOutlineIcon
           sx={btnStyle}
-          onClick={() => deleteStockData("products", params?.id)}
+          onClick={() => deleteStockData("products", params.id)}
         />
       ),
     },
   ];
   return (
-    <Box sx={{ width: "100%", mt: 3 }}>
-      <DataGrid
-        rows={products}
-        columns={columns}
-        initialState={{
-          pagination: {
-            paginationModel: {
-              pageSize: 5,
-            },
-          },
-        }}
-        getRowId={getRowId}
-        pageSizeOptions={[5, 10, 15, 20, 25]}
-        slots={{ toolbar: GridToolbar }}
-        // checkboxSelection
-        disableRowSelectionOnClick
-      />
-    </Box>
+    // <Box sx={{ width: "100%",mt:3 }}>
+    //   <DataGrid
+    //     rows={products}
+    //     columns={columns}
+    //     initialState={{
+    //       pagination: {
+    //         paginationModel: {
+    //           pageSize: 5,
+    //         },
+    //       },
+    //     }}
+    //     getRowId={getRowId}
+    //     pageSizeOptions={[5, 10, 15, 20, 25]}
+    //     slots={{ toolbar: GridToolbar }}
+    //     // checkboxSelection
+    //     disableRowSelectionOnClick
+    //   />
+    // </Box>
+    <DataTable rows={products} columns={columns} />
   );
 }

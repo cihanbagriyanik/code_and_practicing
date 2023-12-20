@@ -3,12 +3,10 @@ import useStockCall from "../hooks/useStockCall";
 import Typography from "@mui/material/Typography";
 import { Button, Container, Grid } from "@mui/material";
 import { useSelector } from "react-redux";
-import BrandModal from "../components/Modals/BrandModal";
-
+import BrandModal from "../components/modals/BrandModal";
+import loadingGif from "../assets/loading.gif";
 import BrandCard from "../components/Cards/BrandsCard";
 import PageHeader from "../components/PageHeader";
-
-import loadingGif from "../assets/loading.gif";
 
 const Brands = () => {
   const { getStockData } = useStockCall();
