@@ -2,7 +2,6 @@ import { Grid } from "@mui/material";
 import { AreaChart, Card, Title } from "@tremor/react";
 import { useSelector } from "react-redux";
 
-
 const valueFormatter = function (number) {
   return "€" + new Intl.NumberFormat("de").format(number).toString();
 };
