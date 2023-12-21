@@ -13,6 +13,7 @@ import {
   getSuccess,
 } from "../features/stockSlice";
 import useAxios from "./useAxios";
+import { toastErrorNotify } from "../helper/ToastNotify";
 
 const useStockCall = () => {
   // const BASE_URL = import.meta.env.VITE_BASE_URL;
@@ -77,9 +78,13 @@ const useStockCall = () => {
       //   },
       // });
       await axiosWithToken.delete(`${url}/${id}`);
+      toastSuccessNotify("Operation succes");
       getStockData(url);
     } catch (error) {
       dispatch(fetchFail());
+      toastErrorNotify(
+        error?.response?.data?.message || "Operation not success"
+      );
     }
   };
 
@@ -90,6 +95,11 @@ const useStockCall = () => {
       getStockData(url);
     } catch (error) {
       dispatch(fetchFail());
+      toastSuccessNotify("Operation succes");
+      toastErrorNotify(
+        error?.response?.data?.message || "Operation not success"
+      );
+      console.log(error);
     }
   };
   const putStockData = async (url, body) => {
@@ -97,8 +107,12 @@ const useStockCall = () => {
     try {
       await axiosWithToken.put(`${url}/${body._id}`, body);
       getStockData(url);
+      toastSuccessNotify("Operation succes");
     } catch (error) {
       dispatch(fetchFail());
+      toastErrorNotify(
+        error?.response?.data?.message || "Operation not success"
+      );
     }
   };
   //!Promise.all()
@@ -164,6 +178,7 @@ const useStockCall = () => {
       dispatch(fetchFail());
     }
   };
+
   const getPurSales = async () => {
     dispatch(fetchStart());
     try {
@@ -187,8 +202,8 @@ const useStockCall = () => {
     getProCatBrand,
     getProPurcFirBrands,
     getProSalBrands,
-    getPurSales,
     putStockData,
+    getPurSales,
   };
 };
 
