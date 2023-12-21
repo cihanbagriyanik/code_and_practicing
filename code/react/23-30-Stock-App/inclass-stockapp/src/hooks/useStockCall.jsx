@@ -177,6 +177,7 @@ const useStockCall = () => {
       dispatch(fetchFail());
     }
   };
+
   return {
     getFirms,
     getBrands,
