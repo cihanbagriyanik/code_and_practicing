@@ -21,7 +21,7 @@ console.log(info)
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (info.id) {
+    if (info._id) {
       putStockData("sales", info);
     } else {
       postStockData("sales", info);
@@ -51,7 +51,7 @@ console.log(info)
                 label="Brand"
                 id="brand-select"
                 name="brandId"
-                value={info?.brandId?._id}
+                value={info?.brandId?._id || info?.brandId}
                 onChange={handleChange}
                 required>
                 <MenuItem onClick={() => navigate("/stock/brands/")}>
@@ -76,7 +76,7 @@ console.log(info)
                 label="Product"
                 id="product-select"
                 name="productId"
-                value={info?.productId?._id}
+                value={info?.productId?._id || info?.productId}
                 onChange={handleChange}
                 required>
                 <MenuItem onClick={() => navigate("/stock/products")}>
@@ -115,7 +115,7 @@ console.log(info)
               required
             />
             <Button type="submit" variant="contained" size="large">
-              {info?.id ? "Update Sale" : "Add New Sale"}
+              {info?._id ? "Update Sale" : "Add New Sale"}
             </Button>
           </Box>
         </Box>
