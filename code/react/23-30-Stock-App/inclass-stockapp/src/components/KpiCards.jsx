@@ -13,22 +13,22 @@ export default function KpiCards() {
     {
       title: "Sales",
       metric: `€ ${totalSales}`,
-      value: `${((totalSales / 200000) * 100).toFixed(2)}`,
-      target: "€ 200,000",
+      value: `${((totalSales / 2000000) * 100).toFixed(2)}`,
+      target: "€ 2,000,000",
       color: "indigo",
     },
     {
       title: "Cash",
       metric: `€ ${cash}`,
-      value: `${((cash / 100000) * 100).toFixed(2)}`,
-      target: "€ 100,000",
+      value: `${((cash / 250000) * 100).toFixed(2)}`,
+      target: "€ 250,000",
       color: "fuchsia",
     },
     {
       title: "Purchases",
       metric: `€ ${totalPurchases}`,
-      value: `${((totalPurchases / 100000) * 100).toFixed(2)}`,
-      target: "100,000",
+      value: `${((totalPurchases / 1000000) * 100).toFixed(2)}`,
+      target: "1,000,000",
       color: "amber",
     },
   ];
