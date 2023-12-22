@@ -13,7 +13,7 @@ import {
   getSuccess,
 } from "../features/stockSlice";
 import useAxios from "./useAxios";
-import { toastErrorNotify } from "../helper/ToastNotify";
+import { toastErrorNotify, toastSuccessNotify } from "../helper/ToastNotify";
 
 const useStockCall = () => {
   // const BASE_URL = import.meta.env.VITE_BASE_URL;
