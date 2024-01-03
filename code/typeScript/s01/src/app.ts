@@ -11,8 +11,6 @@ console.log(add(4,3))
 console.log(`${5+3}`)
  */
 
-
-
 //Type Annotations
 /* 
 let msg:string = 'Hello World'
@@ -98,15 +96,14 @@ arrTuples.push([4,2024]) */
 // console.log(currentUser)
 
 // const enum StatusCodes {
-//     NotFound = 404, 
-//     Success = 200, 
-//     Accepted = 202, 
+//     NotFound = 404,
+//     Success = 200,
+//     Accepted = 202,
 //     BadRequest = 400
 // }
 
 // let result: StatusCodes = StatusCodes.Success
 // console.log(result)
-
 
 // enum Tshirts {
 //     'Small' = 'S',
@@ -146,7 +143,6 @@ let anyArr: any[];
 
 anyArr = [true, 20, 'Selam'] */
 
-
 //Unknown type
 
 /* let notSure : unknown = 'Hello'
@@ -155,12 +151,11 @@ console.log(notSure.length)
 
 let newUnk: string = notSure */
 
-
-//Void 
+//Void
 //fonkksiyon dönüş tipleri
 // function warnUser(): void {
 //     console.log("This is my warning message");
-    
+
 // }
 
 //Never
@@ -176,20 +171,164 @@ console.log(error('Uygulama Çöktü')) */
 
 //Union Type
 
-let yedekSayi : boolean = false
+/* let yedekSayi : boolean = false
 
 let code: number | string;
 
 code = 123
 code = 'abc'
 
-// code = false 
+code = false
 
-// code = yedekSayi
-   
+code = yedekSayi */
+
+/* -------------------------------------------------------------------------- */
+//! Second Day 03.01.2024
+
+//* Type narrowing
+
+/* type nm = number | string;
+
+  
+function checkNumber (n:nm):void{
+    
+  if (typeof n === 'string'){
+    console.log(n)
+  }else{
+    console.log(n **2)
+  }
+}
+
+checkNumber('Hello')
+checkNumber('Hello', 'world')
+checkNumber(5)
+checkNumber(false) */
+
+//? String literals
+
+/* type Car = 'BMW' | 'Ford' | 'Mercedes'
+
+let car1: Car = 'BMW'
+let car2: Car = 'Ford'
+let car3: Car = 'Audi'
+
+type Size = 36 | 38 | 40 | 42
+
+let tShirt1: Size = 'Small'
+let tShirt2: Size = 36
+let tShirt3: Size = 45 */
+
+//? Objects
+/* const car: {
+  make: string,
+  model : number,
+  age(year: number):void,
+  sunroof?: boolean
+} = {
+  make: 'BMW',
+  model: 1990,
+  age(year: number):void{
+    console.log(`Age is ${year - 2009}`)
+  }
+}
 
 
+console.log(car.make)
+console.log(car.model)
+car.age(2024)
+
+car.model = 2000
+car.model = 'ikibin' */
+
+//! Intersection
+
+/* type Book = {
+  book_id: number;
+  book_name: string
+}
+
+type Author = {
+  Author_id: number;
+  Author_name: string;
+}
 
 
+type intersected_type = Book & Author;
+
+const book1:intersected_type = {
+  book_id:1,
+  book_name: '1985',
+  Author_id: 1000,
+  Author_name: 'George  Orwell'
+}
+
+const author1: Author ={
+  Author_id: 1000,
+  Author_name: 'George  Orwell'
+} */
+
+//! Type Assertions
+
+/* let someValue: unknown = 'Ben bir stringim'
+
+console.log(someValue.length)
+console.log((<string>someValue).length)
+console.log((someValue as string).length)
+
+let y:string = someValue //! hata
+let x:string = someValue as string
 
 
+let score : string = '350'
+
+let z: number = +score as number
+ */
+
+//! Functions
+
+/* function greet (greet: string, name:string): string{
+  return `${greet} ${name}`
+}
+
+console.log(greet('Günaydın', 'Mark')) //* Çalışır
+console.log(greet('Günaydın', 2024)) //! Hata
+console.log(greet('Günaydın')) //! Hata
+console.log(greet('Günaydın', 'Mark', 'Hello')) //! Hata */
+
+//? optional parameters
+
+/* function greet2 (name:string, greet?: string ): void{
+  
+  if(!name){
+    name = 'user'
+  }
+  console.log(`${greet} ${name}`)
+}
+
+greet2('Günaydın', 'Mark')
+greet2('Günaydın') */
+
+//? Overloading
+
+/* function add (a:string, b:string):string;
+function add (a:number, b:number):number;
+function add (a:any, b:any):any{
+  return a+b
+}
+
+console.log(add('Hello','World'))
+console.log(add(10,20))
+console.log(add(10, 'Hello'))
+ */
+//? Rest Parameters
+
+function topla(num: number, ...numbers: number[]) {
+  let toplam = num;
+
+  numbers.forEach((num) => (toplam += num));
+  console.log(toplam);
+}
+
+topla(1);
+topla(1, 2);
+topla(1, 2, 3, 4, 5);
