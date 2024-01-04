@@ -46,6 +46,11 @@ const Home = () => {
       );
     } catch (error) {
       console.log(error);
+      notify(
+        "The todo was NOT create successfully",
+        SweetAlertIcons.ERROR,
+        SweetPosition.Center
+      );
     } finally {
       getTodos();
     }
@@ -61,6 +66,11 @@ const Home = () => {
       );
     } catch (error) {
       console.log(error);
+      notify(
+        "The todo is NOT done successfully",
+        SweetAlertIcons.ERROR,
+        SweetPosition.TopStart
+      );
     } finally {
       getTodos();
     }
@@ -75,6 +85,11 @@ const Home = () => {
       );
     } catch (error) {
       console.log(error);
+      notify(
+        "The todo is NOT delete successfully",
+        SweetAlertIcons.ERROR,
+        SweetPosition.BottomEnd
+      );
     } finally {
       getTodos();
     }
