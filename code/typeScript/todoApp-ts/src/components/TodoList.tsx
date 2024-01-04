@@ -1,7 +1,7 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
 import TodoListItem from "./TodoListItem";
-
+import "./style.css";
 interface ITodoList {
   todos: ITodoType[];
   toggleTodo: ToggleFn;
@@ -35,6 +35,8 @@ const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo, deleteTodo }) => {
         xs={12}
         sm={8}
         md={5}
+        position={"relative"}
+        className="myscrool scrool-progress"
         sx={{
           border: "1px solid purple",
           borderRadius: "0.5rem",
@@ -56,8 +58,8 @@ const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo, deleteTodo }) => {
             <TodoListItem
               key={todo.id}
               todo={todo}
-              toggleTodo={toggleTodo}
               deleteTodo={deleteTodo}
+              toggleTodo={toggleTodo}
             />
           ))
         ) : (
@@ -71,6 +73,8 @@ const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo, deleteTodo }) => {
         xs={12}
         sm={8}
         md={5}
+        position={"relative"}
+        className="myscrool scrool-completed"
         sx={{
           border: "1px solid green",
           borderRadius: "0.5rem",
@@ -92,8 +96,8 @@ const TodoList: React.FC<ITodoList> = ({ todos, toggleTodo, deleteTodo }) => {
             <TodoListItem
               key={todo.id}
               todo={todo}
-              toggleTodo={toggleTodo}
               deleteTodo={deleteTodo}
+              toggleTodo={toggleTodo}
             />
           ))
         ) : (

@@ -49,9 +49,10 @@ import { useState } from "react";
 
 //! 2.Kullanım yolu(Props type tanımlası)
 interface IAddTodoComp {
-  // addTodo: (text: string) => Promise<void>;
+  // addTodo:(text:string) => Promise<void>;
   addTodo: AddFn;
 }
+
 const AddTodoComp = ({ addTodo }: IAddTodoComp) => {
   // const [text,setText] = useState<string>("")
   const [text, setText] = useState(""); //! her zaman type belirtmemize gerek yok. Typescript type inference özelliği sayesinde inital değerine göre otomatik type ataması yapıyor.

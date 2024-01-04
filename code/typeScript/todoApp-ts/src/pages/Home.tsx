@@ -15,8 +15,8 @@ import TodoList from "../components/TodoList";
 const url: string = import.meta.env.VITE_BASE_URL;
 
 const Home = () => {
-  // const [todos, setTodos] = useState([] as ITodoType[]);
-  // const [todos, setTodos] = useState<Array<ITodoType>>([]);
+  // const [todos,setTodos] = useState([] as ITodoType[])
+  // const [todos,setTodos] = useState<Array<ITodoType>>([])
   const [todos, setTodos] = useState<ITodoType[]>([]);
 
   const getTodos = async () => {
@@ -29,9 +29,13 @@ const Home = () => {
     }
   };
 
-  // const addTodo = async (text:string) => {}
-  // type AddFn = (text: string) => Promise<void>;
-  const addTodo: AddFn = async (text: string) => {
+  // const addTodo = async (text:string) => {
+
+  // }
+
+  // type AddFn = (text:string) => Promise<void>;
+
+  const addTodo: AddFn = async (text) => {
     try {
       await axios.post(url, { todo: text, isDone: false });
     } catch (error) {
@@ -50,7 +54,6 @@ const Home = () => {
       getTodos();
     }
   };
-
   const deleteTodo: DeleteFn = async (id) => {
     try {
       await axios.delete(`${url}/${id}`);
@@ -68,7 +71,7 @@ const Home = () => {
   return (
     <Container>
       <Typography color="error" align="center" variant="h2" component="h1">
-        Todo App with TypeScript
+        Todo App with Typescript
       </Typography>
       <AddTodoComp addTodo={addTodo} />
       <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
