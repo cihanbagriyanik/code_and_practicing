@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import AddTodoComp from "../components/AddTodoComp";
 import TodoList from "../components/TodoList";
+import { SweetAlertIcons, SweetPosition, notify } from "../helper/sweetalert";
 
 // interface ITodoType {
 //   todo: string;
@@ -38,6 +39,11 @@ const Home = () => {
   const addTodo: AddFn = async (text) => {
     try {
       await axios.post(url, { todo: text, isDone: false });
+      notify(
+        "The todo was created successfully",
+        SweetAlertIcons.SUCCESS,
+        SweetPosition.Center
+      );
     } catch (error) {
       console.log(error);
     } finally {
@@ -48,6 +54,11 @@ const Home = () => {
   const toggleTodo: ToggleFn = async (todo) => {
     try {
       await axios.put(`${url}/${todo.id}`, { ...todo, isDone: !todo.isDone });
+      notify(
+        "The todo is done successfully",
+        SweetAlertIcons.SUCCESS,
+        SweetPosition.TopStart
+      );
     } catch (error) {
       console.log(error);
     } finally {
@@ -57,6 +68,11 @@ const Home = () => {
   const deleteTodo: DeleteFn = async (id) => {
     try {
       await axios.delete(`${url}/${id}`);
+      notify(
+        "The todo is deleted successfully",
+        SweetAlertIcons.SUCCESS,
+        SweetPosition.BottomEnd
+      );
     } catch (error) {
       console.log(error);
     } finally {
