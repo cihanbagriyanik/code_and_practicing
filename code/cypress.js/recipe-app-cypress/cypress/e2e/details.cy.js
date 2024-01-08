@@ -15,7 +15,6 @@ describe('recipe project', () => {
         cy.get("[data-test='contentParag']").should("be.visible")
         cy.get("[data-test='contentCal']").should("be.visible")
         cy.get("[data-test='contentImage']").should("be.visible")
-
     })
 
 })
