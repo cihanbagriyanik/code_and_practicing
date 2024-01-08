@@ -1,59 +1,37 @@
-import React, { useContext, useState } from "react";
-import {
-  FormContainer,
-  Header,
-  LoginContainer,
-  StyledButton,
-  StyledForm,
-  StyledImg,
-  StyledInput,
-} from "./LoginStyles";
-import mealSvg from "../../assets/meal.svg";
-import { useNavigate } from "react-router";
-import { RecipeContext } from "../../App";
+
+import React,{useState} from 'react'
+import {useNavigate} from 'react-router-dom'
+import { FormContainer, Header, LoginContainer, StyledButton, StyledForm, StyledImg,StyledInput } from './LoginStyles'
+import meal from "../../assets/meal.svg"
+
 
 const Login = () => {
-  const navigate = useNavigate();
-  // const [name, setName] = useState("");
-  // const [pass, setPass] = useState("");
-
-  const { name, pass, setPass, setName } = useContext(RecipeContext);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    localStorage.setItem("username", name);
-    localStorage.setItem("password", pass);
-
-    navigate("/home");
-  };
-
+  const Navigate = useNavigate()
+  const [username, setUsername] = useState('Anthony')
+  const user= {
+    username: `${username}`,
+  }
+  const loginSubmit  = (e) => {
+    e.preventDefault()
+    
+    Navigate("/home")
+    sessionStorage.setItem("user",JSON.stringify(user))
+  }
   return (
     <LoginContainer>
       <FormContainer>
-        <StyledImg src={mealSvg} />
-        <Header>{"<Clarusway/>"}Recipe</Header>
-
-        <StyledForm onSubmit={handleSubmit}>
-          <StyledInput
-            type="text"
-            placeholder="username"
-            required
-            onChange={(e) => setName(e.target.value)}
-          />
-
-          <StyledInput
-            type="password"
-            placeholder="password"
-            required
-            onChange={(e) => setPass(e.target.value)}
-          />
-
+        <StyledImg src={meal} />
+        <Header>
+          {`<Clarusway/>`}Recipe
+        </Header>
+        <StyledForm onSubmit={loginSubmit}>
+          <StyledInput type="text" placeholder="Username" name="username" onChange={(e)=>setUsername(e.target.value)} required />
+          <StyledInput type="password" placeholder="Password" required />
           <StyledButton type="submit">Login</StyledButton>
         </StyledForm>
       </FormContainer>
     </LoginContainer>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

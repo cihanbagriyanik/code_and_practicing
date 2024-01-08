@@ -1,46 +1,54 @@
-import React, { useContext, useState } from "react";
-// import axios from "axios";
-import Header from "../../components/header/Header";
-import RecipeCard from "./RecipeCard";
-import { HomeImg, ImgDiv } from "./HomeStyles";
-import homeSvg from "../../assets/home.svg";
-import { RecipeContext } from "../../App";
+import axios from 'axios';
+import React, { useState } from 'react'
+import Header from '../../components/header/Header'
+import { ImgDiv, MainContainer,HomeImg } from './HomeStyles';
+import homeSvg from "../../assets/home.svg"
+import RecipeCardComp from './RecipeCardComp'
 
-// const APP_ID = "bfbb3efc";
+//personal key and id
+const APP_ID = "e0550b67";
+const APP_KEY  = "b9fce4db63d154f4247d4d944c3fba8f";
 
-// const APP_KEY = "43faeee790f26cd82b28050d3031619d";
 
 const Home = () => {
-  // const [query, setQuery] = useState("");
-  // const [ögün, setOgun] = useState("Breakfast");
-  // const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${ögün}`;
+  const mealTypes = ["Breakfast", "Lunch", "Dinner","Snack","Teatime"];
+  const [query,setQuery]=useState("")
+  const [meal,setMeal]=useState(mealTypes[0])
+  const [food,setFood]=useState()
+  const url = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`
 
-  // const getData = async () => {
-  //   const veri = await axios.get(url);
-  //   console.log(veri.data.hits);
-  //   setRecipes(veri.data.hits);
-  // };
-  // getData()
-
-  const { recipes } = useContext(RecipeContext);
-
+  const getData = async () => {
+   if(query){
+     const result =  await axios.get(url);
+      setFood(result.data.hits)
+      
+    }else{
+      console.log("please fill the Form")
+    }
+    
+  }
   return (
     <div>
-      {/* <Header setQuery={setQuery} setOgun={setOgun} getData={getData} /> */}
-      <Header />
+      <Header 
+        setQuery={setQuery} 
+        getData={getData}
+        mealTypes={mealTypes}
+        setMeal={setMeal}
+      />
 
-      {recipes.length > 0 ? (
-        <div>
-          {/* <RecipeCard recipes={recipes} /> */}
-          <RecipeCard />
-        </div>
-      ) : (
-        <ImgDiv>
-          <HomeImg src={homeSvg} alt="" />
-        </ImgDiv>
-      )}
+
+    {food? (<MainContainer>
+    {food.map((liste,index)=>(
+      <RecipeCardComp key={index} recipe={liste.recipe}/>
+    ))}
+
+    </MainContainer>
+
+    ):<ImgDiv>
+      <HomeImg src={homeSvg}/>
+    </ImgDiv>}
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

@@ -1,56 +1,62 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
-  /* başlık ve 3 arama kutusunu taşıyan kutu TURUNCU */
-
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* background: #00adb5; */
-  background: orange;
+  background: #00adb5;
 `;
-
-export const MainHeader = styled.h2`
-  /* food app başlık */
-  margin-top: 1rem;
+export const UserHeader = styled.h4`
+  display: flex;
   font-size: 3rem;
-  background-color: yellow;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  letter-spacing:5px;
+  background: #00adb5;
+  margin-top: 0;
+  margin-bottom: 0;
+  `
+export const MainHeader = styled.h2`
+
+
+  margin-top: 0;
+  font-size: 3rem;
 `;
 
 export const FormContainer = styled.form`
-  /* 3 arama kutusunun toplandığı kutu  MAVİ*/
+
+
   display: flex;
-  /* flex-direction: row; */
+
   flex-wrap: wrap;
-  /* ekran küçülünce sıkışmasınlar,alta geçsinler */
+ 
   justify-content: center;
   border: 2px solid white;
   border-radius: 3px;
   margin: 20px;
-  background-color:blue;
 `;
 
 export const FoodInput = styled.input`
-  /* arama yapılacak ürünün yazıldığı input AÇIK MAVİ İNPUT*/
+
   height: 3rem;
   width: 15rem;
   border: none;
   border-radius: 3px;
+
   text-indent: 10px;
-  /* yazı 10px içten başlasın */
+
   margin: 5px;
   font-size: 2rem;
-  background-color: lightblue;
 `;
 
 export const Button = styled.button`
-  /* search butonu GRİ*/
-  /* background-color: #e1f1dd; */
-  background-color: gray;
 
+  background-color: #e1f1dd;
   padding: 5px;
-  /* outline: none; */
+
   height: 3rem;
   border: none;
   margin: 5px;
@@ -65,8 +71,7 @@ export const Button = styled.button`
 `;
 
 export const Select = styled.select`
-  /* breakfast yazan select */
-  background-color: pink;
+
 
   border-radius: 3px;
   margin: 5px;
@@ -74,7 +79,4 @@ export const Select = styled.select`
   height: 3rem;
   border: none;
   font-size: 2rem;
-
-  
-  
 `;

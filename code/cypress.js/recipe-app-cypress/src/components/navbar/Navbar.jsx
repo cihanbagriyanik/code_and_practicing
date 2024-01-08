@@ -1,30 +1,34 @@
-import React from "react";
-import { Hamburger, Logo, Menu, MenuLink, Nav } from "./NavbarStyles";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
 
+import React,{useState} from 'react'
+import {Nav,Logo,Hamburger,Menu,MenuLink,A} from './NavbarStyles'
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false)
+  
+ 
+  
   return (
     <Nav>
-      <Logo to="/home">
-        <i> {"<Clarusway>"} </i> <span> Recipe </span>
+      <Logo onClick={()=>setIsOpen(false)} to="/home">
+        <i>{`<Clarusway/>`}</i>
+        <span >recipe</span>
       </Logo>
-
-      <Hamburger onClick={() => setOpen(!open)}>
-        <GiHamburgerMenu />
+      
+      <Hamburger onClick={()=>setIsOpen(!isOpen)}>
+        <span/>
+        <span/>
+        <span/>
       </Hamburger>
-
-      <Menu muhammed={open} onClick={() => setOpen(false)}>
-        <MenuLink to="/about">About</MenuLink>
-        <a href="https://github.com/cihanbagriyanik" target="_blank">
-          GitHub
-        </a>
-        <MenuLink to="/login">Logout</MenuLink>
-      </Menu>
+      <Menu hamburOpen={isOpen}>
+        <MenuLink to="/about" onClick={()=>setIsOpen(!isOpen)}>About</MenuLink>
+        
+        <A href="https://github.com/" target="_blank">
+          Github
+        </A>
+        
+        <MenuLink onClick={()=>setIsOpen(!isOpen)} onMouseUp={()=>sessionStorage.clear()} to="/">LOGOUT</MenuLink>
+      </Menu> 
     </Nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
 export const DetailContainer = styled.div`
-  /* en dış container */
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   background: #00adb5;
   min-height: calc(100vh - 75px);
-  /* height: fit-content; */
+
   padding: 5px;
 `;
 
 export const DetailPart = styled.div`
-  /* verilerin , içindekiler,resim ve Nutrients in yazdığı yer */
+ 
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22,9 +22,7 @@ export const DetailPart = styled.div`
   margin: 1rem;
   border: 1px solid white;
   border-radius: 5px;
-  background-color: pink;
-  /* background-color: #e1f1dd; */
-  /* height: calc(100vh - 300px); */
+  background-color: #e1f1dd;
   @media (max-width: 1250px) {
     justify-content: center;
 
@@ -33,8 +31,6 @@ export const DetailPart = styled.div`
 `;
 
 export const ImgContainer = styled.div`
-  /* resmin div i */
-  background-color: green;
 
   border: 1px solid #00adb5;
   padding: 10px;
@@ -49,8 +45,6 @@ export const ImgContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.div`
-  /* üstteki başlık ve kadın resmi */
-  background-color: darkgray;
 
   display: flex;
   justify-content: space-evenly;
@@ -65,16 +59,13 @@ export const HeaderContainer = styled.div`
 `;
 
 export const IngredContainer = styled.div`
-  /* alttaki bilgiler, içindekiler */
+
   width: 400px;
   font-size: 1.4rem;
   margin: 2rem;
-  background-color: gray;
 `;
 
 export const OtherPart = styled.div`
-  /* üstteki bilgiler */
-  background-color: lightgray;
 
   width: 400px;
   text-align: right;

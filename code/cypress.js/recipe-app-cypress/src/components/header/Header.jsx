@@ -1,49 +1,26 @@
-import React, { useContext } from "react";
-import {
-  Button,
-  FoodInput,
-  FormContainer,
-  HeaderContainer,
-  MainHeader,
-  Select,
-} from "./HeaderStyles";
-import { RecipeContext } from "../../App";
 
-// const Header = ({ setQuery, setOgun, getData }) => {
-const Header = () => {
-  const { setQuery, setOgun, getData } = useContext(RecipeContext);
+import React from 'react'
+import {HeaderContainer, MainHeader,UserHeader} from "./HeaderStyles"
+import Form from './Form'
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    getData();
-  };
-
+const Header = ({ setQuery, getData, mealTypes, setMeal }) => {
+  const user = JSON.parse(sessionStorage.getItem('user'))
   return (
-    <HeaderContainer>
-      <MainHeader>FOOD APP</MainHeader>
-
-      <FormContainer onSubmit={handleSubmit}>
-        <FoodInput
-          type="text"
-          placeholder="Search"
-          onChange={(e) => setQuery(e.target.value)}
-        />
-
-        <Button type="submit">Search</Button>
-
-        <Select
-          name="ogunTypes"
-          id="ogunTypes"
-          onChange={(e) => setOgun(e.target.value)}
-        >
-          <option>Breakfast</option>
-          <option>Lunch</option>
-          <option>TeaTime</option>
-        </Select>
-      </FormContainer>
+    <div>
+      
+      <HeaderContainer>
+      {user && <UserHeader>{`Hi,${user ? user.username.toUpperCase() : "Anthony"}! Welcome to my recipe app!`}</UserHeader>}
+      <MainHeader>Food App</MainHeader>
+      
+      <Form
+        setQuery={setQuery} 
+        getData={getData}
+        mealTypes={mealTypes}
+        setMeal={setMeal}
+      />
     </HeaderContainer>
-  );
-};
+    </div>
+  )
+}
 
-export default Header;
+export default Header
